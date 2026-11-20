@@ -59,10 +59,36 @@ def est_port_service(port) -> bool:
 
 
 def est_interne(ip) -> bool:
-    """Vrai si l'IP fait partie du réseau de l'organisation."""
+    """
+    Vrai si l'IP est une machine du réseau de l'organisation.
+
+    On exclut l'adresse du réseau (.0) et l'adresse de diffusion (.255) :
+    ce ne sont pas des machines, mais des adresses spéciales. Un message
+    envoyé à .255 est reçu par tout le réseau.
+    """
     try:
-        return ipaddress.ip_address(str(ip).strip()) in _RESEAU
+        adresse = ipaddress.ip_address(str(ip).strip())
     except ValueError:
+        return False
+    return (adresse in _RESEAU
+            and adresse not in (_RESEAU.network_address, _RESEAU.broadcast_address))
+
+
+def flux_ambigu(src, dst, port_src, port_dst, balayages: dict) -> bool:
+    """
+    Vrai si on ne peut pas se fier à ce flux pour dire qu'un port est ouvert.
+
+    - il fait partie d'un balayage, dans un sens ou dans l'autre
+      (quand A scanne B, les réponses de B vers A sont parfois enregistrées
+      à l'envers et feraient croire que A a des centaines de ports ouverts)
+    - les deux côtés utilisent le même port (ex. NetBIOS : 137 vers 137) :
+      impossible de savoir lequel est le serveur
+    """
+    if (src, dst) in balayages or (dst, src) in balayages:
+        return True
+    try:
+        return int(port_src) == int(port_dst)
+    except (TypeError, ValueError):
         return False
 
 
@@ -129,7 +155,8 @@ def _nouvel_actif(ip: str) -> dict:
         "connexions_emises": 0,
         "clients_uniques": set(),     # qui se connecte à cette machine
         "destinations_uniques": set(),  # à qui cette machine se connecte
-        "clients_externes": set(),    # machines d'Internet qui se connectent à elle
+        "clients_externes": set(),    # machines d'Internet qui utilisent un de ses services
+        "ports_exposes": set(),       # ports de service utilisés depuis Internet
         "indices_role": set(),
     }
 
@@ -174,6 +201,7 @@ def _analyser_conn(conn: pd.DataFrame, actifs: dict, balayages: dict) -> None:
     for _, c in conn.iterrows():
         src, dst = c.get("id.orig_h"), c.get("id.resp_h")
         port, proto = c.get("id.resp_p"), c.get("proto")
+        port_src = c.get("id.orig_p")
         service, etat = c.get("service"), c.get("conn_state")
 
         # La machine source émet une connexion
@@ -187,19 +215,22 @@ def _analyser_conn(conn: pd.DataFrame, actifs: dict, balayages: dict) -> None:
             a = actifs.setdefault(dst, _nouvel_actif(dst))
             a["connexions_recues"] += 1
             a["clients_uniques"].add(src)
-            if not est_interne(src):
-                a["clients_externes"].add(src)
 
             # Le port est considéré "ouvert" seulement si le serveur a répondu
-            # et si la connexion ne fait pas partie d'un balayage
-            if ((src, dst) not in balayages and etat not in ETATS_SANS_REPONSE
-                    and est_port_service(port)):
+            # et si le flux est fiable (pas un balayage, pas un même port des deux côtés)
+            if (not flux_ambigu(src, dst, port_src, port, balayages)
+                    and etat not in ETATS_SANS_REPONSE and est_port_service(port)):
+                # Exposée à Internet = un de ses services est utilisé depuis l'extérieur
+                if not est_interne(src):
+                    a["clients_externes"].add(src)
+                    a["ports_exposes"].add(int(port))
                 port = int(port)
                 p = a["ports_ouverts"].setdefault(
                     port, {"protocole": proto, "service": None if vide(service) else service,
                            "connexions": 0}
                 )
                 p["connexions"] += 1
+                p.setdefault("clients", set()).add(src)
                 if not vide(service) and vide(p["service"]):
                     p["service"] = service
 
@@ -320,6 +351,7 @@ def depuis_csv(chemins: list[Path]) -> tuple[dict, pd.DataFrame, dict, dict]:
         for _, f in df.iterrows():
             src, dst = f["Source IP"], f["Destination IP"]
             port = int(f["Destination Port"])
+            port_src = int(f["Source Port"])
             proto = {6: "tcp", 17: "udp", 1: "icmp"}.get(int(f["Protocol"]), str(f["Protocol"]))
 
             if est_interne(src):
@@ -331,19 +363,22 @@ def depuis_csv(chemins: list[Path]) -> tuple[dict, pd.DataFrame, dict, dict]:
                 a = actifs.setdefault(dst, _nouvel_actif(dst))
                 a["connexions_recues"] += 1
                 a["clients_uniques"].add(src)
-                if not est_interne(src):
-                    a["clients_externes"].add(src)
                 # Le port est ouvert seulement si :
                 #  - le serveur a renvoyé de vraies données (un port fermé répond
                 #    aussi, par un paquet "refusé" RST, mais sans données)
-                #  - et la connexion ne fait pas partie d'un balayage
-                if ((src, dst) not in balayages
+                #  - et le flux est fiable (pas un balayage, pas un même port des deux côtés)
+                if (not flux_ambigu(src, dst, port_src, port, balayages)
                         and f.get("Total Length of Bwd Packets", 0) > 0
                         and est_port_service(port)):
+                    # Exposée à Internet = un de ses services est utilisé depuis l'extérieur
+                    if not est_interne(src):
+                        a["clients_externes"].add(src)
+                        a["ports_exposes"].add(port)
                     p = a["ports_ouverts"].setdefault(
                         port, {"protocole": proto, "service": None, "connexions": 0}
                     )
                     p["connexions"] += 1
+                    p.setdefault("clients", set()).add(src)
 
                 # \x96 est un tiret mal encodé dans les CSV d'origine
                 label = str(f.get("Label", "BENIGN")).replace("\x96", "-").strip()
@@ -367,6 +402,42 @@ def _ajouter_balayages(actifs: dict, balayages: dict) -> None:
             )
 
 
+def _est_vrai_service(port: int, infos: dict, ports_exposes: set) -> bool:
+    """
+    Un port compte comme service s'il a assez de connexions, et :
+      1. au moins 2 clients différents (cas général),
+      2. ou il est utilisé depuis Internet : derrière le pare-feu, tout Internet
+         apparaît sous une seule adresse (traduction d'adresses, NAT),
+      3. ou un seul client mais un usage massif : service dédié
+         (ex : le contrôleur de domaine qui transmet ses requêtes DNS à la passerelle).
+    """
+    if infos["connexions"] < config.MIN_CONNEXIONS_SERVICE:
+        return False
+    return (len(infos.get("clients", ())) >= config.MIN_CLIENTS_SERVICE
+            or port in ports_exposes
+            or infos["connexions"] >= config.SEUIL_SERVICE_DEDIE)
+
+
+def _retirer_ports_peu_utilises(actifs: dict) -> None:
+    """
+    Retire les ports vus trop rarement pour être de vrais services.
+
+    Un service réel est utilisé plusieurs fois dans la journée, et par
+    plusieurs machines. Un port vu 1 ou 2 fois, ou par un seul interlocuteur,
+    est presque toujours un résidu (fin de scan, flux mal orienté) ou un
+    échange particulier entre deux machines, pas un service rendu au réseau.
+    C'est un compromis : on peut rater un service très rarement utilisé.
+    """
+    for a in actifs.values():
+        a["ports_ouverts"] = {
+            port: infos for port, infos in a["ports_ouverts"].items()
+            if _est_vrai_service(port, infos, a["ports_exposes"])
+        }
+        a["ports_exposes"] &= set(a["ports_ouverts"])
+        if not a["ports_exposes"]:
+            a["clients_externes"] = set()
+
+
 def _ajouter_indices(actifs: dict) -> None:
     """Ajoute des indices de rôle à partir des ports ouverts."""
     for a in actifs.values():
@@ -375,6 +446,9 @@ def _ajouter_indices(actifs: dict) -> None:
                 a["indices_role"].add(config.PORTS_INDICES[port])
         if not a["ports_ouverts"] and a["connexions_emises"] > 0:
             a["indices_role"].add("Aucun service offert : probablement un poste de travail")
+        # Par convention, la première adresse d'un réseau est souvent la passerelle
+        if a["ip"] == str(_RESEAU.network_address + 1):
+            a["indices_role"].add("Première adresse du réseau : souvent la passerelle (routeur ou pare-feu)")
 
 
 def construire_graphe(flux: pd.DataFrame) -> nx.DiGraph:
@@ -402,7 +476,9 @@ def _vers_json(actifs: dict) -> list[dict]:
             "ip": a["ip"],
             "noms_dns": sorted(a["noms_dns"]),
             "ports_ouverts": [
-                {"port": p, **infos} for p, infos in sorted(a["ports_ouverts"].items())
+                {"port": p, "protocole": infos["protocole"], "service": infos["service"],
+                 "connexions": infos["connexions"], "nb_clients": len(infos.get("clients", ()))}
+                for p, infos in sorted(a["ports_ouverts"].items())
             ],
             "logiciels": [{"nom": n, **infos} for n, infos in a["logiciels"].items()],
             "connexions_recues": a["connexions_recues"],
@@ -411,6 +487,7 @@ def _vers_json(actifs: dict) -> list[dict]:
             "nb_destinations_uniques": len(a["destinations_uniques"]),
             "expose_internet": len(a["clients_externes"]) > 0,
             "nb_clients_externes": len(a["clients_externes"]),
+            "ports_exposes": sorted(a["ports_exposes"]),
             "indices_role": sorted(a["indices_role"]),
             "balayages_recus": a.get("balayages_recus", []),
         })
@@ -448,6 +525,7 @@ def executer(dossier_zeek: Path | None = None, csvs: list[Path] | None = None,
         _, _, verite, _ = depuis_csv(csvs)
 
     _ajouter_balayages(actifs, balayages)
+    _retirer_ports_peu_utilises(actifs)
     _ajouter_indices(actifs)
     inventaire = _vers_json(actifs)
     graphe = construire_graphe(flux)

@@ -1,19 +1,18 @@
 """
 Point d'entrée du projet : lance les agents dans l'ordre.
 
-Pour l'instant seul l'agent 1 existe. Les autres seront ajoutés ici
-au fur et à mesure (puis remplacés par un graphe LangGraph).
-
 Utilisation :
-    python main.py                       # lit data/zeek et data/csv
-    python main.py --zeek data/exemple   # lit un autre dossier Zeek
+    python main.py                  # tous les agents
+    python main.py --depuis 2       # reprend à l'agent 2 (l'agent 1 a déjà tourné)
+    python main.py --sans-llm       # classification par règles seulement
+    python main.py --zeek data/exemple --sortie output/exemple
 """
 
 import argparse
 from pathlib import Path
 
 import config
-from agents import decouverte
+from agents import classification, decouverte
 
 
 def main():
@@ -23,22 +22,30 @@ def main():
     parser.add_argument("--csv", type=Path, default=config.DOSSIER_CSV,
                         help="Dossier contenant les CSV TrafficLabelling de CICIDS2017")
     parser.add_argument("--sortie", type=Path, default=config.DOSSIER_SORTIE)
+    parser.add_argument("--depuis", type=int, default=1,
+                        help="Numéro de l'agent par lequel commencer")
+    parser.add_argument("--sans-llm", action="store_true",
+                        help="Ne pas appeler le LLM (règles seulement)")
     args = parser.parse_args()
 
-    csvs = sorted(args.csv.glob("*.csv")) if args.csv.exists() else []
-
     # Agent 1 : découverte des actifs
-    inventaire = decouverte.executer(args.zeek, csvs, args.sortie)
+    if args.depuis <= 1:
+        csvs = sorted(args.csv.glob("*.csv")) if args.csv.exists() else []
+        inventaire = decouverte.executer(args.zeek, csvs, args.sortie)
 
-    # Petit résumé à l'écran
-    print("\nTop 5 des actifs les plus sollicités :")
-    for a in inventaire[:5]:
-        ports = ", ".join(str(p["port"]) for p in a["ports_ouverts"][:8]) or "aucun"
-        logiciels = ", ".join(f"{l['nom']} {l['version']}" for l in a["logiciels"]) or "aucun détecté"
-        print(f"  {a['ip']:<16} ports: {ports:<25} logiciels: {logiciels}")
+        print("\nTop 5 des actifs les plus sollicités :")
+        for a in inventaire[:5]:
+            ports = ", ".join(str(p["port"]) for p in a["ports_ouverts"][:8]) or "aucun"
+            logiciels = ", ".join(f"{l['nom']} {l['version']}" for l in a["logiciels"]) or "aucun détecté"
+            print(f"  {a['ip']:<16} ports: {ports:<25} logiciels: {logiciels}")
+        print()
 
-    # Agents 2 à 5 : à venir
-    # classification.executer(...)
+    # Agent 2 : classification (rôle + criticité)
+    if args.depuis <= 2:
+        classification.executer(args.sortie, utiliser_llm=not args.sans_llm)
+        print()
+
+    # Agents 3 à 5 : à venir
     # vulnerabilites.executer(...)
     # risque.executer(...)
     # remediation.executer(...)
