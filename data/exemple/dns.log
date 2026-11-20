@@ -1,0 +1,6 @@
+#separator \x09
+#path	dns
+#fields	ts	uid	query	answers
+1499256000	D1	webserver.local	192.168.10.50
+1499256000	D2	dc.local	192.168.10.3
+#close	2017-07-05-17-00-00

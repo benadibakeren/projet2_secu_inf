@@ -1,0 +1,7 @@
+data/zeek/*
+data/csv/*
+output/*
+!*/.gitkeep
+*.pcap
+*.zip
+__pycache__/

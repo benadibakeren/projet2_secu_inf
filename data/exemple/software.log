@@ -1,0 +1,8 @@
+#separator \x09
+#path	software
+#fields	ts	host	host_p	software_type	name	version.major	version.minor	version.minor2	version.minor3	version.addl	unparsed_version
+1499256000	192.168.10.50	80	HTTP::SERVER	Apache	2	4	18	-	Ubuntu	Apache/2.4.18 (Ubuntu)
+1499256000	192.168.10.50	22	SSH::SERVER	OpenSSH	7	2	-	-	p2 Ubuntu-4ubuntu2.1	OpenSSH_7.2p2
+1499256000	192.168.10.51	22	SSH::SERVER	OpenSSH	5	9	-	-	p1 Debian-5ubuntu1	OpenSSH_5.9p1
+1499256000	192.168.10.5	-	HTTP::BROWSER	Firefox	54	0	-	-	-	Firefox/54.0
+#close	2017-07-05-17-00-00
