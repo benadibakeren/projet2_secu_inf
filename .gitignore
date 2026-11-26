@@ -5,3 +5,4 @@ output/*
 *.pcap
 *.zip
 __pycache__/
+cache/

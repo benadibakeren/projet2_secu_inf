@@ -4,6 +4,7 @@ Point d'entrée du projet : lance les agents dans l'ordre.
 Utilisation :
     python main.py                  # tous les agents
     python main.py --depuis 2       # reprend à l'agent 2 (l'agent 1 a déjà tourné)
+    python main.py --depuis 3       # seulement l'agent 3 (et les suivants)
     python main.py --sans-llm       # classification par règles seulement
     python main.py --zeek data/exemple --sortie output/exemple
 """
@@ -12,7 +13,7 @@ import argparse
 from pathlib import Path
 
 import config
-from agents import classification, decouverte
+from agents import classification, decouverte, vulnerabilites
 
 
 def main():
@@ -45,8 +46,12 @@ def main():
         classification.executer(args.sortie, utiliser_llm=not args.sans_llm)
         print()
 
-    # Agents 3 à 5 : à venir
-    # vulnerabilites.executer(...)
+    # Agent 3 : vulnérabilités (CVE, CVSS, KEV)
+    if args.depuis <= 3:
+        vulnerabilites.executer(args.sortie)
+        print()
+
+    # Agents 4 et 5 : à venir
     # risque.executer(...)
     # remediation.executer(...)
 

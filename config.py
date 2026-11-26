@@ -73,6 +73,60 @@ MIN_CLIENTS_SERVICE = 2
 SEUIL_SERVICE_DEDIE = 500
 
 # ---------------------------------------------------------------------------
+# Agent 3 : vulnérabilités
+# ---------------------------------------------------------------------------
+# Inventaire déclaré de l'organisation (systèmes et logiciels installés)
+INVENTAIRE_DECLARE = RACINE / "data" / "inventaire_declare.json"
+
+# Cache des réponses NVD et KEV : on ne refait pas les mêmes appels à chaque lancement
+DOSSIER_CACHE = RACINE / "cache"
+
+# API officielles (gratuites)
+NVD_URL = "https://services.nvd.nist.gov/rest/json/cves/2.0"
+KEV_URL = "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+
+# Clé NVD facultative (gratuite) : 50 requêtes par 30 s au lieu de 5.
+NVD_VARIABLE_CLE = "NVD_API_KEY"
+
+# Date de la capture du trafic (jeudi de CICIDS2017).
+# Si True, on ne garde que les CVE publiées avant cette date : on se place
+# dans la situation de l'organisation à ce moment-là.
+DATE_CAPTURE = "2017-07-06"
+SEULEMENT_CVE_CONNUES_A_LA_CAPTURE = True
+
+# Pour un système d'exploitation, la NVD rattache aussi les failles de logiciels
+# optionnels distribués avec lui (Java, Firefox, Tomcat...), qui ne sont pas
+# forcément installés. Si True, on ne garde que les failles du système lui-même.
+GARDER_SEULEMENT_PAQUETS_DE_BASE = True
+
+# Éditeurs de distributions : la NVD les liste comme "vulnérables" pour dire
+# "ce logiciel est livré par cette distribution". Ils ne désignent pas le produit fautif.
+EDITEURS_DISTRIBUTIONS = {"canonical", "debian", "redhat", "fedoraproject",
+                          "opensuse", "suse", "novell", "oracle_linux"}
+
+# Paquets présents sur toute installation Linux (base du système)
+PAQUETS_DE_BASE_LINUX = {
+    "linux_kernel", "bash", "glibc", "openssl", "sudo", "systemd", "util-linux",
+    "coreutils", "shadow", "pam", "linux-pam", "polkit", "dbus", "openssh",
+    "ntp", "apt", "dpkg", "libc", "gnutls", "libgcrypt", "zlib", "expat",
+    "libxml2", "curl", "libcurl", "wget", "tar", "gzip", "bzip2", "xz", "procps",
+    "cron", "rsyslog", "nss", "eglibc",
+}
+
+# Nombre de CVE détaillées par logiciel dans le fichier de sortie (les plus graves)
+NB_CVE_DETAILLEES = 10
+
+# Logiciels vus par Zeek : correspondance nom -> CPE (début du nom normalisé NVD)
+CPE_LOGICIELS_ZEEK = {
+    "Apache": "cpe:2.3:a:apache:http_server",
+    "nginx": "cpe:2.3:a:f5:nginx",
+    "OpenSSH": "cpe:2.3:a:openbsd:openssh",
+    "Microsoft-IIS": "cpe:2.3:a:microsoft:internet_information_services",
+    "vsftpd": "cpe:2.3:a:vsftpd_project:vsftpd",
+    "ProFTPD": "cpe:2.3:a:proftpd:proftpd",
+}
+
+# ---------------------------------------------------------------------------
 # LLM (agents 2 et 5)
 # ---------------------------------------------------------------------------
 # Groq et Ollama utilisent le même format que l'API OpenAI : on passe de l'un

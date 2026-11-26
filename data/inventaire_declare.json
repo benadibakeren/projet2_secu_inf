@@ -1,0 +1,101 @@
+{
+  "_description": "Inventaire déclaré de l'organisation (équivalent d'une CMDB). Rempli à partir de la topologie publiée de CICIDS2017 (https://www.unb.ca/cic/datasets/ids-2017.html). On n'y met que les systèmes et logiciels installés : ni rôle, ni attaque. Champ source : 'topologie publiée' = écrit dans la documentation du jeu de données ; 'hypothèse' = déduit par nous, à signaler dans le rapport. Le cpe est le nom normalisé du logiciel, utilisé pour chercher ses CVE dans la base NVD.",
+  "actifs": [
+    {
+      "ip": "192.168.10.1",
+      "description": "Pare-feu (interface interne)",
+      "logiciels": []
+    },
+    {
+      "ip": "192.168.10.3",
+      "description": "Windows Server 2016",
+      "logiciels": [
+        {"nom": "Windows Server 2016", "cpe": "cpe:2.3:o:microsoft:windows_server_2016", "source": "topologie publiée", "ports": []}
+      ]
+    },
+    {
+      "ip": "192.168.10.50",
+      "description": "Ubuntu 16.04 (serveur web)",
+      "logiciels": [
+        {"nom": "Ubuntu 16.04", "cpe": "cpe:2.3:o:canonical:ubuntu_linux:16.04", "source": "topologie publiée", "ports": []},
+        {"nom": "Apache 2.4.18", "cpe": "cpe:2.3:a:apache:http_server:2.4.18", "source": "hypothèse : version par défaut d'Ubuntu 16.04", "ports": [80, 443]},
+        {"nom": "OpenSSH 7.2p2", "cpe": "cpe:2.3:a:openbsd:openssh:7.2", "source": "hypothèse : version par défaut d'Ubuntu 16.04", "ports": [22]}
+      ]
+    },
+    {
+      "ip": "192.168.10.51",
+      "description": "Ubuntu 12.04 (serveur)",
+      "logiciels": [
+        {"nom": "Ubuntu 12.04", "cpe": "cpe:2.3:o:canonical:ubuntu_linux:12.04", "source": "topologie publiée", "ports": []}
+      ]
+    },
+    {
+      "ip": "192.168.10.19",
+      "description": "Ubuntu 14.04, 32 bits",
+      "logiciels": [
+        {"nom": "Ubuntu 14.04", "cpe": "cpe:2.3:o:canonical:ubuntu_linux:14.04", "source": "topologie publiée", "ports": []}
+      ]
+    },
+    {
+      "ip": "192.168.10.17",
+      "description": "Ubuntu 14.04, 64 bits",
+      "logiciels": [
+        {"nom": "Ubuntu 14.04", "cpe": "cpe:2.3:o:canonical:ubuntu_linux:14.04", "source": "topologie publiée", "ports": []}
+      ]
+    },
+    {
+      "ip": "192.168.10.16",
+      "description": "Ubuntu 16.04, 32 bits",
+      "logiciels": [
+        {"nom": "Ubuntu 16.04", "cpe": "cpe:2.3:o:canonical:ubuntu_linux:16.04", "source": "topologie publiée", "ports": []}
+      ]
+    },
+    {
+      "ip": "192.168.10.12",
+      "description": "Ubuntu 16.04, 64 bits",
+      "logiciels": [
+        {"nom": "Ubuntu 16.04", "cpe": "cpe:2.3:o:canonical:ubuntu_linux:16.04", "source": "topologie publiée", "ports": []}
+      ]
+    },
+    {
+      "ip": "192.168.10.9",
+      "description": "Windows 7 Pro, 64 bits",
+      "logiciels": [
+        {"nom": "Windows 7 SP1", "cpe": "cpe:2.3:o:microsoft:windows_7:-:sp1", "source": "topologie publiée (SP1 : hypothèse)", "ports": []}
+      ]
+    },
+    {
+      "ip": "192.168.10.5",
+      "description": "Windows 8.1, 64 bits",
+      "logiciels": [
+        {"nom": "Windows 8.1", "cpe": "cpe:2.3:o:microsoft:windows_8.1", "source": "topologie publiée", "ports": []}
+      ]
+    },
+    {
+      "ip": "192.168.10.8",
+      "description": "Windows Vista, 64 bits",
+      "logiciels": [
+        {"nom": "Windows Vista SP2", "cpe": "cpe:2.3:o:microsoft:windows_vista:-:sp2", "source": "topologie publiée (SP2 : hypothèse)", "ports": []}
+      ]
+    },
+    {
+      "ip": "192.168.10.14",
+      "description": "Windows 10 Pro, 32 bits",
+      "logiciels": [
+        {"nom": "Windows 10", "cpe": "cpe:2.3:o:microsoft:windows_10", "source": "topologie publiée (version exacte inconnue : toutes les versions de Windows 10 sorties avant la capture)", "ports": []}
+      ]
+    },
+    {
+      "ip": "192.168.10.15",
+      "description": "Windows 10, 64 bits",
+      "logiciels": [
+        {"nom": "Windows 10", "cpe": "cpe:2.3:o:microsoft:windows_10", "source": "topologie publiée (version exacte inconnue : toutes les versions de Windows 10 sorties avant la capture)", "ports": []}
+      ]
+    },
+    {
+      "ip": "192.168.10.25",
+      "description": "Mac (version de macOS non publiée)",
+      "logiciels": []
+    }
+  ]
+}
