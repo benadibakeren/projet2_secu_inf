@@ -2,3 +2,4 @@ pandas
 networkx
 openai
 requests
+streamlit
