@@ -161,7 +161,8 @@ def evaluer_actif(actif: dict, epss: dict, scanners: dict) -> dict:
         "ports_exposes": actif.get("ports_exposes", []),
         "justification_criticite": actif["classification"]["justification"],
         "donnees_probables": actif["classification"].get("donnees_probables", ""),
-        "logiciels": [{"nom": l["nom"], "source": l["source"], "expose_internet": l["expose_internet"]}
+        "logiciels": [{"nom": l["nom"], "cpe": l["cpe"], "source": l["source"],
+                       "expose_internet": l["expose_internet"]}
                       for l in actif["logiciels_analyses"]],
         "resume_vulnerabilites": actif["resume_vulnerabilites"],
         "risque": risque,

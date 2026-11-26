@@ -6,6 +6,7 @@ Utilisation :
     python main.py --depuis 2       # reprend à l'agent 2 (l'agent 1 a déjà tourné)
     python main.py --depuis 3       # reprend à l'agent 3
     python main.py --depuis 4       # reprend à l'agent 4
+    python main.py --depuis 5       # seulement l'agent 5 (plans d'action et rapport)
     python main.py --sans-llm       # classification par règles seulement
     python main.py --zeek data/exemple --sortie output/exemple
 """
@@ -14,7 +15,7 @@ import argparse
 from pathlib import Path
 
 import config
-from agents import classification, decouverte, risque, vulnerabilites
+from agents import classification, decouverte, remediation, risque, vulnerabilites
 
 
 def main():
@@ -57,8 +58,9 @@ def main():
         risque.executer(args.sortie)
         print()
 
-    # Agent 5 : à venir
-    # remediation.executer(...)
+    # Agent 5 : remédiation (plans d'action + rapport)
+    if args.depuis <= 5:
+        remediation.executer(args.sortie, utiliser_llm=not args.sans_llm)
 
 
 if __name__ == "__main__":

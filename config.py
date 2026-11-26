@@ -147,6 +147,27 @@ SEUILS_RISQUE = [(50, "Critique"), (30, "Élevé"), (15, "Moyen"), (0, "Faible")
 NB_CVE_A_TRAITER = 5
 
 # ---------------------------------------------------------------------------
+# Agent 5 : remédiation
+# ---------------------------------------------------------------------------
+# Fin du support (plus de correctifs de sécurité). Dates publiées par Microsoft et Canonical.
+# Un système dont le support est fini à la date de la capture doit être remplacé.
+FIN_DE_SUPPORT = {
+    "cpe:2.3:o:microsoft:windows_vista": "2017-04-11",
+    "cpe:2.3:o:canonical:ubuntu_linux:12.04": "2017-04-28",
+    "cpe:2.3:o:microsoft:windows_7": "2020-01-14",
+    "cpe:2.3:o:canonical:ubuntu_linux:14.04": "2019-04-30",
+    "cpe:2.3:o:canonical:ubuntu_linux:16.04": "2021-04-30",
+    "cpe:2.3:o:microsoft:windows_8.1": "2023-01-10",
+}
+
+# Ports qui ne devraient pas être ouverts à tout Internet (administration, transfert de fichiers)
+PORTS_SENSIBLES = {21: "FTP", 22: "SSH", 23: "Telnet", 445: "SMB", 3389: "Bureau à distance (RDP)",
+                   1433: "SQL Server", 3306: "MySQL", 5432: "PostgreSQL"}
+
+# Pause entre deux appels au LLM (l'offre gratuite de Groq limite les jetons par minute)
+PAUSE_LLM = 3
+
+# ---------------------------------------------------------------------------
 # LLM (agents 2 et 5)
 # ---------------------------------------------------------------------------
 # Groq et Ollama utilisent le même format que l'API OpenAI : on passe de l'un
