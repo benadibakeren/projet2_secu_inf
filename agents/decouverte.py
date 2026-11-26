@@ -330,7 +330,8 @@ def depuis_csv(chemins: list[Path]) -> tuple[dict, pd.DataFrame, dict, dict]:
     Renvoie aussi la "vérité terrain" : quelles machines ont été attaquées.
     """
     actifs: dict = {}
-    attaques = defaultdict(lambda: defaultdict(int))
+    attaques = defaultdict(lambda: defaultdict(int))         # attaques reçues
+    attaques_emises = defaultdict(lambda: defaultdict(int))  # attaques envoyées par une machine interne
     morceaux = []
 
     for chemin in chemins:
@@ -380,12 +381,20 @@ def depuis_csv(chemins: list[Path]) -> tuple[dict, pd.DataFrame, dict, dict]:
                     p["connexions"] += 1
                     p.setdefault("clients", set()).add(src)
 
-                # \x96 est un tiret mal encodé dans les CSV d'origine
-                label = str(f.get("Label", "BENIGN")).replace("\x96", "-").strip()
-                if label != "BENIGN":
+            # Vérité terrain. \x96 est un tiret mal encodé dans les CSV d'origine.
+            # On note qui reçoit une attaque, mais aussi quelle machine interne en
+            # envoie une : c'est le signe qu'elle a été compromise.
+            label = str(f.get("Label", "BENIGN")).replace("\x96", "-").strip()
+            if label != "BENIGN":
+                if est_interne(dst):
                     attaques[dst][label] += 1
+                if est_interne(src):
+                    attaques_emises[src][label] += 1
 
-    verite = {ip: dict(types) for ip, types in attaques.items()}
+    verite = {
+        "recues": {ip: dict(types) for ip, types in attaques.items()},
+        "emises": {ip: dict(types) for ip, types in attaques_emises.items()},
+    }
     return actifs, flux, verite, balayages
 
 

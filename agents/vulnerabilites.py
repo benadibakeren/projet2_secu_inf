@@ -179,8 +179,11 @@ def produits_vulnerables(cve: dict) -> list[str]:
                 if not m.get("vulnerable"):
                     continue
                 morceaux = m.get("criteria", "").split(":")
-                if len(morceaux) > 4 and morceaux[3] not in config.EDITEURS_DISTRIBUTIONS:
-                    produits.add(f"{morceaux[3]} {morceaux[4]}")
+                if len(morceaux) <= 4 or morceaux[3] in config.EDITEURS_DISTRIBUTIONS:
+                    continue
+                nom = f"{morceaux[3]} {morceaux[4]}"
+                if nom not in config.PRODUITS_DISTRIBUTIONS:
+                    produits.add(nom)
     return sorted(produits)
 
 

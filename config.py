@@ -102,7 +102,10 @@ GARDER_SEULEMENT_PAQUETS_DE_BASE = True
 # Éditeurs de distributions : la NVD les liste comme "vulnérables" pour dire
 # "ce logiciel est livré par cette distribution". Ils ne désignent pas le produit fautif.
 EDITEURS_DISTRIBUTIONS = {"canonical", "debian", "redhat", "fedoraproject",
-                          "opensuse", "suse", "novell", "oracle_linux"}
+                          "opensuse", "suse", "novell"}
+# Distributions dont l'éditeur publie aussi d'autres logiciels (ex. Oracle) :
+# on les reconnaît au couple "éditeur produit".
+PRODUITS_DISTRIBUTIONS = {"oracle linux", "redhat enterprise_linux", "debian debian_linux"}
 
 # Paquets présents sur toute installation Linux (base du système)
 PAQUETS_DE_BASE_LINUX = {
@@ -125,6 +128,23 @@ CPE_LOGICIELS_ZEEK = {
     "vsftpd": "cpe:2.3:a:vsftpd_project:vsftpd",
     "ProFTPD": "cpe:2.3:a:proftpd:proftpd",
 }
+
+# ---------------------------------------------------------------------------
+# Agent 4 : risque
+# ---------------------------------------------------------------------------
+# Probabilité d'exploitation des CVE (base EPSS de FIRST, gratuite, sans clé)
+EPSS_URL = "https://api.first.org/data/v1/epss"
+
+# Accessibilité d'une faille selon son vecteur d'attaque et l'exposition du logiciel
+ACCES_INTERNET = 1.0   # exploitable à distance, logiciel utilisé depuis Internet
+ACCES_INTERNE = 0.7    # exploitable à distance, depuis le réseau interne seulement
+ACCES_LOCAL = 0.4      # l'attaquant doit déjà être sur la machine
+
+# Seuils des niveaux de risque (score de 0 à 100)
+SEUILS_RISQUE = [(50, "Critique"), (30, "Élevé"), (15, "Moyen"), (0, "Faible")]
+
+# Nombre de CVE à traiter en priorité, par actif
+NB_CVE_A_TRAITER = 5
 
 # ---------------------------------------------------------------------------
 # LLM (agents 2 et 5)

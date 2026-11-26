@@ -30,8 +30,9 @@ def main():
 
     verite = DOSSIER / "verite_terrain.json"
     if verite.exists():
-        attaques = json.loads(verite.read_text(encoding="utf-8")).get(ip)
-        print("\nAttaques reçues (vérité terrain) :", attaques or "aucune")
+        v = json.loads(verite.read_text(encoding="utf-8"))
+        print("\nAttaques reçues (vérité terrain) :", v.get("recues", {}).get(ip) or "aucune")
+        print("Attaques envoyées (vérité terrain) :", v.get("emises", {}).get(ip) or "aucune")
 
 
 if __name__ == "__main__":
