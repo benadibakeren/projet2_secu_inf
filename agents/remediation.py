@@ -340,10 +340,11 @@ def ecrire_rapport(plans: list[dict], ecarts: dict, balayages: list[dict], chemi
         f"{len(plans)} actifs analysés : " + ", ".join(f"{compte[n]} {n.lower()}" for n in ordre if n in compte) + ".",
         "",
     ]
-    compromis = [p["ip"] for p in plans if p["compromission_probable"]]
-    if compromis:
-        l += [f"**Incident en cours :** {', '.join(compromis)} balaie le réseau interne et est probablement "
-              f"compromise. Elle doit être isolée immédiatement.", ""]
+    for p in plans:
+        if p["compromission_probable"]:
+            # la première raison décrit les indices observés (balayage, outils d'attaque)
+            l += [f"**Incident en cours sur {p['ip']} :** {p['raisons'][0]} "
+                  f"La machine doit être isolée immédiatement.", ""]
 
     l += ["## Classement des risques", "",
           "| Rang | Actif | Rôle | Score | Niveau | Raison principale |",

@@ -313,24 +313,45 @@ def logiciels_zeek(actif: dict) -> list[dict]:
     """
     Transforme les logiciels vus par Zeek en logiciels interrogeables dans la NVD.
 
-    On ne garde que les logiciels serveur (type *SERVER) : ce sont eux que l'on
-    peut attaquer à distance. Seule la partie numérique de la version est gardée
-    (ex. "7.2 (p2 Ubuntu-4ubuntu2.1)" devient "7.2").
+      - serveurs (Apache, OpenSSH...) : exposés aux attaques directes
+      - navigateurs et Java des postes : exploités quand l'utilisateur visite un site piégé
+      - système du Mac, lu dans l'en-tête du navigateur ("Mac OS X 10_5_8")
+    Seule la partie numérique de la version est gardée (ex. "7.2 (p2 ...)" devient "7.2").
     """
-    resultat = []
+    resultat, vus = [], set()
+
+    def ajouter(nom, cpe, ports, source="vu dans le trafic (Zeek)", variantes=()):
+        if cpe not in vus:
+            vus.add(cpe)
+            resultat.append({"nom": nom, "cpe": cpe, "source": source, "ports": ports,
+                             "cpe_variantes": list(variantes)})
+
     for l in actif.get("logiciels", []):
-        prefixe = config.CPE_LOGICIELS_ZEEK.get(l["nom"])
-        if not prefixe or not str(l.get("type") or "").endswith("SERVER"):
-            continue
+        type_ = str(l.get("type") or "")
+        brut = str(l.get("brut") or "")
         version = re.match(r"[\d.]+", str(l.get("version", "")))
-        if not version:
-            continue
-        resultat.append({
-            "nom": f"{l['nom']} {version.group(0).rstrip('.')}",
-            "cpe": f"{prefixe}:{version.group(0).rstrip('.')}",
-            "source": "vu dans le trafic (Zeek)",
-            "ports": [l["port"]] if l.get("port") else [],
-        })
+        version = version.group(0).rstrip(".") if version else None
+
+        if type_.endswith("SERVER") and l["nom"] in config.CPE_LOGICIELS_ZEEK and version:
+            ajouter(f"{l['nom']} {version}", f"{config.CPE_LOGICIELS_ZEEK[l['nom']]}:{version}",
+                    [l["port"]] if l.get("port") else [])
+        elif l["nom"] in config.CPE_CLIENTS_ZEEK and version:
+            ajouter(f"{l['nom']} {version}", f"{config.CPE_CLIENTS_ZEEK[l['nom']]}:{version}", [],
+                    "vu dans le trafic (Zeek, navigateur)")
+
+        # Java : "Java/1.8.0_121" = Java 8 mise à jour 121. La NVD écrit la mise à jour
+        # de deux façons selon les années : on interroge les deux.
+        java = re.search(r"Java/1\.(\d+)\.0_(\d+)", brut)
+        if java:
+            base = f"cpe:2.3:a:oracle:jre:1.{java.group(1)}.0"
+            ajouter(f"Java {java.group(1)} mise à jour {java.group(2)}", f"{base}:update_{java.group(2)}", [],
+                    "vu dans le trafic (Zeek)", [f"{base}:update{java.group(2)}"])
+
+        mac = re.search(r"Mac OS X (\d+)[_.](\d+)[_.](\d+)", brut)
+        if mac:
+            v = ".".join(mac.groups())
+            ajouter(f"Mac OS X {v}", f"cpe:2.3:o:apple:mac_os_x:{v}", [],
+                    "vu dans le trafic (Zeek, en-tête du navigateur)")
     return resultat
 
 
@@ -466,7 +487,9 @@ def comparer_inventaires(actifs: list[dict], declare: dict) -> dict:
     return {
         "vus_mais_non_declares": sorted(vus - set(declare)),
         "declares_mais_non_vus": sorted(set(declare) - vus),
-        "sans_logiciel_connu": sorted(ip for ip in vus & set(declare) if not declare[ip]["logiciels"]),
+        # sans logiciel ni dans l'inventaire déclaré, ni dans le trafic (Zeek)
+        "sans_logiciel_connu": sorted(a["ip"] for a in actifs
+                                      if not a.get("resume_vulnerabilites", {}).get("logiciels_connus", True)),
     }
 
 
@@ -494,7 +517,7 @@ def executer(dossier_sortie: Path = config.DOSSIER_SORTIE) -> list[dict]:
     resultats.sort(key=lambda a: (-a["resume_vulnerabilites"]["nb_kev"],
                                   -a["resume_vulnerabilites"]["cvss_max"]))
 
-    ecarts = comparer_inventaires(actifs, declare)
+    ecarts = comparer_inventaires(resultats, declare)
     with open(dossier_sortie / "vulnerabilites.json", "w", encoding="utf-8") as f:
         json.dump(resultats, f, indent=2, ensure_ascii=False)
     with open(dossier_sortie / "ecarts_inventaire.json", "w", encoding="utf-8") as f:

@@ -146,14 +146,17 @@ def evaluer_actif(actif: dict, epss: dict, scanners: dict) -> dict:
         risque["niveau"] = "Inconnu"
         risque["raisons"].append("Aucun logiciel connu : impossible d'évaluer ses failles. Compléter l'inventaire.")
 
-    # Incident : la machine balaie le réseau, elle est probablement compromise
+    # Incident : la machine balaie le réseau, ou des outils d'attaque passent dans son
+    # trafic : elle est probablement compromise
+    indices = []
     if actif["ip"] in scanners:
+        indices.append(f"elle a balayé {scanners[actif['ip']]} autres machines du réseau")
+    if actif.get("outils_offensifs"):
+        indices.append(f"des outils d'attaque passent dans son trafic ({', '.join(actif['outils_offensifs'])})")
+    risque["compromission_probable"] = bool(indices)
+    if indices:
         risque["niveau"] = "Critique"
-        risque["compromission_probable"] = True
-        risque["raisons"].insert(0,
-            f"Compromission probable : cette machine a balayé {scanners[actif['ip']]} autres machines du réseau.")
-    else:
-        risque["compromission_probable"] = False
+        risque["raisons"].insert(0, "Compromission probable : " + " et ".join(indices) + ".")
 
     return {
         "ip": actif["ip"],
@@ -165,6 +168,8 @@ def evaluer_actif(actif: dict, epss: dict, scanners: dict) -> dict:
         "logiciels": [{"nom": l["nom"], "cpe": l["cpe"], "source": l["source"],
                        "expose_internet": l["expose_internet"]}
                       for l in actif["logiciels_analyses"]],
+        "outils_offensifs": actif.get("outils_offensifs", []),
+        "comptes_utilises": actif.get("comptes_utilises", []),
         "resume_vulnerabilites": actif["resume_vulnerabilites"],
         # toutes les failles KEV de la machine, sans doublon (pour choisir les correctifs)
         "cves_kev": list({c["id"]: c for l in actif["logiciels_analyses"]

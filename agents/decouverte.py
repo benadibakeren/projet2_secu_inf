@@ -251,7 +251,26 @@ def _analyser_software(software: pd.DataFrame, actifs: dict) -> None:
             "version": _version_logiciel(s),
             "type": None if vide(s.get("software_type")) else s["software_type"],
             "port": None if vide(s.get("host_p")) else int(s["host_p"]),
+            # texte complet (ex. en-tête du navigateur) : l'agent 3 y lit parfois le système
+            "brut": None if vide(s.get("unparsed_version")) else str(s["unparsed_version"])[:300],
         }
+
+
+def detecter_outils_offensifs(software: pd.DataFrame) -> dict:
+    """
+    Outils de balayage ou d'attaque vus dans le trafic des machines internes
+    (ex. "Nmap Scripting Engine" dans un en-tête HTTP). Renvoie {ip: {outils}}.
+    """
+    trouves = {}
+    for _, s in software.iterrows():
+        ip = s.get("host")
+        if not est_interne(ip):
+            continue
+        texte = f"{s.get('name', '')} {s.get('unparsed_version', '')}".lower()
+        for outil in config.OUTILS_OFFENSIFS:
+            if outil in texte:
+                trouves.setdefault(ip, set()).add(outil.capitalize())
+    return trouves
 
 
 def _analyser_dns(dns: pd.DataFrame, actifs: dict) -> None:
@@ -274,14 +293,17 @@ def _nom_compte(brut) -> tuple[str, str]:
     """
     if vide(brut):
         return "", ""
-    brut = str(brut).strip()
-    for separateur in ("/", "@", "\\"):
-        if separateur in brut:
-            nom, domaine = brut.split(separateur, 1)
-            if separateur == "\\":
-                nom, domaine = domaine, nom      # NTLM : DOMAINE\nom
-            return nom.lower(), domaine.upper()
-    return brut.lower(), ""
+    nom, domaine = str(brut).strip(), ""
+    if "\\" in nom:                             # NTLM : DOMAINE\nom
+        domaine, nom = nom.split("\\", 1)
+    if "/" in nom:                               # Kerberos : nom/DOMAINE
+        nom, domaine = nom.split("/", 1)
+    if "@" in nom:                               # parfois nom@domaine (même dans Kerberos)
+        nom, reste = nom.split("@", 1)
+        domaine = domaine or reste
+    if nom.strip() in ("", "-"):
+        return "", domaine.upper()
+    return nom.lower(), domaine.upper()
 
 
 def _reussi(ligne: pd.Series) -> bool | None:
@@ -333,7 +355,13 @@ def lire_comptes(dossier: Path) -> dict:
     for _, k in kerberos.iterrows():
         nom, domaine = _nom_compte(k.get("client"))
         service = None if vide(k.get("service")) else str(k["service"])
-        noter(nom, domaine, k.get("id.orig_h"), k.get("id.resp_h"), "Kerberos", _reussi(k), service)
+        reussi = _reussi(k)
+        # Le premier échange Kerberos est volontairement refusé avec PREAUTH_REQUIRED :
+        # le serveur demande au client de prouver son identité, puis le client réessaie.
+        # C'est le fonctionnement normal, pas un échec de mot de passe.
+        if "PREAUTH_REQUIRED" in str(k.get("error_msg") or ""):
+            reussi = None
+        noter(nom, domaine, k.get("id.orig_h"), k.get("id.resp_h"), "Kerberos", reussi, service)
 
     noms_machines = {}  # ntlm.log donne aussi le nom de la machine cliente
     ntlm = lire_log_zeek(Path(dossier) / "ntlm.log")
@@ -362,6 +390,10 @@ def enrichir_avec_zeek(actifs: dict, dossier: Path) -> dict:
         if ip in connues:
             actifs[ip]["logiciels"].update(a["logiciels"])
             actifs[ip]["noms_dns"] |= a["noms_dns"]
+
+    for ip, outils in detecter_outils_offensifs(lire_log_zeek(dossier / "software.log")).items():
+        if ip in connues:
+            actifs[ip].setdefault("outils_offensifs", set()).update(outils)
 
     resultat = lire_comptes(dossier)
     for ip, noms in resultat["noms_machines"].items():
@@ -612,6 +644,8 @@ def _vers_json(actifs: dict) -> list[dict]:
             "comptes_utilises": sorted(a.get("comptes_utilises", set())),
             # comptes qui s'authentifient AUPRÈS de cette machine (ex. contrôleur de domaine)
             "nb_comptes_servis": len(a.get("comptes_servis", set())),
+            # outils de balayage ou d'attaque vus dans son trafic (Zeek)
+            "outils_offensifs": sorted(a.get("outils_offensifs", set())),
         })
     # Les machines les plus sollicitées en premier
     return sorted(sortie, key=lambda x: x["connexions_recues"], reverse=True)
@@ -648,6 +682,9 @@ def executer(dossier_zeek: Path | None = None, csvs: list[Path] | None = None,
         actifs, flux, balayages = depuis_zeek(zeek)
         comptes = lire_comptes(zeek)["comptes"]
         source = "Zeek"
+        for ip, outils in detecter_outils_offensifs(lire_log_zeek(zeek / "software.log")).items():
+            if ip in actifs:
+                actifs[ip].setdefault("outils_offensifs", set()).update(outils)
         for c in comptes.values():
             for ip in c["machines_sources"] & set(actifs):
                 actifs[ip].setdefault("comptes_utilises", set()).add(c["nom"])
@@ -697,6 +734,9 @@ def executer(dossier_zeek: Path | None = None, csvs: list[Path] | None = None,
     print(f"[Agent 1] Comptes : {len(utilisateurs)} utilisateurs, "
           f"{len(liste_comptes) - len(utilisateurs)} comptes machines"
           + ("" if liste_comptes else " (pas de kerberos.log ni ntlm.log)"))
+    for a in inventaire:
+        if a["outils_offensifs"]:
+            print(f"[Agent 1] Outils d'attaque vus dans le trafic de {a['ip']} : {', '.join(a['outils_offensifs'])}")
     print(f"[Agent 1] {len(liste_balayages)} balayages de ports détectés")
     for b in liste_balayages[:5]:
         print(f"           {b['source']} -> {b['destination']} ({b['nb_ports']} ports)")

@@ -127,6 +127,18 @@ BULLETINS_COMPLEMENTAIRES = {
     },
 }
 
+# Logiciels clients vus par Zeek (en-têtes des navigateurs) : ils ont aussi des failles,
+# exploitées quand l'utilisateur visite un site piégé.
+CPE_CLIENTS_ZEEK = {
+    "Firefox": "cpe:2.3:a:mozilla:firefox",
+    "Safari": "cpe:2.3:a:apple:safari",
+}
+
+# Outils de balayage ou d'attaque : vus dans le trafic d'une machine interne,
+# ils indiquent qu'elle est probablement compromise (ou utilisée par un attaquant).
+OUTILS_OFFENSIFS = ["nmap", "masscan", "zmap", "zgrab", "nikto", "sqlmap", "hydra", "medusa",
+                    "metasploit", "dirbuster", "gobuster", "wpscan", "acunetix"]
+
 # Nombre de CVE détaillées par logiciel dans le fichier de sortie (les plus graves)
 NB_CVE_DETAILLEES = 10
 

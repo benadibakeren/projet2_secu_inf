@@ -200,13 +200,13 @@ onglets = st.tabs(["Vue d'ensemble", "Inventaire", "Graphe des dépendances",
 # 1. Vue d'ensemble
 # ---------------------------------------------------------------------------
 with onglets[0]:
-    compromis = [r["ip"] for r in risques if r["risque"].get("compromission_probable")]
-    if compromis:
-        st.markdown(f"""
-        <div class='alerte'><div class='point'></div>
-          <div><b>Incident en cours :</b> <span class='mono'>{e(', '.join(compromis))}</span> balaie le réseau
-          interne et est probablement compromise. Action immédiate : l'isoler du réseau.</div>
-        </div>""", unsafe_allow_html=True)
+    for r in risques:
+        if r["risque"].get("compromission_probable"):
+            st.markdown(f"""
+            <div class='alerte'><div class='point'></div>
+              <div><b>Incident en cours sur <span class='mono'>{e(r['ip'])}</span> :</b> {e(r['risque']['raisons'][0])}
+              Action immédiate : l'isoler du réseau.</div>
+            </div>""", unsafe_allow_html=True)
 
     compte = pd.Series([r["risque"]["niveau"] for r in risques]).value_counts()
     cartes = [f"<div class='kpi' style='--c:#38bdf8'><div class='l'>Actifs</div>"
@@ -381,7 +381,8 @@ with onglets[3]:
     st.latex(r"\text{risque} = 100 \times \frac{\text{criticité}}{5} \times "
              r"\max\left(\frac{\text{CVSS}}{10} \times \text{probabilité} \times \text{accessibilité}\right)")
     st.caption("Probabilité : 1 si la faille est dans CISA KEV, sinon EPSS. Accessibilité : 1 depuis Internet, "
-               "0,7 depuis le réseau interne, 0,4 en local. Une machine qui balaie le réseau est classée Critique.")
+               "0,7 depuis le réseau interne, 0,4 en local. Une machine qui balaie le réseau, ou dont le trafic contient des outils d'attaque, "
+               "est classée Critique.")
 
     tableau = pd.DataFrame([{
         "Rang": i, "IP": r["ip"], "Rôle": r["role"], "Niveau": r["risque"]["niveau"],
