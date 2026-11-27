@@ -1,0 +1,14 @@
+{
+  "recues": {
+    "192.168.10.50": {
+      "Web Attack - Brute Force": 1507,
+      "Web Attack - XSS": 652,
+      "Web Attack - Sql Injection": 21
+    }
+  },
+  "emises": {
+    "192.168.10.8": {
+      "Infiltration": 36
+    }
+  }
+}

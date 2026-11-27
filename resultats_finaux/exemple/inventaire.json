@@ -1,0 +1,202 @@
+[
+  {
+    "ip": "192.168.10.3",
+    "noms_dns": [
+      "dc.local"
+    ],
+    "ports_ouverts": [
+      {
+        "port": 53,
+        "protocole": "udp",
+        "service": "dns",
+        "connexions": 100
+      },
+      {
+        "port": 88,
+        "protocole": "tcp",
+        "service": "krb_tcp",
+        "connexions": 25
+      },
+      {
+        "port": 389,
+        "protocole": "tcp",
+        "service": "ldap",
+        "connexions": 25
+      },
+      {
+        "port": 445,
+        "protocole": "tcp",
+        "service": "smb",
+        "connexions": 25
+      }
+    ],
+    "logiciels": [],
+    "connexions_recues": 175,
+    "connexions_emises": 0,
+    "nb_clients_uniques": 5,
+    "nb_destinations_uniques": 0,
+    "expose_internet": false,
+    "nb_clients_externes": 0,
+    "indices_role": [
+      "DNS",
+      "Kerberos (Active Directory)",
+      "LDAP (Active Directory)",
+      "SMB (partage Windows)"
+    ]
+  },
+  {
+    "ip": "192.168.10.50",
+    "noms_dns": [
+      "webserver.local"
+    ],
+    "ports_ouverts": [
+      {
+        "port": 22,
+        "protocole": "tcp",
+        "service": "ssh",
+        "connexions": 1
+      },
+      {
+        "port": 80,
+        "protocole": "tcp",
+        "service": "http",
+        "connexions": 70
+      }
+    ],
+    "logiciels": [
+      {
+        "nom": "Apache",
+        "version": "2.4.18 (Ubuntu)",
+        "type": "HTTP::SERVER",
+        "port": 80
+      },
+      {
+        "nom": "OpenSSH",
+        "version": "7.2 (p2 Ubuntu-4ubuntu2.1)",
+        "type": "SSH::SERVER",
+        "port": 22
+      }
+    ],
+    "connexions_recues": 110,
+    "connexions_emises": 0,
+    "nb_clients_uniques": 6,
+    "nb_destinations_uniques": 0,
+    "expose_internet": true,
+    "nb_clients_externes": 1,
+    "indices_role": [
+      "SSH",
+      "Web (HTTP)"
+    ]
+  },
+  {
+    "ip": "192.168.10.51",
+    "noms_dns": [],
+    "ports_ouverts": [
+      {
+        "port": 22,
+        "protocole": "tcp",
+        "service": "ssh",
+        "connexions": 4
+      }
+    ],
+    "logiciels": [
+      {
+        "nom": "OpenSSH",
+        "version": "5.9 (p1 Debian-5ubuntu1)",
+        "type": "SSH::SERVER",
+        "port": 22
+      }
+    ],
+    "connexions_recues": 4,
+    "connexions_emises": 0,
+    "nb_clients_uniques": 1,
+    "nb_destinations_uniques": 0,
+    "expose_internet": false,
+    "nb_clients_externes": 0,
+    "indices_role": [
+      "SSH"
+    ]
+  },
+  {
+    "ip": "192.168.10.5",
+    "noms_dns": [],
+    "ports_ouverts": [],
+    "logiciels": [
+      {
+        "nom": "Firefox",
+        "version": "54.0",
+        "type": "HTTP::BROWSER",
+        "port": null
+      }
+    ],
+    "connexions_recues": 0,
+    "connexions_emises": 44,
+    "nb_clients_uniques": 0,
+    "nb_destinations_uniques": 3,
+    "expose_internet": false,
+    "nb_clients_externes": 0,
+    "indices_role": [
+      "Aucun service offert : probablement un poste de travail"
+    ]
+  },
+  {
+    "ip": "192.168.10.8",
+    "noms_dns": [],
+    "ports_ouverts": [],
+    "logiciels": [],
+    "connexions_recues": 0,
+    "connexions_emises": 44,
+    "nb_clients_uniques": 0,
+    "nb_destinations_uniques": 3,
+    "expose_internet": false,
+    "nb_clients_externes": 0,
+    "indices_role": [
+      "Aucun service offert : probablement un poste de travail"
+    ]
+  },
+  {
+    "ip": "192.168.10.9",
+    "noms_dns": [],
+    "ports_ouverts": [],
+    "logiciels": [],
+    "connexions_recues": 0,
+    "connexions_emises": 48,
+    "nb_clients_uniques": 0,
+    "nb_destinations_uniques": 4,
+    "expose_internet": false,
+    "nb_clients_externes": 0,
+    "indices_role": [
+      "Aucun service offert : probablement un poste de travail"
+    ]
+  },
+  {
+    "ip": "192.168.10.14",
+    "noms_dns": [],
+    "ports_ouverts": [],
+    "logiciels": [],
+    "connexions_recues": 0,
+    "connexions_emises": 44,
+    "nb_clients_uniques": 0,
+    "nb_destinations_uniques": 3,
+    "expose_internet": false,
+    "nb_clients_externes": 0,
+    "indices_role": [
+      "Aucun service offert : probablement un poste de travail"
+    ]
+  },
+  {
+    "ip": "192.168.10.15",
+    "noms_dns": [],
+    "ports_ouverts": [],
+    "logiciels": [],
+    "connexions_recues": 0,
+    "connexions_emises": 44,
+    "nb_clients_uniques": 0,
+    "nb_destinations_uniques": 3,
+    "expose_internet": false,
+    "nb_clients_externes": 0,
+    "indices_role": [
+      "Aucun service offert : probablement un poste de travail"
+    ]
+  }
+]

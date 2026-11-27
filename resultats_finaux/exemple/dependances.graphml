@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+  <key id="d1" for="edge" attr.name="poids" attr.type="long" />
+  <key id="d0" for="node" attr.name="interne" attr.type="boolean" />
+  <graph edgedefault="directed">
+    <node id="192.168.10.14">
+      <data key="d0">True</data>
+    </node>
+    <node id="192.168.10.3">
+      <data key="d0">True</data>
+    </node>
+    <node id="192.168.10.50">
+      <data key="d0">True</data>
+    </node>
+    <node id="8.8.8.8">
+      <data key="d0">False</data>
+    </node>
+    <node id="192.168.10.15">
+      <data key="d0">True</data>
+    </node>
+    <node id="192.168.10.5">
+      <data key="d0">True</data>
+    </node>
+    <node id="192.168.10.8">
+      <data key="d0">True</data>
+    </node>
+    <node id="192.168.10.9">
+      <data key="d0">True</data>
+    </node>
+    <node id="192.168.10.51">
+      <data key="d0">True</data>
+    </node>
+    <node id="205.174.165.73">
+      <data key="d0">False</data>
+    </node>
+    <edge source="192.168.10.14" target="192.168.10.3">
+      <data key="d1">35</data>
+    </edge>
+    <edge source="192.168.10.14" target="192.168.10.50">
+      <data key="d1">8</data>
+    </edge>
+    <edge source="192.168.10.14" target="8.8.8.8">
+      <data key="d1">1</data>
+    </edge>
+    <edge source="192.168.10.15" target="192.168.10.3">
+      <data key="d1">35</data>
+    </edge>
+    <edge source="192.168.10.15" target="192.168.10.50">
+      <data key="d1">8</data>
+    </edge>
+    <edge source="192.168.10.15" target="8.8.8.8">
+      <data key="d1">1</data>
+    </edge>
+    <edge source="192.168.10.5" target="192.168.10.3">
+      <data key="d1">35</data>
+    </edge>
+    <edge source="192.168.10.5" target="192.168.10.50">
+      <data key="d1">8</data>
+    </edge>
+    <edge source="192.168.10.5" target="8.8.8.8">
+      <data key="d1">1</data>
+    </edge>
+    <edge source="192.168.10.8" target="192.168.10.3">
+      <data key="d1">35</data>
+    </edge>
+    <edge source="192.168.10.8" target="192.168.10.50">
+      <data key="d1">8</data>
+    </edge>
+    <edge source="192.168.10.8" target="8.8.8.8">
+      <data key="d1">1</data>
+    </edge>
+    <edge source="192.168.10.9" target="192.168.10.3">
+      <data key="d1">35</data>
+    </edge>
+    <edge source="192.168.10.9" target="192.168.10.50">
+      <data key="d1">8</data>
+    </edge>
+    <edge source="192.168.10.9" target="192.168.10.51">
+      <data key="d1">4</data>
+    </edge>
+    <edge source="192.168.10.9" target="8.8.8.8">
+      <data key="d1">1</data>
+    </edge>
+    <edge source="205.174.165.73" target="192.168.10.50">
+      <data key="d1">70</data>
+    </edge>
+  </graph>
+</graphml>

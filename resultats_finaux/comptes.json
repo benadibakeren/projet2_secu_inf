@@ -1,0 +1,555 @@
+[
+  {
+    "nom": "cic2",
+    "domaine": "TESTBED1",
+    "type": "utilisateur",
+    "privilege_probable": false,
+    "machines_sources": [
+      "192.168.10.8"
+    ],
+    "serveurs": [
+      "192.168.10.3"
+    ],
+    "services": [
+      "LDAP/DC.Testbed1.ca/Testbed1.ca",
+      "cifs/DC.Testbed1.ca",
+      "cifs/dc.testbed1.ca",
+      "host/mitacs-pc2.testbed1.ca",
+      "krbtgt/TESTBED1",
+      "krbtgt/TESTBED1.CA",
+      "ldap/DC.Testbed1.ca"
+    ],
+    "protocoles": [
+      "Kerberos"
+    ],
+    "authentifications": 59,
+    "echecs": 0
+  },
+  {
+    "nom": "cic1",
+    "domaine": "TESTBED1",
+    "type": "utilisateur",
+    "privilege_probable": false,
+    "machines_sources": [
+      "192.168.10.25",
+      "192.168.10.9"
+    ],
+    "serveurs": [
+      "192.168.10.3"
+    ],
+    "services": [
+      "LDAP/DC.Testbed1.ca/Testbed1.ca",
+      "cifs/DC.Testbed1.ca",
+      "host/mitacs-pc6.testbed1.ca",
+      "krbtgt/TESTBED1",
+      "krbtgt/TESTBED1.CA",
+      "ldap/DC.Testbed1.ca",
+      "macpc$"
+    ],
+    "protocoles": [
+      "Kerberos"
+    ],
+    "authentifications": 26,
+    "echecs": 0
+  },
+  {
+    "nom": "guest",
+    "domaine": "TESTBED1",
+    "type": "utilisateur",
+    "privilege_probable": false,
+    "machines_sources": [
+      "192.168.10.8"
+    ],
+    "serveurs": [
+      "192.168.10.12",
+      "192.168.10.16",
+      "192.168.10.17",
+      "192.168.10.19",
+      "192.168.10.50"
+    ],
+    "services": [],
+    "protocoles": [
+      "NTLM"
+    ],
+    "authentifications": 20,
+    "echecs": 0
+  },
+  {
+    "nom": "cic3",
+    "domaine": "TESTBED1",
+    "type": "utilisateur",
+    "privilege_probable": false,
+    "machines_sources": [
+      "192.168.10.5"
+    ],
+    "serveurs": [
+      "192.168.10.3"
+    ],
+    "services": [
+      "LDAP/DC.Testbed1.ca/Testbed1.ca",
+      "cifs/DC.Testbed1.ca",
+      "host/mitacs-pc3.testbed1.ca",
+      "krbtgt/TESTBED1",
+      "krbtgt/TESTBED1.CA",
+      "ldap/DC.Testbed1.ca"
+    ],
+    "protocoles": [
+      "Kerberos"
+    ],
+    "authentifications": 10,
+    "echecs": 0
+  },
+  {
+    "nom": "cicweb",
+    "domaine": "TESTBED1.CA",
+    "type": "utilisateur",
+    "privilege_probable": false,
+    "machines_sources": [
+      "192.168.10.50"
+    ],
+    "serveurs": [
+      "192.168.10.3"
+    ],
+    "services": [
+      "host/cic-webserver.testbed1.ca",
+      "krbtgt/TESTBED1.CA"
+    ],
+    "protocoles": [
+      "Kerberos"
+    ],
+    "authentifications": 9,
+    "echecs": 0
+  },
+  {
+    "nom": "cic8",
+    "domaine": "TESTBED1.CA",
+    "type": "utilisateur",
+    "privilege_probable": false,
+    "machines_sources": [
+      "192.168.10.19"
+    ],
+    "serveurs": [
+      "192.168.10.3"
+    ],
+    "services": [
+      "host/ubuntu14-32.testbed1.ca",
+      "krbtgt/TESTBED1.CA"
+    ],
+    "protocoles": [
+      "Kerberos"
+    ],
+    "authentifications": 9,
+    "echecs": 0
+  },
+  {
+    "nom": "cic9",
+    "domaine": "TESTBED1.CA",
+    "type": "utilisateur",
+    "privilege_probable": false,
+    "machines_sources": [
+      "192.168.10.17"
+    ],
+    "serveurs": [
+      "192.168.10.3"
+    ],
+    "services": [
+      "host/ubuntu14-64.testbed1.ca",
+      "krbtgt/TESTBED1.CA"
+    ],
+    "protocoles": [
+      "Kerberos"
+    ],
+    "authentifications": 9,
+    "echecs": 0
+  },
+  {
+    "nom": "cic6",
+    "domaine": "TESTBED1.CA",
+    "type": "utilisateur",
+    "privilege_probable": false,
+    "machines_sources": [
+      "192.168.10.12"
+    ],
+    "serveurs": [
+      "192.168.10.3"
+    ],
+    "services": [
+      "host/ubuntu64a.testbed1.ca",
+      "krbtgt/TESTBED1.CA"
+    ],
+    "protocoles": [
+      "Kerberos"
+    ],
+    "authentifications": 9,
+    "echecs": 0
+  },
+  {
+    "nom": "cic4",
+    "domaine": "TESTBED1",
+    "type": "utilisateur",
+    "privilege_probable": false,
+    "machines_sources": [
+      "192.168.10.15"
+    ],
+    "serveurs": [
+      "192.168.10.3"
+    ],
+    "services": [
+      "LDAP/DC.Testbed1.ca/Testbed1.ca",
+      "cifs/DC.Testbed1.ca",
+      "host/mitacs-pc4.testbed1.ca",
+      "krbtgt/TESTBED1",
+      "krbtgt/TESTBED1.CA"
+    ],
+    "protocoles": [
+      "Kerberos"
+    ],
+    "authentifications": 8,
+    "echecs": 0
+  },
+  {
+    "nom": "cic7",
+    "domaine": "TESTBED1.CA",
+    "type": "utilisateur",
+    "privilege_probable": false,
+    "machines_sources": [
+      "192.168.10.16"
+    ],
+    "serveurs": [
+      "192.168.10.3"
+    ],
+    "services": [
+      "host/ubuntu32a.testbed1.ca",
+      "krbtgt/TESTBED1.CA"
+    ],
+    "protocoles": [
+      "Kerberos"
+    ],
+    "authentifications": 8,
+    "echecs": 0
+  },
+  {
+    "nom": "cic5",
+    "domaine": "TESTBED1.CA",
+    "type": "utilisateur",
+    "privilege_probable": false,
+    "machines_sources": [
+      "192.168.10.14"
+    ],
+    "serveurs": [
+      "192.168.10.3"
+    ],
+    "services": [
+      "LDAP/DC.Testbed1.ca/Testbed1.ca",
+      "krbtgt/TESTBED1.CA"
+    ],
+    "protocoles": [
+      "Kerberos"
+    ],
+    "authentifications": 4,
+    "echecs": 0
+  },
+  {
+    "nom": "root",
+    "domaine": "TESTBED1.CA",
+    "type": "utilisateur",
+    "privilege_probable": true,
+    "machines_sources": [
+      "192.168.10.12",
+      "192.168.10.16",
+      "192.168.10.50"
+    ],
+    "serveurs": [
+      "192.168.10.3"
+    ],
+    "services": [
+      "krbtgt/TESTBED1.CA"
+    ],
+    "protocoles": [
+      "Kerberos"
+    ],
+    "authentifications": 3,
+    "echecs": 3
+  },
+  {
+    "nom": "mitacs-pc2$",
+    "domaine": "TESTBED1.CA",
+    "type": "machine",
+    "privilege_probable": false,
+    "machines_sources": [
+      "192.168.10.8"
+    ],
+    "serveurs": [
+      "192.168.10.3"
+    ],
+    "services": [
+      "LDAP/DC.Testbed1.ca/Testbed1.ca",
+      "MITACS-PC2$",
+      "cifs/DC",
+      "cifs/DC.Testbed1.ca",
+      "krbtgt/TESTBED1.CA",
+      "krbtgt/Testbed1.ca",
+      "ldap/DC.Testbed1.ca/Testbed1.ca",
+      "mitacs-pc2$",
+      "mitacs-pc2$@TESTBED1.CA"
+    ],
+    "protocoles": [
+      "Kerberos"
+    ],
+    "authentifications": 63,
+    "echecs": 0
+  },
+  {
+    "nom": "ubuntu14-32$",
+    "domaine": "TESTBED1.CA",
+    "type": "machine",
+    "privilege_probable": false,
+    "machines_sources": [
+      "192.168.10.19"
+    ],
+    "serveurs": [
+      "192.168.10.3"
+    ],
+    "services": [
+      "krbtgt/TESTBED1.CA",
+      "ldap/dc"
+    ],
+    "protocoles": [
+      "Kerberos"
+    ],
+    "authentifications": 62,
+    "echecs": 0
+  },
+  {
+    "nom": "ubuntu64a$",
+    "domaine": "TESTBED1.CA",
+    "type": "machine",
+    "privilege_probable": false,
+    "machines_sources": [
+      "192.168.10.12"
+    ],
+    "serveurs": [
+      "192.168.10.3"
+    ],
+    "services": [
+      "krbtgt/TESTBED1.CA",
+      "ldap/dc",
+      "ldap/dc.testbed1.ca"
+    ],
+    "protocoles": [
+      "Kerberos"
+    ],
+    "authentifications": 59,
+    "echecs": 0
+  },
+  {
+    "nom": "ubuntu14-64$",
+    "domaine": "TESTBED1.CA",
+    "type": "machine",
+    "privilege_probable": false,
+    "machines_sources": [
+      "192.168.10.17"
+    ],
+    "serveurs": [
+      "192.168.10.3"
+    ],
+    "services": [
+      "krbtgt/TESTBED1.CA",
+      "ldap/dc"
+    ],
+    "protocoles": [
+      "Kerberos"
+    ],
+    "authentifications": 59,
+    "echecs": 0
+  },
+  {
+    "nom": "ubuntu32a$",
+    "domaine": "TESTBED1.CA",
+    "type": "machine",
+    "privilege_probable": false,
+    "machines_sources": [
+      "192.168.10.16"
+    ],
+    "serveurs": [
+      "192.168.10.3"
+    ],
+    "services": [
+      "krbtgt/TESTBED1.CA",
+      "ldap/dc",
+      "ldap/dc.testbed1.ca"
+    ],
+    "protocoles": [
+      "Kerberos"
+    ],
+    "authentifications": 54,
+    "echecs": 0
+  },
+  {
+    "nom": "cic-webserver$",
+    "domaine": "TESTBED1.CA",
+    "type": "machine",
+    "privilege_probable": false,
+    "machines_sources": [
+      "192.168.10.50"
+    ],
+    "serveurs": [
+      "192.168.10.3"
+    ],
+    "services": [
+      "krbtgt/TESTBED1.CA",
+      "ldap/dc.testbed1.ca"
+    ],
+    "protocoles": [
+      "Kerberos"
+    ],
+    "authentifications": 27,
+    "echecs": 0
+  },
+  {
+    "nom": "mitacs-pc6$",
+    "domaine": "TESTBED1.CA",
+    "type": "machine",
+    "privilege_probable": false,
+    "machines_sources": [
+      "192.168.10.9"
+    ],
+    "serveurs": [
+      "192.168.10.3"
+    ],
+    "services": [
+      "LDAP/DC.Testbed1.ca/Testbed1.ca",
+      "MITACS-PC6$",
+      "cifs/DC.Testbed1.ca",
+      "krbtgt/TESTBED1.CA",
+      "krbtgt/Testbed1.ca",
+      "ldap/DC.Testbed1.ca/Testbed1.ca",
+      "mitacs-pc6$",
+      "mitacs-pc6$@TESTBED1.CA"
+    ],
+    "protocoles": [
+      "Kerberos"
+    ],
+    "authentifications": 20,
+    "echecs": 0
+  },
+  {
+    "nom": "mitacs-pc3$",
+    "domaine": "TESTBED1.CA",
+    "type": "machine",
+    "privilege_probable": false,
+    "machines_sources": [
+      "192.168.10.5"
+    ],
+    "serveurs": [
+      "192.168.10.3"
+    ],
+    "services": [
+      "LDAP/DC.Testbed1.ca/Testbed1.ca",
+      "MITACS-PC3$",
+      "cifs/DC.Testbed1.ca",
+      "krbtgt/TESTBED1.CA",
+      "krbtgt/Testbed1.ca",
+      "ldap/DC.Testbed1.ca/Testbed1.ca",
+      "mitacs-pc3$"
+    ],
+    "protocoles": [
+      "Kerberos"
+    ],
+    "authentifications": 18,
+    "echecs": 0
+  },
+  {
+    "nom": "mitacs-pc4$",
+    "domaine": "TESTBED1.CA",
+    "type": "machine",
+    "privilege_probable": false,
+    "machines_sources": [
+      "192.168.10.15"
+    ],
+    "serveurs": [
+      "192.168.10.3"
+    ],
+    "services": [
+      "LDAP/DC.Testbed1.ca/Testbed1.ca",
+      "MITACS-PC4$",
+      "cifs/DC.Testbed1.ca",
+      "cifs/DC.Testbed1.ca/Testbed1.ca",
+      "krbtgt/TESTBED1.CA",
+      "krbtgt/Testbed1.ca",
+      "ldap/DC.Testbed1.ca/Testbed1.ca",
+      "mitacs-pc4$"
+    ],
+    "protocoles": [
+      "Kerberos"
+    ],
+    "authentifications": 17,
+    "echecs": 0
+  },
+  {
+    "nom": "macpc$",
+    "domaine": "TESTBED1.CA",
+    "type": "machine",
+    "privilege_probable": false,
+    "machines_sources": [
+      "192.168.10.25"
+    ],
+    "serveurs": [
+      "192.168.10.3"
+    ],
+    "services": [
+      "krbtgt/TESTBED1.CA",
+      "ldap/DC.Testbed1.ca",
+      "macpc$"
+    ],
+    "protocoles": [
+      "Kerberos"
+    ],
+    "authentifications": 11,
+    "echecs": 0
+  },
+  {
+    "nom": "mitacs-pc5$",
+    "domaine": "TESTBED1.CA",
+    "type": "machine",
+    "privilege_probable": false,
+    "machines_sources": [
+      "192.168.10.14"
+    ],
+    "serveurs": [
+      "192.168.10.3"
+    ],
+    "services": [
+      "LDAP/DC.Testbed1.ca/Testbed1.ca",
+      "cifs/DC.Testbed1.ca",
+      "cifs/DC.Testbed1.ca/Testbed1.ca",
+      "krbtgt/TESTBED1.CA",
+      "mitacs-pc5$"
+    ],
+    "protocoles": [
+      "Kerberos"
+    ],
+    "authentifications": 10,
+    "echecs": 0
+  },
+  {
+    "nom": "ubuntu12srv$",
+    "domaine": "TESTBED1.CA",
+    "type": "machine",
+    "privilege_probable": false,
+    "machines_sources": [
+      "192.168.10.51"
+    ],
+    "serveurs": [
+      "192.168.10.3"
+    ],
+    "services": [
+      "krbtgt/TESTBED1.CA"
+    ],
+    "protocoles": [
+      "Kerberos"
+    ],
+    "authentifications": 3,
+    "echecs": 0
+  }
+]

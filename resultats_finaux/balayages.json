@@ -1,0 +1,62 @@
+[
+  {
+    "source": "192.168.10.8",
+    "destination": "192.168.10.50",
+    "nb_ports": 934
+  },
+  {
+    "source": "192.168.10.8",
+    "destination": "192.168.10.14",
+    "nb_ports": 913
+  },
+  {
+    "source": "192.168.10.8",
+    "destination": "192.168.10.19",
+    "nb_ports": 913
+  },
+  {
+    "source": "192.168.10.8",
+    "destination": "192.168.10.15",
+    "nb_ports": 912
+  },
+  {
+    "source": "192.168.10.8",
+    "destination": "192.168.10.16",
+    "nb_ports": 912
+  },
+  {
+    "source": "192.168.10.8",
+    "destination": "192.168.10.17",
+    "nb_ports": 912
+  },
+  {
+    "source": "192.168.10.8",
+    "destination": "192.168.10.9",
+    "nb_ports": 912
+  },
+  {
+    "source": "192.168.10.8",
+    "destination": "192.168.10.5",
+    "nb_ports": 911
+  },
+  {
+    "source": "192.168.10.8",
+    "destination": "192.168.10.12",
+    "nb_ports": 910
+  },
+  {
+    "source": "192.168.10.8",
+    "destination": "192.168.10.25",
+    "nb_ports": 910
+  },
+  {
+    "source": "192.168.10.8",
+    "destination": "192.168.10.51",
+    "nb_ports": 909
+  },
+  {
+    "source": "172.16.0.1",
+    "destination": "192.168.10.51",
+    "nb_ports": 880
+  }
+]
