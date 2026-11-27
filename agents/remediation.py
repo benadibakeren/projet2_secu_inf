@@ -47,6 +47,29 @@ def fin_de_support(logiciel: dict) -> str | None:
     return None
 
 
+def ids_bulletins(cves: list[dict]) -> list[str]:
+    """Identifiants uniques des bulletins de sécurité de ces CVE (ex. MS17-010)."""
+    return sorted({b["id"] for c in cves for b in c.get("bulletins", []) if b.get("id")})
+
+
+def _avec_bulletins(texte: str, cves: list[dict]) -> str:
+    ids = ids_bulletins(cves)
+    return texte + (f" Bulletins de sécurité correspondants : {', '.join(ids)}." if ids else "")
+
+
+def correctifs_de_la_machine(actif: dict, maximum: int = 8) -> list[str]:
+    """
+    Bulletins qui corrigent le plus de failles déjà exploitées (KEV) sur cette machine.
+    On regarde toutes ses failles KEV, pas seulement les 5 plus menaçantes.
+    """
+    compte = {}
+    for c in actif.get("cves_kev", []):
+        for b in c.get("bulletins", []):
+            if b.get("id"):
+                compte[b["id"]] = compte.get(b["id"], 0) + 1
+    return [bid for bid, _ in sorted(compte.items(), key=lambda x: (-x[1], x[0]))[:maximum]]
+
+
 def recommandations_par_regles(actif: dict) -> list[dict]:
     """Recommandations qui découlent directement des faits. Chacune dit pourquoi."""
     risque = actif["risque"]
@@ -65,8 +88,9 @@ def recommandations_par_regles(actif: dict) -> list[dict]:
     if kev:
         recos.append({
             "priorite": "immédiate",
-            "action": "Appliquer les mises à jour de sécurité qui corrigent les failles déjà "
-                      "exploitées par des attaquants : " + ", ".join(c["id"] for c in kev) + ".",
+            "action": _avec_bulletins("Appliquer les mises à jour de sécurité qui corrigent les failles déjà "
+                                      "exploitées par des attaquants : " + ", ".join(c["id"] for c in kev) + ".",
+                                      kev),
             "justification": "Ces failles sont dans le catalogue CISA KEV : leur exploitation réelle est prouvée.",
             "cves": [c["id"] for c in kev],
         })
@@ -75,8 +99,8 @@ def recommandations_par_regles(actif: dict) -> list[dict]:
     if autres:
         recos.append({
             "priorite": "court terme",
-            "action": "Corriger les autres failles graves (CVSS 7 ou plus) : "
-                      + ", ".join(c["id"] for c in autres) + ".",
+            "action": _avec_bulletins("Corriger les autres failles graves (CVSS 7 ou plus) : "
+                                      + ", ".join(c["id"] for c in autres) + ".", autres),
             "justification": "Failles graves, sans exploitation prouvée à ce jour.",
             "cves": [c["id"] for c in autres],
         })
@@ -138,8 +162,10 @@ Règles :
 - Décris l'effet d'une CVE uniquement à partir de sa description fournie. Ne dis pas "exécution de
   code à distance" si la description ne le dit pas.
 - Ne parle de fin de support d'un système que si la fiche donne sa date, et compare-la à la date de référence.
-- Cite uniquement des identifiants CVE présents dans la fiche. N'invente aucune CVE, aucun numéro
-  de correctif, aucune version.
+- Cite uniquement des identifiants CVE et des bulletins (ex. MS17-010, USN-3105-1) présents dans la
+  fiche. "correctifs_disponibles_pour_failles_kev" liste les bulletins qui corrigent le plus de failles
+  déjà exploitées sur cette machine : nomme-les, c'est ce qu'un administrateur applique.
+  N'invente aucune CVE, aucun bulletin, aucun numéro de correctif, aucune version.
 - Écris en français simple, phrases courtes, sans jargon inutile.
 - Réponds uniquement avec un objet JSON, sans texte autour :
 {"resume": "1 ou 2 phrases sur la situation de la machine",
@@ -164,15 +190,23 @@ def fiche_pour_llm(actif: dict, recos: list[dict]) -> dict:
         "raisons": r["raisons"],
         "failles_les_plus_menacantes": [
             {"id": c["id"], "logiciel": c["logiciel"], "cvss": c["cvss"], "dans_kev": c["dans_kev"],
-             "acces": c["acces"], "description": c["description"]}
+             "acces": c["acces"], "bulletins": ids_bulletins([c]), "description": c["description"]}
             for c in r["cves_a_traiter"]
         ],
         "recommandations_des_regles": recos,
+        "correctifs_disponibles_pour_failles_kev": correctifs_de_la_machine(actif),
     }
 
 
-def verifier_cves(plan: dict, connues: set[str]) -> list[str]:
-    """Retire du plan les CVE que l'agent 3 n'a pas trouvées. Renvoie celles retirées."""
+MOTIF_BULLETIN = re.compile(r"\b(?:MS\d{2}-\d{3}|USN-\d{3,5}-\d+|RHSA-\d{4}:\d{4,5}|DSA-\d{3,5}(?:-\d+)?)\b")
+
+
+def verifier_cves(plan: dict, connues: set[str], bulletins_connus: set[str] = frozenset()) -> list[str]:
+    """
+    Retire du plan les CVE et les bulletins que l'agent 3 n'a pas trouvés.
+    Un LLM peut inventer un identifiant qui a l'air vrai : on ne garde que ceux vérifiés.
+    Renvoie les identifiants retirés.
+    """
     inventees = set()
     for a in plan["actions"]:
         cites = set(a.get("cves") or []) | set(re.findall(r"CVE-\d{4}-\d{4,7}", a.get("action", "")))
@@ -181,6 +215,10 @@ def verifier_cves(plan: dict, connues: set[str]) -> list[str]:
         a["cves"] = sorted((set(a.get("cves") or []) | cites) - faux)
         for f in faux:
             a["action"] = a["action"].replace(f, "[CVE retirée : non vérifiée]")
+        for champ in ("action", "justification"):
+            for b in set(MOTIF_BULLETIN.findall(a.get(champ, ""))) - bulletins_connus:
+                inventees.add(b)
+                a[champ] = a[champ].replace(b, "[bulletin retiré : non vérifié]")
     return sorted(inventees)
 
 
@@ -231,6 +269,59 @@ def plan_par_regles(actif: dict, recos: list[dict]) -> dict:
 # 3. Rapport Markdown
 # ---------------------------------------------------------------------------
 
+def regrouper_correctifs(plans: list[dict]) -> list[dict]:
+    """
+    Correctifs à déployer, à partir de toutes les failles déjà exploitées (KEV).
+
+    1. Pour chaque bulletin : quelles machines il protège, quelles failles il corrige.
+    2. Les bulletins équivalents (exactement les mêmes failles sur les mêmes machines,
+       par exemple un bulletin Ubuntu par version du système) sont regroupés.
+    3. Classement : nombre de machines protégées, puis failles de rançongiciels d'abord,
+       puis nombre de failles corrigées.
+    Utilisée par le rapport et par le tableau de bord, pour qu'ils affichent la même chose.
+    """
+    par_bulletin = {}
+    for p in plans:
+        for c in p.get("cves_kev", []):
+            for b in c.get("bulletins", []):
+                if not b.get("id"):
+                    continue
+                info = par_bulletin.setdefault(b["id"], {"url": b["url"], "machines": set(), "cves": set(),
+                                                         "rancongiciel": False})
+                info["machines"].add(p["ip"])
+                info["cves"].add(c["id"])
+                info["rancongiciel"] |= bool(c.get("rancongiciel"))
+
+    # Un lien du guide Microsoft (MSRC) est inutile si un bulletin nommé (ex. MS17-010)
+    # corrige déjà la même faille sur les mêmes machines
+    for bid in [b for b in par_bulletin if b.startswith("MSRC ")]:
+        info = par_bulletin[bid]
+        if any(autre != bid and not autre.startswith("MSRC ") and info["cves"] <= a["cves"]
+               and info["machines"] <= a["machines"] for autre, a in par_bulletin.items()):
+            del par_bulletin[bid]
+
+    groupes = {}
+    for bid, info in par_bulletin.items():
+        if bid.startswith("MSRC "):
+            # Depuis 2017, Microsoft publie une mise à jour cumulative par mois qui corrige
+            # toutes les failles d'un coup : un seul groupe par ensemble de machines.
+            cle = (frozenset(info["machines"]), "MSRC")
+        else:
+            cle = (frozenset(info["machines"]), frozenset(info["cves"]))
+        g = groupes.setdefault(cle, {"ids": [], "urls": {}, "machines": info["machines"],
+                                     "cves": set(), "rancongiciel": False,
+                                     "cumulative_microsoft": cle[1] == "MSRC"})
+        g["ids"].append(bid)
+        g["urls"][bid] = info["url"]
+        g["cves"] |= info["cves"]
+        g["rancongiciel"] |= info["rancongiciel"]
+    for g in groupes.values():
+        # les bulletins MSxx-xxx (les plus connus) d'abord, puis l'ordre alphabétique
+        g["ids"].sort(key=lambda b: (not re.match(r"MS\d{2}-", b), b))
+    return sorted(groupes.values(), key=lambda g: (-len(g["machines"]), not g["rancongiciel"],
+                                                   -len(g["cves"]), g["ids"][0]))
+
+
 def ecrire_rapport(plans: list[dict], ecarts: dict, balayages: list[dict], chemin: Path) -> None:
     """Assemble le rapport. Tous les chiffres viennent des données, pas du LLM."""
     compte = {}
@@ -269,6 +360,26 @@ def ecrire_rapport(plans: list[dict], ecarts: dict, balayages: list[dict], chemi
             if a["priorite"] == "immédiate":
                 l.append(f"- **{p['ip']}** ({p['role']}) : {a['action']}")
 
+    groupes = regrouper_correctifs(plans)
+    if groupes:
+        l += ["", "## Correctifs prioritaires", "",
+              "Bulletins des éditeurs qui corrigent des failles déjà exploitées (CISA KEV). Les bulletins "
+              "équivalents (mêmes failles, mêmes machines, par exemple un bulletin Ubuntu par version) sont "
+              "regroupés. Classés par nombre de machines protégées, puis rançongiciels d'abord, puis nombre "
+              "de failles corrigées.", "",
+              "| Bulletins | Machines | Failles KEV corrigées | Rançongiciel | Adresses |",
+              "| --- | --- | --- | --- | --- |"]
+        for g in groupes[:15]:
+            if g["cumulative_microsoft"]:
+                noms = f"[Mises à jour cumulatives Microsoft (guide MSRC)]({g['urls'][g['ids'][0]]})"
+            else:
+                noms = ", ".join(f"[{bid}]({g['urls'][bid]})" for bid in g["ids"])
+            cves = ", ".join(sorted(g["cves"])[:3]) + (" ..." if len(g["cves"]) > 3 else "")
+            l.append(f"| {noms} | {len(g['machines'])} | {len(g['cves'])} ({cves}) | "
+                     f"{'oui' if g['rancongiciel'] else ''} | {', '.join(sorted(g['machines']))} |")
+        if len(groupes) > 15:
+            l += ["", f"*Et {len(groupes) - 15} autres groupes de bulletins, détaillés dans le tableau de bord.*"]
+
     l += ["", "## Plan d'action par actif", ""]
     for p in plans:
         l += [f"### {p['ip']} : {p['role']} ({p['niveau']}, score {p['score']})", "", p["plan"]["resume"], ""]
@@ -286,7 +397,7 @@ def ecrire_rapport(plans: list[dict], ecarts: dict, balayages: list[dict], chemi
                     l.append(f"- {a['action']} *{a['justification']}*")
                 l.append("")
         if p["cves_retirees"]:
-            l += [f"*Contrôle : CVE citées par le LLM mais non vérifiées, retirées : "
+            l += [f"*Contrôle : identifiants cités par le LLM mais non vérifiés, retirés : "
                   f"{', '.join(p['cves_retirees'])}.*", ""]
         l += [f"*Plan rédigé par : {p['methode']}.*", ""]
 
@@ -328,7 +439,9 @@ def executer(dossier_sortie: Path = config.DOSSIER_SORTIE, utiliser_llm: bool = 
         if client is not None and actif["risque"]["niveau"] in NIVEAUX_AVEC_LLM:
             try:
                 plan = plan_par_llm(client, actif, recos)
-                retirees = verifier_cves(plan, connues)
+                bulletins_connus = set(ids_bulletins(actif["risque"]["cves_a_traiter"]
+                                                     + actif.get("cves_kev", [])))
+                retirees = verifier_cves(plan, connues, bulletins_connus)
                 methode = "règles + LLM"
                 time.sleep(config.PAUSE_LLM)
             except RuntimeError:
@@ -339,8 +452,9 @@ def executer(dossier_sortie: Path = config.DOSSIER_SORTIE, utiliser_llm: bool = 
             "ip": actif["ip"], "role": actif["role"], "niveau": r["niveau"], "score": r["score"],
             "raisons": r["raisons"], "compromission_probable": r.get("compromission_probable", False),
             "recommandations_regles": recos, "plan": plan, "methode": methode, "cves_retirees": retirees,
+            "cves_kev": actif.get("cves_kev", []),
         })
-        alerte = f"  [{len(retirees)} CVE inventée(s) retirée(s)]" if retirees else ""
+        alerte = f"  [identifiant(s) inventé(s) retiré(s) : {', '.join(retirees)}]" if retirees else ""
         print(f"[Agent 5] {actif['ip']:<16} {r['niveau']:<9} {len(plan['actions'])} actions  ({methode}){alerte}")
 
     with open(dossier_sortie / "remediation.json", "w", encoding="utf-8") as f:

@@ -207,7 +207,76 @@ def concerne_le_systeme(produits: list[str], cpe_logiciel: str) -> bool:
     return False
 
 
-def resumer_cve(brute: dict, kev: dict, cpe_logiciel: str = "") -> dict:
+# Reconnaître les identifiants de bulletins dans les liens fournis par la NVD
+_MOTIFS_BULLETINS = [
+    (re.compile(r"\b(MS\d{2}-\d{3})\b", re.I), lambda m: m.group(1).upper()),           # Microsoft
+    (re.compile(r"usn\.ubuntu\.com/(\d{3,5}-\d+)", re.I), lambda m: f"USN-{m.group(1)}"),  # Ubuntu
+    (re.compile(r"\busn-(\d{3,5}-\d+)", re.I), lambda m: f"USN-{m.group(1)}"),             # Ubuntu
+    (re.compile(r"\b(RHSA-\d{4}:\d{4,5})\b", re.I), lambda m: m.group(1).upper()),        # Red Hat
+    (re.compile(r"\b(DSA-\d{3,5}(?:-\d+)?)\b", re.I), lambda m: m.group(1).upper()),      # Debian
+    # Guide des mises à jour de Microsoft (remplace les bulletins MSxx-xxx depuis 2017)
+    (re.compile(r"msrc\.microsoft\.com/.*?(CVE-\d{4}-\d{4,7})", re.I), lambda m: f"MSRC {m.group(1).upper()}"),
+]
+_EDITEURS = {"microsoft": "Microsoft", "ubuntu": "Ubuntu", "apache.org": "Apache",
+             "openssh": "OpenSSH", "openbsd": "OpenSSH", "redhat": "Red Hat", "debian": "Debian"}
+
+
+# Préfixe des bulletins publiés par l'éditeur de chaque système
+PREFIXE_BULLETINS = {"microsoft": "MS", "canonical": "USN", "debian": "DSA", "redhat": "RHSA"}
+
+
+def editeur_systeme(logiciels: list[dict]) -> str:
+    """Éditeur du système d'exploitation de la machine (ex. "canonical" pour Ubuntu)."""
+    for l in logiciels:
+        morceaux = l["cpe"].split(":")
+        if len(morceaux) > 3 and morceaux[2] == "o":
+            return morceaux[3]
+    return ""
+
+
+def bulletins_securite(cve: dict, editeur_os: str = "", maximum: int = 4) -> list[dict]:
+    """
+    Bulletins de sécurité des éditeurs qui corrigent la CVE (ex. MS17-010 pour EternalBlue).
+
+    La NVD donne pour chaque CVE une liste de liens, avec des étiquettes comme
+    "Vendor Advisory" (bulletin de l'éditeur) ou "Patch" (correctif). On garde ces liens,
+    et on en extrait l'identifiant du bulletin quand il est reconnaissable.
+    """
+    trouves, vus = [], set()
+    for ref in cve.get("references", []):
+        url = ref.get("url", "")
+        etiquettes = set(ref.get("tags") or [])
+        identifiant = None
+        for motif, former in _MOTIFS_BULLETINS:
+            m = motif.search(url)
+            if m:
+                identifiant = former(m)
+                break
+        if not identifiant and not etiquettes & {"Vendor Advisory", "Patch"}:
+            continue
+        cle = identifiant or url
+        if cle in vus:
+            continue
+        vus.add(cle)
+        editeur = next((nom for cle_dom, nom in _EDITEURS.items() if cle_dom in url.lower()), "")
+        trouves.append({"id": identifiant, "editeur": editeur, "url": url})
+    # Les bulletins identifiés d'abord (ils parlent davantage à un administrateur)
+    # Garder seulement les bulletins de l'éditeur du système de la machine :
+    # un administrateur Ubuntu applique les USN, pas les bulletins Debian (DSA).
+    attendu = PREFIXE_BULLETINS.get(editeur_os)
+    if attendu:
+        autres = tuple(p + "-" for p in PREFIXE_BULLETINS.values() if p != attendu)
+        trouves = [b for b in trouves if not (b["id"] or "").startswith(autres)]
+    # Bulletins connus que la NVD ne cite pas (voir config.BULLETINS_COMPLEMENTAIRES)
+    for bid, info in config.BULLETINS_COMPLEMENTAIRES.items():
+        if cve.get("id") in info["cves"] and bid not in vus:
+            trouves.append({"id": bid, "editeur": "Microsoft", "url": info["url"], "source": "table locale"})
+    # Les bulletins MSxx-xxx d'abord, puis les autres identifiés, puis les simples liens
+    trouves.sort(key=lambda b: (b["id"] is None, not str(b["id"]).startswith(("MS0", "MS1"))))
+    return trouves[:maximum]
+
+
+def resumer_cve(brute: dict, kev: dict, cpe_logiciel: str = "", editeur_os: str = "") -> dict:
     """Garde l'essentiel d'une CVE renvoyée par la NVD."""
     cve = brute["cve"]
     produits = produits_vulnerables(cve)
@@ -220,6 +289,7 @@ def resumer_cve(brute: dict, kev: dict, cpe_logiciel: str = "") -> dict:
         "rancongiciel": kev.get(cve["id"], {}).get("rancongiciel", False),
         "produits": produits[:5],
         "concerne_le_systeme": concerne_le_systeme(produits, cpe_logiciel) if cpe_logiciel else True,
+        "bulletins": bulletins_securite(cve, editeur_os),
         "description": description[:300],
     }
 
@@ -264,30 +334,54 @@ def logiciels_zeek(actif: dict) -> list[dict]:
     return resultat
 
 
+def _produit(cpe: str) -> str:
+    """Partie "éditeur:produit" d'un CPE (ex. apache:http_server), sans la version."""
+    return ":".join(cpe.split(":")[3:5])
+
+
 def logiciels_de(actif: dict, declare: dict) -> list[dict]:
-    """Logiciels déclarés + logiciels vus par Zeek, sans doublon de CPE."""
-    liste = list(declare.get(actif["ip"], {}).get("logiciels", [])) + logiciels_zeek(actif)
-    vus, uniques = set(), []
-    for l in liste:
-        if l["cpe"] not in vus:
-            vus.add(l["cpe"])
-            uniques.append(l)
-    return uniques
+    """
+    Logiciels déclarés + logiciels vus dans le trafic par Zeek.
+
+    Le trafic est plus fiable qu'une hypothèse :
+      - même produit, même version : l'hypothèse est confirmée par le trafic
+      - même produit, autre version : la version vue par Zeek remplace la déclarée
+      - produit nouveau : il est ajouté
+    """
+    declares = [dict(l) for l in declare.get(actif["ip"], {}).get("logiciels", [])]
+    for z in logiciels_zeek(actif):
+        meme = next((l for l in declares if _produit(l["cpe"]) == _produit(z["cpe"])), None)
+        if meme is None:
+            declares.append(z)
+        elif meme["cpe"] == z["cpe"]:
+            meme["source"] = "inventaire déclaré, confirmé par le trafic (Zeek)"
+        else:
+            meme.update({"nom": z["nom"], "cpe": z["cpe"], "cpe_variantes": [],
+                         "source": f"vu dans le trafic (Zeek), remplace la version déclarée ({meme['nom']})"})
+    return declares
 
 
 # ---------------------------------------------------------------------------
 # 4. Analyse d'un actif
 # ---------------------------------------------------------------------------
 
-def analyser_logiciel(logiciel: dict, actif: dict, client: ClientNVD, kev: dict) -> tuple[dict, list]:
+def analyser_logiciel(logiciel: dict, actif: dict, client: ClientNVD, kev: dict,
+                      editeur_os: str = "") -> tuple[dict, list]:
     """Cherche les CVE d'un logiciel et renvoie (fiche du logiciel, liste des CVE)."""
-    try:
-        brutes = client.cves_du_logiciel(logiciel["cpe"])
-        erreur = None
-    except RuntimeError as e:
-        brutes, erreur = [], str(e)
+    # La NVD range parfois les failles d'un même système sous plusieurs noms
+    # (ex. windows_10 et windows_10_1607) : on interroge tous les noms, puis on
+    # fusionne les résultats sans doublon.
+    brutes, erreur, vues = [], None, set()
+    for cpe in [logiciel["cpe"]] + logiciel.get("cpe_variantes", []):
+        try:
+            for b in client.cves_du_logiciel(cpe):
+                if b["cve"]["id"] not in vues:
+                    vues.add(b["cve"]["id"])
+                    brutes.append(b)
+        except RuntimeError as e:
+            erreur = str(e)
 
-    cves = [resumer_cve(b, kev, logiciel["cpe"]) for b in brutes]
+    cves = [resumer_cve(b, kev, logiciel["cpe"], editeur_os) for b in brutes]
     if config.SEULEMENT_CVE_CONNUES_A_LA_CAPTURE:
         cves = [c for c in cves if c["publiee_le"] and c["publiee_le"] <= config.DATE_CAPTURE]
     # Failles de logiciels optionnels (Java, Firefox...) : comptées à part, puis écartées
@@ -313,6 +407,10 @@ def analyser_logiciel(logiciel: dict, actif: dict, client: ClientNVD, kev: dict)
         "nb_exploitables_a_distance": sum(1 for c in cves if c["vecteur"] in ("NETWORK", "ADJACENT_NETWORK")),
         "cvss_max": max((c["score"] or 0 for c in cves), default=0),
         "cves_prioritaires": cves[:config.NB_CVE_DETAILLEES],
+        # Toutes les failles déjà exploitées (KEV), en version courte : elles servent à
+        # choisir les correctifs à déployer, pas seulement les 10 plus graves.
+        "cves_kev": [{"id": c["id"], "score": c["score"], "rancongiciel": c["rancongiciel"],
+                      "bulletins": c["bulletins"]} for c in cves if c["dans_kev"]],
         "nb_cve_logiciels_optionnels_ecartees":
             len(optionnelles) if config.GARDER_SEULEMENT_PAQUETS_DE_BASE else 0,
         "logiciels_optionnels_les_plus_cites": _plus_cites(optionnelles),
@@ -332,10 +430,11 @@ def _plus_cites(cves: list[dict], n: int = 5) -> list[str]:
 
 def analyser_actif(actif: dict, declare: dict, client: ClientNVD, kev: dict) -> dict:
     logiciels = logiciels_de(actif, declare)
+    editeur_os = editeur_systeme(logiciels)
     fiches, toutes = [], {}
     for l in logiciels:
         print(f"[Agent 3] {actif['ip']:<16} {l['nom']}")
-        fiche, cves = analyser_logiciel(l, actif, client, kev)
+        fiche, cves = analyser_logiciel(l, actif, client, kev, editeur_os)
         fiches.append(fiche)
         for c in cves:  # une même CVE peut toucher le système et une application
             toutes[c["id"]] = c

@@ -82,14 +82,14 @@
       "ip": "192.168.10.14",
       "description": "Windows 10 Pro, 32 bits",
       "logiciels": [
-        {"nom": "Windows 10", "cpe": "cpe:2.3:o:microsoft:windows_10", "source": "topologie publiée (version exacte inconnue : toutes les versions de Windows 10 sorties avant la capture)", "ports": []}
+        {"nom": "Windows 10", "cpe": "cpe:2.3:o:microsoft:windows_10", "cpe_variantes": ["cpe:2.3:o:microsoft:windows_10_1507", "cpe:2.3:o:microsoft:windows_10_1511", "cpe:2.3:o:microsoft:windows_10_1607", "cpe:2.3:o:microsoft:windows_10_1703"], "source": "topologie publiée (version exacte inconnue : toutes les versions de Windows 10 sorties avant la capture)", "ports": []}
       ]
     },
     {
       "ip": "192.168.10.15",
       "description": "Windows 10, 64 bits",
       "logiciels": [
-        {"nom": "Windows 10", "cpe": "cpe:2.3:o:microsoft:windows_10", "source": "topologie publiée (version exacte inconnue : toutes les versions de Windows 10 sorties avant la capture)", "ports": []}
+        {"nom": "Windows 10", "cpe": "cpe:2.3:o:microsoft:windows_10", "cpe_variantes": ["cpe:2.3:o:microsoft:windows_10_1507", "cpe:2.3:o:microsoft:windows_10_1511", "cpe:2.3:o:microsoft:windows_10_1607", "cpe:2.3:o:microsoft:windows_10_1703"], "source": "topologie publiée (version exacte inconnue : toutes les versions de Windows 10 sorties avant la capture)", "ports": []}
       ]
     },
     {

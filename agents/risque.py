@@ -100,6 +100,7 @@ def menace_cve(cve: dict, logiciel: dict, epss: dict) -> dict:
         "acces": raison_acces,
         "menace": round(gravite * probabilite * acces, 4),
         "produits": cve.get("produits", []),
+        "bulletins": cve.get("bulletins", []),
         "description": cve["description"],
     }
 
@@ -165,6 +166,9 @@ def evaluer_actif(actif: dict, epss: dict, scanners: dict) -> dict:
                        "expose_internet": l["expose_internet"]}
                       for l in actif["logiciels_analyses"]],
         "resume_vulnerabilites": actif["resume_vulnerabilites"],
+        # toutes les failles KEV de la machine, sans doublon (pour choisir les correctifs)
+        "cves_kev": list({c["id"]: c for l in actif["logiciels_analyses"]
+                          for c in l.get("cves_kev", [])}.values()),
         "risque": risque,
     }
 

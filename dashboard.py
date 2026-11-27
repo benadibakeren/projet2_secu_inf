@@ -21,6 +21,7 @@ import pandas as pd
 import streamlit as st
 
 import config
+from agents.remediation import regrouper_correctifs
 
 DOSSIER = Path(sys.argv[1]) if len(sys.argv) > 1 else config.DOSSIER_SORTIE
 
@@ -190,6 +191,7 @@ inventaire = lire("inventaire.json", [])
 remediation = {p["ip"]: p for p in lire("remediation.json", [])}
 balayages = lire("balayages.json", [])
 ecarts = lire("ecarts_inventaire.json", {})
+comptes = lire("comptes.json", [])
 
 onglets = st.tabs(["Vue d'ensemble", "Inventaire", "Graphe des dépendances",
                    "Vulnérabilités et risques", "Recommandations", "Évaluation", "À propos"])
@@ -262,6 +264,24 @@ with onglets[1]:
         "Criticité": st.column_config.ProgressColumn("Criticité", min_value=0, max_value=5, format="%d / 5"),
     })
 
+    st.markdown("<div class='section'>Comptes vus dans les authentifications (Kerberos, NTLM)</div>",
+                unsafe_allow_html=True)
+    if comptes:
+        humains = [c for c in comptes if c["type"] == "utilisateur"]
+        st.caption(f"{len(humains)} comptes utilisateurs et {len(comptes) - len(humains)} comptes machines "
+                   "(nom terminé par $ : c'est l'ordinateur qui s'authentifie). Source : journaux Zeek.")
+        st.dataframe(pd.DataFrame([{
+            "Compte": c["nom"], "Type": c["type"], "Domaine": c["domaine"],
+            "Privilèges probables": "oui" if c["privilege_probable"] else "",
+            "Depuis les machines": ", ".join(c["machines_sources"]),
+            "Auprès des serveurs": ", ".join(c["serveurs"]),
+            "Authentifications": c["authentifications"], "Échecs": c["echecs"],
+            "Protocoles": ", ".join(c["protocoles"]),
+        } for c in comptes]), hide_index=True, width="stretch")
+    else:
+        st.info("Aucun compte : les CSV ne contiennent pas de noms d'utilisateurs. Lancer Zeek sur le PCAP "
+                "et placer kerberos.log et ntlm.log dans data/zeek/ pour les découvrir.")
+
     choix = st.selectbox("Détail d'un actif", [r["ip"] for r in risques])
     r = next(x for x in risques if x["ip"] == choix)
     fiche = next((a for a in inventaire if a["ip"] == choix), {})
@@ -304,6 +324,8 @@ with onglets[2]:
         df = liens.assign(source=liens["source"].map(nom), target=liens["target"].map(nom))
         df = df[df["source"] != df["target"]].groupby(["source", "target"], as_index=False)["poids"].sum()
         seuil = st.slider("Masquer les liens de moins de N connexions", 1, 500, 20)
+        avec_comptes = st.toggle("Afficher les comptes utilisateurs", value=False, disabled=not comptes,
+                                 help="Relations compte → machine, à partir des journaux Zeek")
         df = df[df["poids"] >= seuil]
         scanners = {b["source"] for b in balayages}
 
@@ -313,6 +335,10 @@ with onglets[2]:
                'shape=box, color="#0b0f17", penwidth=1];',
                'edge [color="#475569", arrowsize=0.6];']
         noeuds = set(df["source"]) | set(df["target"])
+        if avec_comptes:
+            # les machines reliées à un compte sont toujours dessinées, même sous le seuil
+            noeuds |= {ip for c in comptes if c["type"] == "utilisateur"
+                       for ip in c["machines_sources"] if ip in internes}
         for n in sorted(noeuds):
             if n == "Internet":
                 dot.append('"Internet" [shape=ellipse, style=filled, fillcolor="#1e293b", '
@@ -322,6 +348,18 @@ with onglets[2]:
                 bord = ', penwidth=4, color="#f8fafc"' if n in scanners else ""
                 dot.append(f'"{n}" [label="{n}\\n{internes[n]["role"]}", '
                            f'fillcolor="{COULEURS[q["niveau"]]}"{bord}];')
+        if avec_comptes:
+            # Un nœud violet par compte utilisateur, relié aux machines depuis lesquelles il se connecte
+            for c in comptes:
+                if c["type"] != "utilisateur":
+                    continue
+                forme = "doubleoctagon" if c["privilege_probable"] else "ellipse"
+                dot.append(f'"compte:{c["nom"]}" [label="{c["nom"]}", shape={forme}, style=filled, '
+                           f'fillcolor="#a78bfa", fontcolor="#0b0f17"];')
+                for ip in c["machines_sources"]:
+                    if ip in internes:
+                        dot.append(f'"compte:{c["nom"]}" -> "{ip}" [style=dashed, color="#a78bfa", '
+                                   f'arrowhead=none];')
         maxi = df["poids"].max() if not df.empty else 1
         for _, l in df.iterrows():
             epaisseur = 0.5 + 3 * l["poids"] / maxi
@@ -331,7 +369,9 @@ with onglets[2]:
         st.graphviz_chart("\n".join(dot))
         legende = " &nbsp; ".join(f"{pastille(n)}" for n in ORDRE)
         st.markdown(f"<div class='muted' style='font-size:.85rem'>{legende} &nbsp;·&nbsp; "
-                    f"bord blanc épais = machine qui a balayé le réseau</div>", unsafe_allow_html=True)
+                    f"bord blanc épais = machine qui a balayé le réseau"
+                    f"{' &nbsp;·&nbsp; violet = compte utilisateur (octogone : privilèges probables)' if avec_comptes else ''}"
+                    f"</div>", unsafe_allow_html=True)
 
 # ---------------------------------------------------------------------------
 # 4. Vulnérabilités et risques
@@ -386,13 +426,20 @@ with onglets[3]:
     st.markdown(carte_actif(r), unsafe_allow_html=True)
     cves = r["risque"]["cves_a_traiter"]
     if cves:
+        def premier_bulletin(c):
+            b = (c.get("bulletins") or [None])[0]
+            return b["url"] if b else None
+
         st.dataframe(pd.DataFrame([{
             "CVE": c["id"], "Logiciel": c["logiciel"], "CVSS": c["cvss"],
             "KEV": "oui" if c["dans_kev"] else "", "Rançongiciel": "oui" if c["rancongiciel"] else "",
-            "EPSS": c["epss"], "Accès": c["acces"], "Menace": c["menace"], "Description": c["description"],
+            "EPSS": c["epss"], "Accès": c["acces"], "Menace": c["menace"],
+            "Bulletins": ", ".join(b["id"] or b["editeur"] or "lien" for b in c.get("bulletins", [])),
+            "Lien": premier_bulletin(c), "Description": c["description"],
         } for c in cves]), hide_index=True, width="stretch", column_config={
             "CVSS": st.column_config.NumberColumn(format="%.1f"),
             "Menace": st.column_config.ProgressColumn(min_value=0, max_value=1, format="%.2f"),
+            "Lien": st.column_config.LinkColumn("Bulletin", display_text="ouvrir"),
         })
 
 # ---------------------------------------------------------------------------
@@ -401,11 +448,29 @@ with onglets[3]:
 with onglets[4]:
     st.markdown("<div class='section'>Plans d'action · agent 5</div>", unsafe_allow_html=True)
     st.caption("Les constats des règles sont toujours affichés. Le plan détaillé est rédigé par le LLM, "
-               "et chaque CVE qu'il cite est vérifiée.")
+               "et chaque CVE ou bulletin qu'il cite est vérifié.")
     rapport = lire("rapport.md")
     if rapport:
         st.download_button("Télécharger le rapport complet (Markdown)", rapport,
                            file_name="rapport.md", mime="text/markdown")
+
+    # Correctifs prioritaires : quel bulletin déployer, sur quelles machines.
+    # Même calcul que le rapport (fonction partagée de l'agent 5).
+    groupes = regrouper_correctifs(list(remediation.values()))
+    if groupes:
+        st.markdown("<div class='section'>Correctifs prioritaires (failles déjà exploitées)</div>",
+                    unsafe_allow_html=True)
+        st.caption("Bulletins équivalents regroupés. Classés par nombre de machines protégées, "
+                   "puis rançongiciels d'abord, puis nombre de failles corrigées.")
+        st.dataframe(pd.DataFrame([{
+            "Bulletins": ("Mises à jour cumulatives Microsoft (guide MSRC)" if g["cumulative_microsoft"]
+                          else ", ".join(g["ids"])),
+            "Machines": len(g["machines"]),
+            "Failles KEV corrigées": len(g["cves"]), "Rançongiciel": "oui" if g["rancongiciel"] else "",
+            "Adresses": ", ".join(sorted(g["machines"])), "CVE corrigées": ", ".join(sorted(g["cves"])),
+            "Lien": g["urls"][g["ids"][0]],
+        } for g in groupes]), hide_index=True, width="stretch", column_config={
+            "Lien": st.column_config.LinkColumn("Lien", display_text="ouvrir le bulletin")})
 
     for r in risques:
         p = remediation.get(r["ip"])
@@ -430,7 +495,7 @@ with onglets[4]:
                 f"<div class='j'>{e(a['justification'])}</div></div>"
                 for a in p["plan"]["actions"]), unsafe_allow_html=True)
             if p["cves_retirees"]:
-                st.warning(f"CVE inventées par le LLM et retirées : {', '.join(p['cves_retirees'])}")
+                st.warning(f"Identifiants inventés par le LLM et retirés : {', '.join(p['cves_retirees'])}")
             st.caption(f"Rédigé par : {p['methode']}")
 
 # ---------------------------------------------------------------------------

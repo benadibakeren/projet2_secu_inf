@@ -116,6 +116,17 @@ PAQUETS_DE_BASE_LINUX = {
     "cron", "rsyslog", "nss", "eglibc",
 }
 
+# Bulletins que la NVD ne cite pas. Depuis 2017, Microsoft renvoie vers son guide des mises
+# à jour au lieu des bulletins MSxx-xxx. MS17-010 (14 mars 2017, EternalBlue et WannaCry)
+# corrige CVE-2017-0143 à CVE-2017-0148 : on l'ajoute pour que l'administrateur le reconnaisse.
+BULLETINS_COMPLEMENTAIRES = {
+    "MS17-010": {
+        "cves": ["CVE-2017-0143", "CVE-2017-0144", "CVE-2017-0145",
+                 "CVE-2017-0146", "CVE-2017-0147", "CVE-2017-0148"],
+        "url": "https://learn.microsoft.com/en-us/security-updates/securitybulletins/2017/ms17-010",
+    },
+}
+
 # Nombre de CVE détaillées par logiciel dans le fichier de sortie (les plus graves)
 NB_CVE_DETAILLEES = 10
 

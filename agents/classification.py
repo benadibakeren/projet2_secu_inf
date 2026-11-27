@@ -61,6 +61,9 @@ def fiche_resumee(actif: dict) -> dict:
         "nb_clients_uniques": actif["nb_clients_uniques"],
         "nb_balayages_recus": len(actif.get("balayages_recus", [])),
         "indices_role": actif["indices_role"],
+        # Comptes vus dans les authentifications (si Zeek a été lancé)
+        "comptes_qui_se_connectent_depuis_cette_machine": actif.get("comptes_utilises", [])[:10],
+        "nb_comptes_authentifies_par_cette_machine": actif.get("nb_comptes_servis", 0),
     }
 
 
@@ -127,6 +130,8 @@ Critères :
 - sensibilité des données qu'elle manipule probablement
 - exposition : services utilisés depuis Internet, balayages subis
 - fréquence d'utilisation : connexions, nombre de clients
+- comptes : un poste où se connecte un compte administrateur, ou un serveur qui authentifie
+  beaucoup de comptes, compte davantage
 
 Règles :
 - Base-toi uniquement sur la fiche. N'invente aucun logiciel ni aucune version.

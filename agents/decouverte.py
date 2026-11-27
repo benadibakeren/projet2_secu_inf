@@ -18,6 +18,7 @@ Deux sources possibles :
 
 import ipaddress
 import json
+import re
 from collections import defaultdict
 from pathlib import Path
 
@@ -266,6 +267,114 @@ def _analyser_dns(dns: pd.DataFrame, actifs: dict) -> None:
                 actifs.setdefault(ip, _nouvel_actif(ip))["noms_dns"].add(nom)
 
 
+def _nom_compte(brut) -> tuple[str, str]:
+    """
+    Sépare un compte Kerberos ou NTLM en (nom, domaine).
+    Kerberos écrit "alice/DOMAINE.LOCAL" ou "alice@DOMAINE.LOCAL".
+    """
+    if vide(brut):
+        return "", ""
+    brut = str(brut).strip()
+    for separateur in ("/", "@", "\\"):
+        if separateur in brut:
+            nom, domaine = brut.split(separateur, 1)
+            if separateur == "\\":
+                nom, domaine = domaine, nom      # NTLM : DOMAINE\nom
+            return nom.lower(), domaine.upper()
+    return brut.lower(), ""
+
+
+def _reussi(ligne: pd.Series) -> bool | None:
+    """Zeek note la réussite dans "success" (T/F) ou, dans les vieilles versions, "status"."""
+    v = ligne.get("success")
+    if not vide(v):
+        return str(v).strip().upper() in ("T", "TRUE", "1")
+    v = ligne.get("status")
+    if not vide(v):
+        return "SUCCESS" in str(v).upper()
+    return None
+
+
+def lire_comptes(dossier: Path) -> dict:
+    """
+    Comptes vus dans les authentifications du réseau (journaux Zeek).
+
+    - kerberos.log : authentifications auprès du contrôleur de domaine Active Directory
+    - ntlm.log     : authentifications Windows plus anciennes (partages, RPC), avec le
+                     nom de la machine cliente
+
+    Renvoie {nom du compte: fiche}. Un compte dont le nom finit par "$" est un compte
+    machine : c'est l'ordinateur lui-même qui s'authentifie, pas une personne.
+    """
+    comptes = {}
+
+    def noter(nom, domaine, source, serveur, protocole, reussi, service=None):
+        if not nom or not est_interne(source):
+            return
+        c = comptes.setdefault(nom, {
+            "nom": nom, "domaine": domaine,
+            "type": "machine" if nom.endswith("$") else "utilisateur",
+            "privilege_probable": bool(re.search(r"admin|adm_|root", nom, re.I)),
+            "machines_sources": set(), "serveurs": set(), "services": set(), "protocoles": set(),
+            "authentifications": 0, "echecs": 0,
+        })
+        c["domaine"] = c["domaine"] or domaine
+        c["machines_sources"].add(source)
+        if est_interne(serveur):
+            c["serveurs"].add(serveur)
+        if service:
+            c["services"].add(service)
+        c["protocoles"].add(protocole)
+        c["authentifications"] += 1
+        if reussi is False:
+            c["echecs"] += 1
+
+    kerberos = lire_log_zeek(Path(dossier) / "kerberos.log")
+    for _, k in kerberos.iterrows():
+        nom, domaine = _nom_compte(k.get("client"))
+        service = None if vide(k.get("service")) else str(k["service"])
+        noter(nom, domaine, k.get("id.orig_h"), k.get("id.resp_h"), "Kerberos", _reussi(k), service)
+
+    noms_machines = {}  # ntlm.log donne aussi le nom de la machine cliente
+    ntlm = lire_log_zeek(Path(dossier) / "ntlm.log")
+    for _, n in ntlm.iterrows():
+        nom = "" if vide(n.get("username")) else str(n["username"]).lower()
+        domaine = "" if vide(n.get("domainname")) else str(n["domainname"]).upper()
+        noter(nom, domaine, n.get("id.orig_h"), n.get("id.resp_h"), "NTLM", _reussi(n))
+        if not vide(n.get("hostname")) and est_interne(n.get("id.orig_h")):
+            noms_machines.setdefault(n["id.orig_h"], set()).add(str(n["hostname"]).upper())
+
+    return {"comptes": comptes, "noms_machines": noms_machines}
+
+
+def enrichir_avec_zeek(actifs: dict, dossier: Path) -> dict:
+    """
+    Complète les machines découvertes dans les CSV avec ce que Zeek a vu :
+    logiciels et versions (software.log), noms (dns.log, ntlm.log), comptes.
+    On n'ajoute PAS de nouvelles machines : les CSV restent la source de l'inventaire.
+    """
+    dossier = Path(dossier)
+    connues = set(actifs)
+    temporaire = {}
+    _analyser_software(lire_log_zeek(dossier / "software.log"), temporaire)
+    _analyser_dns(lire_log_zeek(dossier / "dns.log"), temporaire)
+    for ip, a in temporaire.items():
+        if ip in connues:
+            actifs[ip]["logiciels"].update(a["logiciels"])
+            actifs[ip]["noms_dns"] |= a["noms_dns"]
+
+    resultat = lire_comptes(dossier)
+    for ip, noms in resultat["noms_machines"].items():
+        if ip in connues:
+            actifs[ip]["noms_dns"] |= noms
+    for c in resultat["comptes"].values():
+        for ip in c["machines_sources"] & connues:
+            actifs[ip].setdefault("comptes_utilises", set()).add(c["nom"])
+        for ip in c["serveurs"] & connues:
+            actifs[ip].setdefault("comptes_servis", set()).add(c["nom"])
+    return resultat["comptes"]
+
+
 def depuis_zeek(dossier: Path) -> tuple[dict, pd.DataFrame, dict]:
     """Construit l'inventaire à partir d'un dossier de logs Zeek."""
     dossier = Path(dossier)
@@ -499,6 +608,10 @@ def _vers_json(actifs: dict) -> list[dict]:
             "ports_exposes": sorted(a["ports_exposes"]),
             "indices_role": sorted(a["indices_role"]),
             "balayages_recus": a.get("balayages_recus", []),
+            # comptes qui s'authentifient DEPUIS cette machine (Zeek)
+            "comptes_utilises": sorted(a.get("comptes_utilises", set())),
+            # comptes qui s'authentifient AUPRÈS de cette machine (ex. contrôleur de domaine)
+            "nb_comptes_servis": len(a.get("comptes_servis", set())),
         })
     # Les machines les plus sollicitées en premier
     return sorted(sortie, key=lambda x: x["connexions_recues"], reverse=True)
@@ -514,24 +627,34 @@ def executer(dossier_zeek: Path | None = None, csvs: list[Path] | None = None,
       - dependances.graphml  : le graphe (à ouvrir avec networkx, Gephi, pyvis)
       - dependances.csv      : le même graphe en tableau simple
       - balayages.json       : balayages de ports détectés
+      - comptes.json         : comptes vus dans les authentifications (si journaux Zeek)
       - verite_terrain.json  : machines attaquées (CSV seulement)
     """
     dossier_sortie = Path(dossier_sortie)
     dossier_sortie.mkdir(parents=True, exist_ok=True)
     verite = None
 
-    if dossier_zeek and (Path(dossier_zeek) / "conn.log").exists():
-        actifs, flux, balayages = depuis_zeek(dossier_zeek)
-        source = "Zeek"
-    elif csvs:
+    # Les CSV sont la source principale des flux : toutes les règles de l'agent ont été
+    # validées dessus. Zeek, s'il est présent, sert alors à ENRICHIR l'inventaire.
+    zeek = Path(dossier_zeek) if dossier_zeek else None
+    comptes = {}
+    if csvs:
         actifs, flux, verite, balayages = depuis_csv(csvs)
         source = "CSV CICIDS2017"
+        if zeek and zeek.is_dir() and any(zeek.glob("*.log")):
+            comptes = enrichir_avec_zeek(actifs, zeek)
+            source += " + enrichissement Zeek"
+    elif zeek and (zeek / "conn.log").exists():
+        actifs, flux, balayages = depuis_zeek(zeek)
+        comptes = lire_comptes(zeek)["comptes"]
+        source = "Zeek"
+        for c in comptes.values():
+            for ip in c["machines_sources"] & set(actifs):
+                actifs[ip].setdefault("comptes_utilises", set()).add(c["nom"])
+            for ip in c["serveurs"] & set(actifs):
+                actifs[ip].setdefault("comptes_servis", set()).add(c["nom"])
     else:
         raise FileNotFoundError("Aucune donnée : mettez des logs Zeek ou des CSV dans data/")
-
-    # Si on a Zeek ET les CSV, on lit quand même les CSV pour la vérité terrain
-    if source == "Zeek" and csvs:
-        _, _, verite, _ = depuis_csv(csvs)
 
     _ajouter_balayages(actifs, balayages)
     _retirer_ports_peu_utilises(actifs)
@@ -553,6 +676,14 @@ def executer(dossier_zeek: Path | None = None, csvs: list[Path] | None = None,
     with open(dossier_sortie / "balayages.json", "w", encoding="utf-8") as f:
         json.dump(liste_balayages, f, indent=2, ensure_ascii=False)
 
+    # Comptes et relations compte -> machines (si Zeek a fourni kerberos.log / ntlm.log)
+    liste_comptes = sorted((
+        {**c, "machines_sources": sorted(c["machines_sources"]), "serveurs": sorted(c["serveurs"]),
+         "services": sorted(c["services"])[:20], "protocoles": sorted(c["protocoles"])}
+        for c in comptes.values()), key=lambda c: (c["type"] != "utilisateur", -c["authentifications"]))
+    with open(dossier_sortie / "comptes.json", "w", encoding="utf-8") as f:
+        json.dump(liste_comptes, f, indent=2, ensure_ascii=False)
+
     # La vérité terrain est gardée À PART : les agents ne doivent pas la voir,
     # sinon ce serait de la triche. Elle sert seulement à évaluer le résultat final.
     if verite:
@@ -562,6 +693,10 @@ def executer(dossier_zeek: Path | None = None, csvs: list[Path] | None = None,
     print(f"[Agent 1] Source : {source}")
     print(f"[Agent 1] {len(inventaire)} actifs internes découverts")
     print(f"[Agent 1] Graphe : {graphe.number_of_nodes()} machines, {graphe.number_of_edges()} liens")
+    utilisateurs = [c for c in liste_comptes if c["type"] == "utilisateur"]
+    print(f"[Agent 1] Comptes : {len(utilisateurs)} utilisateurs, "
+          f"{len(liste_comptes) - len(utilisateurs)} comptes machines"
+          + ("" if liste_comptes else " (pas de kerberos.log ni ntlm.log)"))
     print(f"[Agent 1] {len(liste_balayages)} balayages de ports détectés")
     for b in liste_balayages[:5]:
         print(f"           {b['source']} -> {b['destination']} ({b['nb_ports']} ports)")
