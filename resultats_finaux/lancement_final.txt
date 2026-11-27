@@ -1,37 +1,3 @@
-[Agent 1] Source : CSV CICIDS2017 + enrichissement Zeek
-[Agent 1] 14 actifs internes découverts
-[Agent 1] Graphe : 8539 machines, 18585 liens
-[Agent 1] Comptes : 12 utilisateurs, 12 comptes machines
-[Agent 1] Outils d'attaque vus dans le trafic de 192.168.10.8 : Nmap
-[Agent 1] 12 balayages de ports détectés
-           192.168.10.8 -> 192.168.10.50 (934 ports)
-           192.168.10.8 -> 192.168.10.14 (913 ports)
-           192.168.10.8 -> 192.168.10.19 (913 ports)
-           192.168.10.8 -> 192.168.10.15 (912 ports)
-           192.168.10.8 -> 192.168.10.16 (912 ports)
-
-Top 5 des actifs les plus sollicités :
-  192.168.10.3     ports: 53, 88, 135, 389, 445, 3268 logiciels: Microsoft-CryptoAPI 10.0, Windows-Update-Agent 10.0.10011.16384 (Client), Microsoft BITS 7.8
-  192.168.10.1     ports: 53                        logiciels: aucun détecté
-  192.168.10.50    ports: 21, 22, 80, 443           logiciels: OpenSSH 7.2 (p2), Python-urllib 3.5, Apache 2.4.18 (Ubuntu), Debian APT-HTTP 1.3 (1.2.19)
-  192.168.10.5     ports: aucun                     logiciels: Microsoft-CryptoAPI 6.3, Microsoft BITS 7.7, Windows-Update-Agent 7.9.9600.17729 (Client), Microsoft-WNS 6.3, MICROSOFT_DEVICE_METADATA_RETRIEVAL_CLIENT MICROSOFT_DEVICE_METADATA_RETRIEVAL_CLIENT, JSCH 0.1.51, Firefox 54.0, Java 1.8.0.121, Windows Store 1.0, WicaAgent WicaAgent
-  192.168.10.14    ports: aucun                     logiciels: Firefox 54.0, Microsoft-WNS 10.0, JSCH 0.1.51, Windows-Update-Agent 10.0.10011.16485 (Client), Microsoft BITS 7.8, Microsoft-CryptoAPI 10.0, MICROSOFT_DEVICE_METADATA_RETRIEVAL_CLIENT MICROSOFT_DEVICE_METADATA_RETRIEVAL_CLIENT
-
-[Agent 2] 192.168.10.3     Contrôleur de domaine                  criticité 5  (regles + llm)
-[Agent 2] 192.168.10.1     Équipement réseau (pare-feu, routeur)  criticité 3  (regles + llm)
-[Agent 2] 192.168.10.50    Serveur web                            criticité 3  (regles + llm)
-[Agent 2] 192.168.10.5     Poste de travail                       criticité 2  (regles + llm)
-[Agent 2] 192.168.10.14    Poste de travail                       criticité 2  (regles + llm)
-[Agent 2] 192.168.10.15    Poste de travail                       criticité 2  (regles + llm)
-[Agent 2] 192.168.10.25    Poste de travail                       criticité 1  (regles + llm)
-[Agent 2] 192.168.10.9     Poste de travail                       criticité 2  (regles + llm)
-[Agent 2] 192.168.10.51    Poste de travail                       criticité 2  (regles + llm)
-[Agent 2] 192.168.10.19    Poste de travail                       criticité 2  (regles + llm)
-[Agent 2] 192.168.10.17    Poste de travail                       criticité 2  (regles + llm)
-[Agent 2] 192.168.10.16    Poste de travail                       criticité 2  (regles + llm)
-[Agent 2] 192.168.10.12    Poste de travail                       criticité 3  (regles + llm)
-[Agent 2] 192.168.10.8     Poste de travail                       criticité 2  (regles + llm)
-
 [Agent 3] Catalogue KEV chargé : 1805 CVE exploitées connues
 [Agent 3] 192.168.10.3     Windows Server 2016
 [Agent 3] 192.168.10.50    Ubuntu 16.04
@@ -68,9 +34,9 @@ Top 5 des actifs les plus sollicités :
   192.168.10.9       535       131   70        266     10.0
   192.168.10.8       401       146   64        263     10.0
   192.168.10.5       525        57   60        224     10.0
-  192.168.10.14      451        27   41        187      9.8
-  192.168.10.15      451        27   41        187      9.8
-  192.168.10.3       240         2   24        116      9.8
+  192.168.10.14      447        25   37        184      9.8
+  192.168.10.15      447        25   37        184      9.8
+  192.168.10.3       239         2   23        116      9.8
   192.168.10.51      564        63    7        434     10.0
   192.168.10.19      512        64    6        410     10.0
   192.168.10.17      512        64    6        410     10.0
@@ -80,7 +46,7 @@ Top 5 des actifs les plus sollicités :
   192.168.10.16       67         4    1         26      9.8
 [Agent 3] Sans logiciel connu (pas de recherche de CVE possible) : ['192.168.10.1']
 
-[Agent 4] EPSS : 97 CVE sur 97 ont une probabilité
+[Agent 4] EPSS : 96 CVE sur 96 ont une probabilité
 
   Rang IP              Rôle                                  Crit.  Score  Niveau
   1    192.168.10.3    Contrôleur de domaine                     5   68.6  Critique
@@ -94,9 +60,9 @@ Top 5 des actifs les plus sollicités :
   5    192.168.10.5    Poste de travail                          2   27.4  Moyen
        Pire faille : CVE-2014-1776 (Windows 8.1), CVSS 9.8, exploitation prouvée (KEV), exploitable depuis le réseau interne.
   6    192.168.10.14   Poste de travail                          2   27.4  Moyen
-       Pire faille : CVE-2015-0311 (Windows 10), CVSS 9.8, exploitation prouvée (KEV), exploitable depuis le réseau interne.
+       Pire faille : CVE-2017-8543 (Windows 10), CVSS 9.8, exploitation prouvée (KEV), exploitable depuis le réseau interne.
   7    192.168.10.15   Poste de travail                          2   27.4  Moyen
-       Pire faille : CVE-2015-0311 (Windows 10), CVSS 9.8, exploitation prouvée (KEV), exploitable depuis le réseau interne.
+       Pire faille : CVE-2017-8543 (Windows 10), CVSS 9.8, exploitation prouvée (KEV), exploitable depuis le réseau interne.
   8    192.168.10.51   Poste de travail                          2   27.4  Moyen
        Pire faille : CVE-2014-6271 (Ubuntu 12.04), CVSS 9.8, exploitation prouvée (KEV), exploitable depuis le réseau interne.
   9    192.168.10.19   Poste de travail                          2   27.4  Moyen
@@ -115,18 +81,17 @@ Top 5 des actifs les plus sollicités :
 [Agent 5] 192.168.10.3     Critique  5 actions  (règles + LLM)
 [Agent 5] 192.168.10.8     Critique  5 actions  (règles + LLM)
 [Agent 5] 192.168.10.50    Élevé     5 actions  (règles + LLM)
-[Agent 5] 192.168.10.9 : essai 1 raté (RateLimitError)
 [Agent 5] 192.168.10.9     Moyen     5 actions  (règles + LLM)
-[Agent 5] 192.168.10.5     Moyen     5 actions  (règles + LLM)
-[Agent 5] 192.168.10.14    Moyen     6 actions  (règles + LLM)
+[Agent 5] 192.168.10.5     Moyen     6 actions  (règles + LLM)
+[Agent 5] 192.168.10.14    Moyen     4 actions  (règles + LLM)
 [Agent 5] 192.168.10.15    Moyen     5 actions  (règles + LLM)
-[Agent 5] 192.168.10.51    Moyen     5 actions  (règles + LLM)
-[Agent 5] 192.168.10.19    Moyen     4 actions  (règles + LLM)
+[Agent 5] 192.168.10.51    Moyen     4 actions  (règles + LLM)
+[Agent 5] 192.168.10.19    Moyen     5 actions  (règles + LLM)
 [Agent 5] 192.168.10.17    Moyen     5 actions  (règles + LLM)
-[Agent 5] 192.168.10.12    Moyen     6 actions  (règles + LLM)
-[Agent 5] 192.168.10.25    Faible    2 actions  (règles)
+[Agent 5] 192.168.10.12    Moyen     5 actions  (règles + LLM)
+[Agent 5] 192.168.10.25    Faible    3 actions  (règles)
 [Agent 5] 192.168.10.16    Faible    2 actions  (règles)
-[Agent 5] 192.168.10.1     Inconnu   6 actions  (règles + LLM)
+[Agent 5] 192.168.10.1     Inconnu   4 actions  (règles + LLM)
 [Agent 5] Rapport écrit : /workspaces/projet2_secu_inf/output/rapport.md
 14 actifs classés. Machines attaquées selon les étiquettes :
 

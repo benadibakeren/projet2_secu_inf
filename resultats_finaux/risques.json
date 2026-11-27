@@ -24,9 +24,9 @@
     "outils_offensifs": [],
     "comptes_utilises": [],
     "resume_vulnerabilites": {
-      "nb_cve": 240,
+      "nb_cve": 239,
       "nb_critiques": 2,
-      "nb_kev": 24,
+      "nb_kev": 23,
       "nb_exploitables_a_distance": 116,
       "cvss_max": 9.8,
       "logiciels_connus": true
@@ -334,23 +334,6 @@
             "id": "MSRC CVE-2017-0022",
             "editeur": "Microsoft",
             "url": "https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2017-0022"
-          }
-        ]
-      },
-      {
-        "id": "CVE-2013-3900",
-        "score": 5.5,
-        "rancongiciel": false,
-        "bulletins": [
-          {
-            "id": "MS13-098",
-            "editeur": "",
-            "url": "http://blogs.technet.com/b/srd/archive/2013/12/10/ms13-098-update-to-enhance-the-security-of-authenticode.aspx"
-          },
-          {
-            "id": "MSRC CVE-2013-3900",
-            "editeur": "Microsoft",
-            "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2013-3900"
           }
         ]
       },
@@ -1778,6 +1761,11 @@
           ],
           "bulletins": [
             {
+              "id": "Apple HT208221",
+              "editeur": "",
+              "url": "https://support.apple.com/HT208221"
+            },
+            {
               "id": null,
               "editeur": "",
               "url": "https://github.com/apache/httpd/commit/29c63b786ae028d82405421585e91283c8fa0da3"
@@ -1829,6 +1817,11 @@
               "url": "http://www.ubuntu.com/usn/USN-3038-1"
             },
             {
+              "id": "Apple HT208221",
+              "editeur": "",
+              "url": "https://support.apple.com/HT208221"
+            },
+            {
               "id": null,
               "editeur": "",
               "url": "http://www.oracle.com/technetwork/security-advisory/cpujan2018-3236628.html"
@@ -1837,11 +1830,6 @@
               "id": null,
               "editeur": "",
               "url": "http://www.oracle.com/technetwork/security-advisory/cpujul2017-3236622.html"
-            },
-            {
-              "id": null,
-              "editeur": "Apache",
-              "url": "https://www.apache.org/security/asf-httpoxy-response.txt"
             }
           ],
           "description": "The Apache HTTP Server through 2.4.23 follows RFC 3875 section 4.1.18 and therefore does not protect applications from the presence of untrusted client data in the HTTP_PROXY environment variable, which might allow remote attackers to redirect an application's outbound HTTP traffic to an arbitrary p"
@@ -4142,48 +4130,14 @@
       "mitacs-pc5$"
     ],
     "resume_vulnerabilites": {
-      "nb_cve": 451,
-      "nb_critiques": 27,
-      "nb_kev": 41,
-      "nb_exploitables_a_distance": 187,
+      "nb_cve": 447,
+      "nb_critiques": 25,
+      "nb_kev": 37,
+      "nb_exploitables_a_distance": 184,
       "cvss_max": 9.8,
       "logiciels_connus": true
     },
     "cves_kev": [
-      {
-        "id": "CVE-2015-0311",
-        "score": 9.8,
-        "rancongiciel": false,
-        "bulletins": [
-          {
-            "id": null,
-            "editeur": "",
-            "url": "http://helpx.adobe.com/security/products/flash-player/apsa15-01.html"
-          },
-          {
-            "id": null,
-            "editeur": "Microsoft",
-            "url": "https://technet.microsoft.com/library/security/2755801"
-          }
-        ]
-      },
-      {
-        "id": "CVE-2015-0313",
-        "score": 9.8,
-        "rancongiciel": false,
-        "bulletins": [
-          {
-            "id": null,
-            "editeur": "",
-            "url": "https://helpx.adobe.com/security/products/flash-player/apsa15-02.html"
-          },
-          {
-            "id": null,
-            "editeur": "Microsoft",
-            "url": "https://technet.microsoft.com/library/security/2755801"
-          }
-        ]
-      },
       {
         "id": "CVE-2017-8543",
         "score": 9.8,
@@ -4193,18 +4147,6 @@
             "id": "MSRC CVE-2017-8543",
             "editeur": "Microsoft",
             "url": "https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2017-8543"
-          }
-        ]
-      },
-      {
-        "id": "CVE-2015-2426",
-        "score": 8.8,
-        "rancongiciel": false,
-        "bulletins": [
-          {
-            "id": "MS15-078",
-            "editeur": "Microsoft",
-            "url": "https://docs.microsoft.com/en-us/security-updates/securitybulletins/2015/ms15-078"
           }
         ]
       },
@@ -4678,23 +4620,6 @@
         ]
       },
       {
-        "id": "CVE-2013-3900",
-        "score": 5.5,
-        "rancongiciel": false,
-        "bulletins": [
-          {
-            "id": "MS13-098",
-            "editeur": "",
-            "url": "http://blogs.technet.com/b/srd/archive/2013/12/10/ms13-098-update-to-enhance-the-security-of-authenticode.aspx"
-          },
-          {
-            "id": "MSRC CVE-2013-3900",
-            "editeur": "Microsoft",
-            "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2013-3900"
-          }
-        ]
-      },
-      {
         "id": "CVE-2016-0162",
         "score": 4.3,
         "rancongiciel": false,
@@ -4725,65 +4650,9 @@
       "criticite": 2,
       "menace_max": 0.686,
       "raisons": [
-        "Pire faille : CVE-2015-0311 (Windows 10), CVSS 9.8, exploitation prouvée (KEV), exploitable depuis le réseau interne."
+        "Pire faille : CVE-2017-8543 (Windows 10), CVSS 9.8, exploitation prouvée (KEV), exploitable depuis le réseau interne."
       ],
       "cves_a_traiter": [
-        {
-          "id": "CVE-2015-0311",
-          "logiciel": "Windows 10",
-          "cvss": 9.8,
-          "dans_kev": true,
-          "rancongiciel": false,
-          "epss": 0.8532,
-          "acces": "exploitable depuis le réseau interne",
-          "menace": 0.686,
-          "produits": [
-            "adobe flash_player",
-            "microsoft edge",
-            "microsoft internet_explorer"
-          ],
-          "bulletins": [
-            {
-              "id": null,
-              "editeur": "",
-              "url": "http://helpx.adobe.com/security/products/flash-player/apsa15-01.html"
-            },
-            {
-              "id": null,
-              "editeur": "Microsoft",
-              "url": "https://technet.microsoft.com/library/security/2755801"
-            }
-          ],
-          "description": "Unspecified vulnerability in Adobe Flash Player through 13.0.0.262 and 14.x, 15.x, and 16.x through 16.0.0.287 on Windows and OS X and through 11.2.202.438 on Linux allows remote attackers to execute arbitrary code via unknown vectors, as exploited in the wild in January 2015."
-        },
-        {
-          "id": "CVE-2015-0313",
-          "logiciel": "Windows 10",
-          "cvss": 9.8,
-          "dans_kev": true,
-          "rancongiciel": false,
-          "epss": 0.9534,
-          "acces": "exploitable depuis le réseau interne",
-          "menace": 0.686,
-          "produits": [
-            "adobe flash_player",
-            "microsoft edge",
-            "microsoft internet_explorer"
-          ],
-          "bulletins": [
-            {
-              "id": null,
-              "editeur": "",
-              "url": "https://helpx.adobe.com/security/products/flash-player/apsa15-02.html"
-            },
-            {
-              "id": null,
-              "editeur": "Microsoft",
-              "url": "https://technet.microsoft.com/library/security/2755801"
-            }
-          ],
-          "description": "Use-after-free vulnerability in Adobe Flash Player before 13.0.0.269 and 14.x through 16.x before 16.0.0.305 on Windows and OS X and before 11.2.202.442 on Linux allows remote attackers to execute arbitrary code via unspecified vectors, as exploited in the wild in February 2015, a different vulnerab"
-        },
         {
           "id": "CVE-2017-8543",
           "logiciel": "Windows 10",
@@ -4810,31 +4679,6 @@
           "description": "Microsoft Windows XP SP3, Windows XP x64 XP2, Windows Server 2003 SP2, Windows Vista, Windows 7 SP1, Windows Server 2008 SP2 and R2 SP1, Windows 8, Windows 8.1 and Windows RT 8.1, Windows Server 2012 and R2, Windows 10 Gold, 1511, 1607, and 1703, and Windows Server 2016 allow an attacker to take con"
         },
         {
-          "id": "CVE-2015-2426",
-          "logiciel": "Windows 10",
-          "cvss": 8.8,
-          "dans_kev": true,
-          "rancongiciel": false,
-          "epss": 0.8658,
-          "acces": "exploitable depuis le réseau interne",
-          "menace": 0.616,
-          "produits": [
-            "microsoft windows_10",
-            "microsoft windows_7",
-            "microsoft windows_8",
-            "microsoft windows_8.1",
-            "microsoft windows_rt"
-          ],
-          "bulletins": [
-            {
-              "id": "MS15-078",
-              "editeur": "Microsoft",
-              "url": "https://docs.microsoft.com/en-us/security-updates/securitybulletins/2015/ms15-078"
-            }
-          ],
-          "description": "Buffer underflow in atmfd.dll in the Windows Adobe Type Manager Library in Microsoft Windows Vista SP2, Windows Server 2008 SP2 and R2 SP1, Windows 7 SP1, Windows 8, Windows 8.1, Windows Server 2012 Gold and R2, and Windows RT Gold and 8.1 allows remote attackers to execute arbitrary code via a craf"
-        },
-        {
           "id": "CVE-2015-2502",
           "logiciel": "Windows 10",
           "cvss": 8.8,
@@ -4854,6 +4698,73 @@
             }
           ],
           "description": "Microsoft Internet Explorer 7 through 11 allows remote attackers to execute arbitrary code or cause a denial of service (memory corruption) via a crafted web site, aka \"Memory Corruption Vulnerability,\" as exploited in the wild in August 2015."
+        },
+        {
+          "id": "CVE-2016-7200",
+          "logiciel": "Windows 10",
+          "cvss": 8.8,
+          "dans_kev": true,
+          "rancongiciel": false,
+          "epss": 0.8278,
+          "acces": "exploitable depuis le réseau interne",
+          "menace": 0.616,
+          "produits": [
+            "microsoft edge"
+          ],
+          "bulletins": [
+            {
+              "id": "MS16-129",
+              "editeur": "Microsoft",
+              "url": "https://docs.microsoft.com/en-us/security-updates/securitybulletins/2016/ms16-129"
+            }
+          ],
+          "description": "The Chakra JavaScript scripting engine in Microsoft Edge allows remote attackers to execute arbitrary code or cause a denial of service (memory corruption) via a crafted web site, aka \"Scripting Engine Memory Corruption Vulnerability,\" a different vulnerability than CVE-2016-7201, CVE-2016-7202, CVE"
+        },
+        {
+          "id": "CVE-2016-7201",
+          "logiciel": "Windows 10",
+          "cvss": 8.8,
+          "dans_kev": true,
+          "rancongiciel": false,
+          "epss": 0.8,
+          "acces": "exploitable depuis le réseau interne",
+          "menace": 0.616,
+          "produits": [
+            "microsoft edge"
+          ],
+          "bulletins": [
+            {
+              "id": "MS16-129",
+              "editeur": "Microsoft",
+              "url": "https://docs.microsoft.com/en-us/security-updates/securitybulletins/2016/ms16-129"
+            }
+          ],
+          "description": "The Chakra JavaScript scripting engine in Microsoft Edge allows remote attackers to execute arbitrary code or cause a denial of service (memory corruption) via a crafted web site, aka \"Scripting Engine Memory Corruption Vulnerability,\" a different vulnerability than CVE-2016-7200, CVE-2016-7202, CVE"
+        },
+        {
+          "id": "CVE-2016-7256",
+          "logiciel": "Windows 10",
+          "cvss": 8.8,
+          "dans_kev": true,
+          "rancongiciel": false,
+          "epss": 0.6459,
+          "acces": "exploitable depuis le réseau interne",
+          "menace": 0.616,
+          "produits": [
+            "microsoft windows_10_1507",
+            "microsoft windows_10_1511",
+            "microsoft windows_10_1607",
+            "microsoft windows_7",
+            "microsoft windows_8.1"
+          ],
+          "bulletins": [
+            {
+              "id": "MS16-132",
+              "editeur": "Microsoft",
+              "url": "https://docs.microsoft.com/en-us/security-updates/securitybulletins/2016/ms16-132"
+            }
+          ],
+          "description": "atmfd.dll in the Windows font library in Microsoft Windows Vista SP2, Windows Server 2008 SP2 and R2 SP1, Windows 7 SP1, Windows 8.1, Windows Server 2012 Gold and R2, Windows RT 8.1, Windows 10 Gold, 1511, and 1607, and Windows Server 2016 allows remote attackers to execute arbitrary code via a craf"
         }
       ],
       "compromission_probable": false
@@ -4886,48 +4797,14 @@
       "mitacs-pc4$"
     ],
     "resume_vulnerabilites": {
-      "nb_cve": 451,
-      "nb_critiques": 27,
-      "nb_kev": 41,
-      "nb_exploitables_a_distance": 187,
+      "nb_cve": 447,
+      "nb_critiques": 25,
+      "nb_kev": 37,
+      "nb_exploitables_a_distance": 184,
       "cvss_max": 9.8,
       "logiciels_connus": true
     },
     "cves_kev": [
-      {
-        "id": "CVE-2015-0311",
-        "score": 9.8,
-        "rancongiciel": false,
-        "bulletins": [
-          {
-            "id": null,
-            "editeur": "",
-            "url": "http://helpx.adobe.com/security/products/flash-player/apsa15-01.html"
-          },
-          {
-            "id": null,
-            "editeur": "Microsoft",
-            "url": "https://technet.microsoft.com/library/security/2755801"
-          }
-        ]
-      },
-      {
-        "id": "CVE-2015-0313",
-        "score": 9.8,
-        "rancongiciel": false,
-        "bulletins": [
-          {
-            "id": null,
-            "editeur": "",
-            "url": "https://helpx.adobe.com/security/products/flash-player/apsa15-02.html"
-          },
-          {
-            "id": null,
-            "editeur": "Microsoft",
-            "url": "https://technet.microsoft.com/library/security/2755801"
-          }
-        ]
-      },
       {
         "id": "CVE-2017-8543",
         "score": 9.8,
@@ -4937,18 +4814,6 @@
             "id": "MSRC CVE-2017-8543",
             "editeur": "Microsoft",
             "url": "https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2017-8543"
-          }
-        ]
-      },
-      {
-        "id": "CVE-2015-2426",
-        "score": 8.8,
-        "rancongiciel": false,
-        "bulletins": [
-          {
-            "id": "MS15-078",
-            "editeur": "Microsoft",
-            "url": "https://docs.microsoft.com/en-us/security-updates/securitybulletins/2015/ms15-078"
           }
         ]
       },
@@ -5422,23 +5287,6 @@
         ]
       },
       {
-        "id": "CVE-2013-3900",
-        "score": 5.5,
-        "rancongiciel": false,
-        "bulletins": [
-          {
-            "id": "MS13-098",
-            "editeur": "",
-            "url": "http://blogs.technet.com/b/srd/archive/2013/12/10/ms13-098-update-to-enhance-the-security-of-authenticode.aspx"
-          },
-          {
-            "id": "MSRC CVE-2013-3900",
-            "editeur": "Microsoft",
-            "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2013-3900"
-          }
-        ]
-      },
-      {
         "id": "CVE-2016-0162",
         "score": 4.3,
         "rancongiciel": false,
@@ -5469,65 +5317,9 @@
       "criticite": 2,
       "menace_max": 0.686,
       "raisons": [
-        "Pire faille : CVE-2015-0311 (Windows 10), CVSS 9.8, exploitation prouvée (KEV), exploitable depuis le réseau interne."
+        "Pire faille : CVE-2017-8543 (Windows 10), CVSS 9.8, exploitation prouvée (KEV), exploitable depuis le réseau interne."
       ],
       "cves_a_traiter": [
-        {
-          "id": "CVE-2015-0311",
-          "logiciel": "Windows 10",
-          "cvss": 9.8,
-          "dans_kev": true,
-          "rancongiciel": false,
-          "epss": 0.8532,
-          "acces": "exploitable depuis le réseau interne",
-          "menace": 0.686,
-          "produits": [
-            "adobe flash_player",
-            "microsoft edge",
-            "microsoft internet_explorer"
-          ],
-          "bulletins": [
-            {
-              "id": null,
-              "editeur": "",
-              "url": "http://helpx.adobe.com/security/products/flash-player/apsa15-01.html"
-            },
-            {
-              "id": null,
-              "editeur": "Microsoft",
-              "url": "https://technet.microsoft.com/library/security/2755801"
-            }
-          ],
-          "description": "Unspecified vulnerability in Adobe Flash Player through 13.0.0.262 and 14.x, 15.x, and 16.x through 16.0.0.287 on Windows and OS X and through 11.2.202.438 on Linux allows remote attackers to execute arbitrary code via unknown vectors, as exploited in the wild in January 2015."
-        },
-        {
-          "id": "CVE-2015-0313",
-          "logiciel": "Windows 10",
-          "cvss": 9.8,
-          "dans_kev": true,
-          "rancongiciel": false,
-          "epss": 0.9534,
-          "acces": "exploitable depuis le réseau interne",
-          "menace": 0.686,
-          "produits": [
-            "adobe flash_player",
-            "microsoft edge",
-            "microsoft internet_explorer"
-          ],
-          "bulletins": [
-            {
-              "id": null,
-              "editeur": "",
-              "url": "https://helpx.adobe.com/security/products/flash-player/apsa15-02.html"
-            },
-            {
-              "id": null,
-              "editeur": "Microsoft",
-              "url": "https://technet.microsoft.com/library/security/2755801"
-            }
-          ],
-          "description": "Use-after-free vulnerability in Adobe Flash Player before 13.0.0.269 and 14.x through 16.x before 16.0.0.305 on Windows and OS X and before 11.2.202.442 on Linux allows remote attackers to execute arbitrary code via unspecified vectors, as exploited in the wild in February 2015, a different vulnerab"
-        },
         {
           "id": "CVE-2017-8543",
           "logiciel": "Windows 10",
@@ -5554,31 +5346,6 @@
           "description": "Microsoft Windows XP SP3, Windows XP x64 XP2, Windows Server 2003 SP2, Windows Vista, Windows 7 SP1, Windows Server 2008 SP2 and R2 SP1, Windows 8, Windows 8.1 and Windows RT 8.1, Windows Server 2012 and R2, Windows 10 Gold, 1511, 1607, and 1703, and Windows Server 2016 allow an attacker to take con"
         },
         {
-          "id": "CVE-2015-2426",
-          "logiciel": "Windows 10",
-          "cvss": 8.8,
-          "dans_kev": true,
-          "rancongiciel": false,
-          "epss": 0.8658,
-          "acces": "exploitable depuis le réseau interne",
-          "menace": 0.616,
-          "produits": [
-            "microsoft windows_10",
-            "microsoft windows_7",
-            "microsoft windows_8",
-            "microsoft windows_8.1",
-            "microsoft windows_rt"
-          ],
-          "bulletins": [
-            {
-              "id": "MS15-078",
-              "editeur": "Microsoft",
-              "url": "https://docs.microsoft.com/en-us/security-updates/securitybulletins/2015/ms15-078"
-            }
-          ],
-          "description": "Buffer underflow in atmfd.dll in the Windows Adobe Type Manager Library in Microsoft Windows Vista SP2, Windows Server 2008 SP2 and R2 SP1, Windows 7 SP1, Windows 8, Windows 8.1, Windows Server 2012 Gold and R2, and Windows RT Gold and 8.1 allows remote attackers to execute arbitrary code via a craf"
-        },
-        {
           "id": "CVE-2015-2502",
           "logiciel": "Windows 10",
           "cvss": 8.8,
@@ -5598,6 +5365,73 @@
             }
           ],
           "description": "Microsoft Internet Explorer 7 through 11 allows remote attackers to execute arbitrary code or cause a denial of service (memory corruption) via a crafted web site, aka \"Memory Corruption Vulnerability,\" as exploited in the wild in August 2015."
+        },
+        {
+          "id": "CVE-2016-7200",
+          "logiciel": "Windows 10",
+          "cvss": 8.8,
+          "dans_kev": true,
+          "rancongiciel": false,
+          "epss": 0.8278,
+          "acces": "exploitable depuis le réseau interne",
+          "menace": 0.616,
+          "produits": [
+            "microsoft edge"
+          ],
+          "bulletins": [
+            {
+              "id": "MS16-129",
+              "editeur": "Microsoft",
+              "url": "https://docs.microsoft.com/en-us/security-updates/securitybulletins/2016/ms16-129"
+            }
+          ],
+          "description": "The Chakra JavaScript scripting engine in Microsoft Edge allows remote attackers to execute arbitrary code or cause a denial of service (memory corruption) via a crafted web site, aka \"Scripting Engine Memory Corruption Vulnerability,\" a different vulnerability than CVE-2016-7201, CVE-2016-7202, CVE"
+        },
+        {
+          "id": "CVE-2016-7201",
+          "logiciel": "Windows 10",
+          "cvss": 8.8,
+          "dans_kev": true,
+          "rancongiciel": false,
+          "epss": 0.8,
+          "acces": "exploitable depuis le réseau interne",
+          "menace": 0.616,
+          "produits": [
+            "microsoft edge"
+          ],
+          "bulletins": [
+            {
+              "id": "MS16-129",
+              "editeur": "Microsoft",
+              "url": "https://docs.microsoft.com/en-us/security-updates/securitybulletins/2016/ms16-129"
+            }
+          ],
+          "description": "The Chakra JavaScript scripting engine in Microsoft Edge allows remote attackers to execute arbitrary code or cause a denial of service (memory corruption) via a crafted web site, aka \"Scripting Engine Memory Corruption Vulnerability,\" a different vulnerability than CVE-2016-7200, CVE-2016-7202, CVE"
+        },
+        {
+          "id": "CVE-2016-7256",
+          "logiciel": "Windows 10",
+          "cvss": 8.8,
+          "dans_kev": true,
+          "rancongiciel": false,
+          "epss": 0.6459,
+          "acces": "exploitable depuis le réseau interne",
+          "menace": 0.616,
+          "produits": [
+            "microsoft windows_10_1507",
+            "microsoft windows_10_1511",
+            "microsoft windows_10_1607",
+            "microsoft windows_7",
+            "microsoft windows_8.1"
+          ],
+          "bulletins": [
+            {
+              "id": "MS16-132",
+              "editeur": "Microsoft",
+              "url": "https://docs.microsoft.com/en-us/security-updates/securitybulletins/2016/ms16-132"
+            }
+          ],
+          "description": "atmfd.dll in the Windows font library in Microsoft Windows Vista SP2, Windows Server 2008 SP2 and R2 SP1, Windows 7 SP1, Windows 8.1, Windows Server 2012 Gold and R2, Windows RT 8.1, Windows 10 Gold, 1511, and 1607, and Windows Server 2016 allows remote attackers to execute arbitrary code via a craf"
         }
       ],
       "compromission_probable": false
@@ -5643,24 +5477,24 @@
         "rancongiciel": false,
         "bulletins": [
           {
+            "id": "Apple HT6495",
+            "editeur": "",
+            "url": "http://support.apple.com/kb/HT6495"
+          },
+          {
             "id": "USN-2362-1",
             "editeur": "Ubuntu",
             "url": "http://www.ubuntu.com/usn/USN-2362-1"
           },
           {
+            "id": "Apple HT6535",
+            "editeur": "",
+            "url": "https://support.apple.com/kb/HT6535"
+          },
+          {
             "id": null,
             "editeur": "",
             "url": "http://jvn.jp/en/jp/JVN55667175/index.html"
-          },
-          {
-            "id": null,
-            "editeur": "",
-            "url": "http://jvndb.jvn.jp/jvndb/JVNDB-2014-000126"
-          },
-          {
-            "id": null,
-            "editeur": "Red Hat",
-            "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1141597"
           }
         ]
       },
@@ -5669,6 +5503,11 @@
         "score": 9.8,
         "rancongiciel": false,
         "bulletins": [
+          {
+            "id": "Apple HT6495",
+            "editeur": "",
+            "url": "http://support.apple.com/kb/HT6495"
+          },
           {
             "id": "USN-2363-1",
             "editeur": "Ubuntu",
@@ -5680,9 +5519,9 @@
             "url": "http://www.ubuntu.com/usn/USN-2363-2"
           },
           {
-            "id": null,
+            "id": "Apple HT6535",
             "editeur": "",
-            "url": "http://www.oracle.com/technetwork/topics/security/bashcve-2014-7169-2317675.html"
+            "url": "https://support.apple.com/kb/HT6535"
           }
         ]
       },
@@ -5849,24 +5688,24 @@
           ],
           "bulletins": [
             {
+              "id": "Apple HT6495",
+              "editeur": "",
+              "url": "http://support.apple.com/kb/HT6495"
+            },
+            {
               "id": "USN-2362-1",
               "editeur": "Ubuntu",
               "url": "http://www.ubuntu.com/usn/USN-2362-1"
             },
             {
+              "id": "Apple HT6535",
+              "editeur": "",
+              "url": "https://support.apple.com/kb/HT6535"
+            },
+            {
               "id": null,
               "editeur": "",
               "url": "http://jvn.jp/en/jp/JVN55667175/index.html"
-            },
-            {
-              "id": null,
-              "editeur": "",
-              "url": "http://jvndb.jvn.jp/jvndb/JVNDB-2014-000126"
-            },
-            {
-              "id": null,
-              "editeur": "Red Hat",
-              "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1141597"
             }
           ],
           "description": "GNU Bash through 4.3 processes trailing strings after function definitions in the values of environment variables, which allows remote attackers to execute arbitrary code via a crafted environment, as demonstrated by vectors involving the ForceCommand feature in OpenSSH sshd, the mod_cgi and mod_cgi"
@@ -5889,6 +5728,11 @@
           ],
           "bulletins": [
             {
+              "id": "Apple HT6495",
+              "editeur": "",
+              "url": "http://support.apple.com/kb/HT6495"
+            },
+            {
               "id": "USN-2363-1",
               "editeur": "Ubuntu",
               "url": "http://www.ubuntu.com/usn/USN-2363-1"
@@ -5899,9 +5743,9 @@
               "url": "http://www.ubuntu.com/usn/USN-2363-2"
             },
             {
-              "id": null,
+              "id": "Apple HT6535",
               "editeur": "",
-              "url": "http://www.oracle.com/technetwork/topics/security/bashcve-2014-7169-2317675.html"
+              "url": "https://support.apple.com/kb/HT6535"
             }
           ],
           "description": "GNU Bash through 4.3 bash43-025 processes trailing strings after certain malformed function definitions in the values of environment variables, which allows remote attackers to write to files or possibly have unknown other impact via a crafted environment, as demonstrated by vectors involving the Fo"
@@ -6065,24 +5909,24 @@
         "rancongiciel": false,
         "bulletins": [
           {
+            "id": "Apple HT6495",
+            "editeur": "",
+            "url": "http://support.apple.com/kb/HT6495"
+          },
+          {
             "id": "USN-2362-1",
             "editeur": "Ubuntu",
             "url": "http://www.ubuntu.com/usn/USN-2362-1"
           },
           {
+            "id": "Apple HT6535",
+            "editeur": "",
+            "url": "https://support.apple.com/kb/HT6535"
+          },
+          {
             "id": null,
             "editeur": "",
             "url": "http://jvn.jp/en/jp/JVN55667175/index.html"
-          },
-          {
-            "id": null,
-            "editeur": "",
-            "url": "http://jvndb.jvn.jp/jvndb/JVNDB-2014-000126"
-          },
-          {
-            "id": null,
-            "editeur": "Red Hat",
-            "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1141597"
           }
         ]
       },
@@ -6091,6 +5935,11 @@
         "score": 9.8,
         "rancongiciel": false,
         "bulletins": [
+          {
+            "id": "Apple HT6495",
+            "editeur": "",
+            "url": "http://support.apple.com/kb/HT6495"
+          },
           {
             "id": "USN-2363-1",
             "editeur": "Ubuntu",
@@ -6102,9 +5951,9 @@
             "url": "http://www.ubuntu.com/usn/USN-2363-2"
           },
           {
-            "id": null,
+            "id": "Apple HT6535",
             "editeur": "",
-            "url": "http://www.oracle.com/technetwork/topics/security/bashcve-2014-7169-2317675.html"
+            "url": "https://support.apple.com/kb/HT6535"
           }
         ]
       },
@@ -6244,24 +6093,24 @@
           ],
           "bulletins": [
             {
+              "id": "Apple HT6495",
+              "editeur": "",
+              "url": "http://support.apple.com/kb/HT6495"
+            },
+            {
               "id": "USN-2362-1",
               "editeur": "Ubuntu",
               "url": "http://www.ubuntu.com/usn/USN-2362-1"
             },
             {
+              "id": "Apple HT6535",
+              "editeur": "",
+              "url": "https://support.apple.com/kb/HT6535"
+            },
+            {
               "id": null,
               "editeur": "",
               "url": "http://jvn.jp/en/jp/JVN55667175/index.html"
-            },
-            {
-              "id": null,
-              "editeur": "",
-              "url": "http://jvndb.jvn.jp/jvndb/JVNDB-2014-000126"
-            },
-            {
-              "id": null,
-              "editeur": "Red Hat",
-              "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1141597"
             }
           ],
           "description": "GNU Bash through 4.3 processes trailing strings after function definitions in the values of environment variables, which allows remote attackers to execute arbitrary code via a crafted environment, as demonstrated by vectors involving the ForceCommand feature in OpenSSH sshd, the mod_cgi and mod_cgi"
@@ -6284,6 +6133,11 @@
           ],
           "bulletins": [
             {
+              "id": "Apple HT6495",
+              "editeur": "",
+              "url": "http://support.apple.com/kb/HT6495"
+            },
+            {
               "id": "USN-2363-1",
               "editeur": "Ubuntu",
               "url": "http://www.ubuntu.com/usn/USN-2363-1"
@@ -6294,9 +6148,9 @@
               "url": "http://www.ubuntu.com/usn/USN-2363-2"
             },
             {
-              "id": null,
+              "id": "Apple HT6535",
               "editeur": "",
-              "url": "http://www.oracle.com/technetwork/topics/security/bashcve-2014-7169-2317675.html"
+              "url": "https://support.apple.com/kb/HT6535"
             }
           ],
           "description": "GNU Bash through 4.3 bash43-025 processes trailing strings after certain malformed function definitions in the values of environment variables, which allows remote attackers to write to files or possibly have unknown other impact via a crafted environment, as demonstrated by vectors involving the Fo"
@@ -6460,24 +6314,24 @@
         "rancongiciel": false,
         "bulletins": [
           {
+            "id": "Apple HT6495",
+            "editeur": "",
+            "url": "http://support.apple.com/kb/HT6495"
+          },
+          {
             "id": "USN-2362-1",
             "editeur": "Ubuntu",
             "url": "http://www.ubuntu.com/usn/USN-2362-1"
           },
           {
+            "id": "Apple HT6535",
+            "editeur": "",
+            "url": "https://support.apple.com/kb/HT6535"
+          },
+          {
             "id": null,
             "editeur": "",
             "url": "http://jvn.jp/en/jp/JVN55667175/index.html"
-          },
-          {
-            "id": null,
-            "editeur": "",
-            "url": "http://jvndb.jvn.jp/jvndb/JVNDB-2014-000126"
-          },
-          {
-            "id": null,
-            "editeur": "Red Hat",
-            "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1141597"
           }
         ]
       },
@@ -6486,6 +6340,11 @@
         "score": 9.8,
         "rancongiciel": false,
         "bulletins": [
+          {
+            "id": "Apple HT6495",
+            "editeur": "",
+            "url": "http://support.apple.com/kb/HT6495"
+          },
           {
             "id": "USN-2363-1",
             "editeur": "Ubuntu",
@@ -6497,9 +6356,9 @@
             "url": "http://www.ubuntu.com/usn/USN-2363-2"
           },
           {
-            "id": null,
+            "id": "Apple HT6535",
             "editeur": "",
-            "url": "http://www.oracle.com/technetwork/topics/security/bashcve-2014-7169-2317675.html"
+            "url": "https://support.apple.com/kb/HT6535"
           }
         ]
       },
@@ -6639,24 +6498,24 @@
           ],
           "bulletins": [
             {
+              "id": "Apple HT6495",
+              "editeur": "",
+              "url": "http://support.apple.com/kb/HT6495"
+            },
+            {
               "id": "USN-2362-1",
               "editeur": "Ubuntu",
               "url": "http://www.ubuntu.com/usn/USN-2362-1"
             },
             {
+              "id": "Apple HT6535",
+              "editeur": "",
+              "url": "https://support.apple.com/kb/HT6535"
+            },
+            {
               "id": null,
               "editeur": "",
               "url": "http://jvn.jp/en/jp/JVN55667175/index.html"
-            },
-            {
-              "id": null,
-              "editeur": "",
-              "url": "http://jvndb.jvn.jp/jvndb/JVNDB-2014-000126"
-            },
-            {
-              "id": null,
-              "editeur": "Red Hat",
-              "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1141597"
             }
           ],
           "description": "GNU Bash through 4.3 processes trailing strings after function definitions in the values of environment variables, which allows remote attackers to execute arbitrary code via a crafted environment, as demonstrated by vectors involving the ForceCommand feature in OpenSSH sshd, the mod_cgi and mod_cgi"
@@ -6679,6 +6538,11 @@
           ],
           "bulletins": [
             {
+              "id": "Apple HT6495",
+              "editeur": "",
+              "url": "http://support.apple.com/kb/HT6495"
+            },
+            {
               "id": "USN-2363-1",
               "editeur": "Ubuntu",
               "url": "http://www.ubuntu.com/usn/USN-2363-1"
@@ -6689,9 +6553,9 @@
               "url": "http://www.ubuntu.com/usn/USN-2363-2"
             },
             {
-              "id": null,
+              "id": "Apple HT6535",
               "editeur": "",
-              "url": "http://www.oracle.com/technetwork/topics/security/bashcve-2014-7169-2317675.html"
+              "url": "https://support.apple.com/kb/HT6535"
             }
           ],
           "description": "GNU Bash through 4.3 bash43-025 processes trailing strings after certain malformed function definitions in the values of environment variables, which allows remote attackers to write to files or possibly have unknown other impact via a crafted environment, as demonstrated by vectors involving the Fo"
@@ -7019,14 +6883,24 @@
           ],
           "bulletins": [
             {
-              "id": "USN-4246-1",
-              "editeur": "Ubuntu",
-              "url": "https://usn.ubuntu.com/4246-1/"
+              "id": "Apple HT208112",
+              "editeur": "",
+              "url": "https://support.apple.com/HT208112"
             },
             {
-              "id": "USN-4292-1",
-              "editeur": "Ubuntu",
-              "url": "https://usn.ubuntu.com/4292-1/"
+              "id": "Apple HT208113",
+              "editeur": "",
+              "url": "https://support.apple.com/HT208113"
+            },
+            {
+              "id": "Apple HT208115",
+              "editeur": "",
+              "url": "https://support.apple.com/HT208115"
+            },
+            {
+              "id": "Apple HT208144",
+              "editeur": "",
+              "url": "https://support.apple.com/HT208144"
             }
           ],
           "description": "inffast.c in zlib 1.2.8 might allow context-dependent attackers to have unspecified impact by leveraging improper pointer arithmetic."
@@ -7049,14 +6923,24 @@
           ],
           "bulletins": [
             {
-              "id": "USN-4246-1",
-              "editeur": "Ubuntu",
-              "url": "https://usn.ubuntu.com/4246-1/"
+              "id": "Apple HT208112",
+              "editeur": "",
+              "url": "https://support.apple.com/HT208112"
             },
             {
-              "id": "USN-4292-1",
-              "editeur": "Ubuntu",
-              "url": "https://usn.ubuntu.com/4292-1/"
+              "id": "Apple HT208113",
+              "editeur": "",
+              "url": "https://support.apple.com/HT208113"
+            },
+            {
+              "id": "Apple HT208115",
+              "editeur": "",
+              "url": "https://support.apple.com/HT208115"
+            },
+            {
+              "id": "Apple HT208144",
+              "editeur": "",
+              "url": "https://support.apple.com/HT208144"
             }
           ],
           "description": "The crc32_big function in crc32.c in zlib 1.2.8 might allow context-dependent attackers to have unspecified impact via vectors involving big-endian CRC calculation."
@@ -7106,14 +6990,14 @@
         "rancongiciel": false,
         "bulletins": [
           {
-            "id": "DSA-3032",
-            "editeur": "Debian",
-            "url": "http://www.debian.org/security/2014/dsa-3032"
+            "id": "Apple HT6495",
+            "editeur": "",
+            "url": "http://support.apple.com/kb/HT6495"
           },
           {
-            "id": "USN-2362-1",
-            "editeur": "Ubuntu",
-            "url": "http://www.ubuntu.com/usn/USN-2362-1"
+            "id": "Apple HT6535",
+            "editeur": "",
+            "url": "https://support.apple.com/kb/HT6535"
           },
           {
             "id": null,
@@ -7133,19 +7017,14 @@
         "rancongiciel": false,
         "bulletins": [
           {
-            "id": "DSA-3035",
-            "editeur": "Debian",
-            "url": "http://www.debian.org/security/2014/dsa-3035"
+            "id": "Apple HT6495",
+            "editeur": "",
+            "url": "http://support.apple.com/kb/HT6495"
           },
           {
-            "id": "USN-2363-1",
-            "editeur": "Ubuntu",
-            "url": "http://www.ubuntu.com/usn/USN-2363-1"
-          },
-          {
-            "id": "USN-2363-2",
-            "editeur": "Ubuntu",
-            "url": "http://www.ubuntu.com/usn/USN-2363-2"
+            "id": "Apple HT6535",
+            "editeur": "",
+            "url": "https://support.apple.com/kb/HT6535"
           },
           {
             "id": null,
@@ -7160,24 +7039,24 @@
         "rancongiciel": false,
         "bulletins": [
           {
-            "id": null,
-            "editeur": "",
-            "url": "http://lists.apple.com/archives/security-announce/2015/Apr/msg00001.html"
-          },
-          {
-            "id": null,
+            "id": "Apple HT6441",
             "editeur": "",
             "url": "http://support.apple.com/kb/HT6441"
           },
           {
-            "id": null,
+            "id": "Apple HT6442",
             "editeur": "",
             "url": "http://support.apple.com/kb/HT6442"
           },
           {
-            "id": null,
+            "id": "Apple HT204659",
             "editeur": "",
             "url": "https://support.apple.com/HT204659"
+          },
+          {
+            "id": "Apple HT6535",
+            "editeur": "",
+            "url": "https://support.apple.com/kb/HT6535"
           }
         ]
       },
@@ -7187,14 +7066,14 @@
         "rancongiciel": false,
         "bulletins": [
           {
-            "id": null,
+            "id": "Apple HT204659",
             "editeur": "",
-            "url": "http://lists.apple.com/archives/security-announce/2015/Apr/msg00001.html"
+            "url": "https://support.apple.com/HT204659"
           },
           {
             "id": null,
             "editeur": "",
-            "url": "https://support.apple.com/HT204659"
+            "url": "http://lists.apple.com/archives/security-announce/2015/Apr/msg00001.html"
           }
         ]
       }
@@ -7226,14 +7105,14 @@
           ],
           "bulletins": [
             {
-              "id": "DSA-3032",
-              "editeur": "Debian",
-              "url": "http://www.debian.org/security/2014/dsa-3032"
+              "id": "Apple HT6495",
+              "editeur": "",
+              "url": "http://support.apple.com/kb/HT6495"
             },
             {
-              "id": "USN-2362-1",
-              "editeur": "Ubuntu",
-              "url": "http://www.ubuntu.com/usn/USN-2362-1"
+              "id": "Apple HT6535",
+              "editeur": "",
+              "url": "https://support.apple.com/kb/HT6535"
             },
             {
               "id": null,
@@ -7266,19 +7145,14 @@
           ],
           "bulletins": [
             {
-              "id": "DSA-3035",
-              "editeur": "Debian",
-              "url": "http://www.debian.org/security/2014/dsa-3035"
+              "id": "Apple HT6495",
+              "editeur": "",
+              "url": "http://support.apple.com/kb/HT6495"
             },
             {
-              "id": "USN-2363-1",
-              "editeur": "Ubuntu",
-              "url": "http://www.ubuntu.com/usn/USN-2363-1"
-            },
-            {
-              "id": "USN-2363-2",
-              "editeur": "Ubuntu",
-              "url": "http://www.ubuntu.com/usn/USN-2363-2"
+              "id": "Apple HT6535",
+              "editeur": "",
+              "url": "https://support.apple.com/kb/HT6535"
             },
             {
               "id": null,
@@ -7304,24 +7178,24 @@
           ],
           "bulletins": [
             {
-              "id": null,
-              "editeur": "",
-              "url": "http://lists.apple.com/archives/security-announce/2015/Apr/msg00001.html"
-            },
-            {
-              "id": null,
+              "id": "Apple HT6441",
               "editeur": "",
               "url": "http://support.apple.com/kb/HT6441"
             },
             {
-              "id": null,
+              "id": "Apple HT6442",
               "editeur": "",
               "url": "http://support.apple.com/kb/HT6442"
             },
             {
-              "id": null,
+              "id": "Apple HT204659",
               "editeur": "",
               "url": "https://support.apple.com/HT204659"
+            },
+            {
+              "id": "Apple HT6535",
+              "editeur": "",
+              "url": "https://support.apple.com/kb/HT6535"
             }
           ],
           "description": "Heap-based buffer overflow in IOHIDFamily in Apple iOS before 8 and Apple TV before 7 allows attackers to execute arbitrary code in a privileged context via an application that provides crafted key-mapping properties."
@@ -7340,14 +7214,14 @@
           ],
           "bulletins": [
             {
-              "id": null,
+              "id": "Apple HT204659",
               "editeur": "",
-              "url": "http://lists.apple.com/archives/security-announce/2015/Apr/msg00001.html"
+              "url": "https://support.apple.com/HT204659"
             },
             {
               "id": null,
               "editeur": "",
-              "url": "https://support.apple.com/HT204659"
+              "url": "http://lists.apple.com/archives/security-announce/2015/Apr/msg00001.html"
             }
           ],
           "description": "The XPC implementation in Admin Framework in Apple OS X before 10.10.3 allows local users to bypass authentication and obtain admin privileges via unspecified vectors."
@@ -7369,24 +7243,24 @@
           ],
           "bulletins": [
             {
+              "id": "Apple HT4196",
+              "editeur": "",
+              "url": "http://support.apple.com/kb/HT4196"
+            },
+            {
+              "id": "Apple HT4220",
+              "editeur": "",
+              "url": "http://support.apple.com/kb/HT4220"
+            },
+            {
+              "id": "Apple HT4225",
+              "editeur": "",
+              "url": "http://support.apple.com/kb/HT4225"
+            },
+            {
               "id": null,
               "editeur": "",
               "url": "http://lists.apple.com/archives/security-announce/2010//Jun/msg00002.html"
-            },
-            {
-              "id": null,
-              "editeur": "",
-              "url": "http://lists.apple.com/archives/security-announce/2010/Jun/msg00000.html"
-            },
-            {
-              "id": null,
-              "editeur": "",
-              "url": "http://lists.apple.com/archives/security-announce/2010/Jun/msg00003.html"
-            },
-            {
-              "id": null,
-              "editeur": "",
-              "url": "http://secunia.com/advisories/40105"
             }
           ],
           "description": "Use-after-free vulnerability in WebKit in Apple Safari before 5.0 on Mac OS X 10.5 through 10.6 and Windows, Safari before 4.1 on Mac OS X 10.4, and Safari on Apple iPhone OS allows remote attackers to execute arbitrary code or cause a denial of service (application crash), or read the SMS database "
@@ -7600,14 +7474,24 @@
           ],
           "bulletins": [
             {
-              "id": "USN-4246-1",
-              "editeur": "Ubuntu",
-              "url": "https://usn.ubuntu.com/4246-1/"
+              "id": "Apple HT208112",
+              "editeur": "",
+              "url": "https://support.apple.com/HT208112"
             },
             {
-              "id": "USN-4292-1",
-              "editeur": "Ubuntu",
-              "url": "https://usn.ubuntu.com/4292-1/"
+              "id": "Apple HT208113",
+              "editeur": "",
+              "url": "https://support.apple.com/HT208113"
+            },
+            {
+              "id": "Apple HT208115",
+              "editeur": "",
+              "url": "https://support.apple.com/HT208115"
+            },
+            {
+              "id": "Apple HT208144",
+              "editeur": "",
+              "url": "https://support.apple.com/HT208144"
             }
           ],
           "description": "inffast.c in zlib 1.2.8 might allow context-dependent attackers to have unspecified impact by leveraging improper pointer arithmetic."
@@ -7630,14 +7514,24 @@
           ],
           "bulletins": [
             {
-              "id": "USN-4246-1",
-              "editeur": "Ubuntu",
-              "url": "https://usn.ubuntu.com/4246-1/"
+              "id": "Apple HT208112",
+              "editeur": "",
+              "url": "https://support.apple.com/HT208112"
             },
             {
-              "id": "USN-4292-1",
-              "editeur": "Ubuntu",
-              "url": "https://usn.ubuntu.com/4292-1/"
+              "id": "Apple HT208113",
+              "editeur": "",
+              "url": "https://support.apple.com/HT208113"
+            },
+            {
+              "id": "Apple HT208115",
+              "editeur": "",
+              "url": "https://support.apple.com/HT208115"
+            },
+            {
+              "id": "Apple HT208144",
+              "editeur": "",
+              "url": "https://support.apple.com/HT208144"
             }
           ],
           "description": "The crc32_big function in crc32.c in zlib 1.2.8 might allow context-dependent attackers to have unspecified impact via vectors involving big-endian CRC calculation."

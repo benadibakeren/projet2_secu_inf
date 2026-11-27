@@ -214,6 +214,7 @@ _MOTIFS_BULLETINS = [
     (re.compile(r"\busn-(\d{3,5}-\d+)", re.I), lambda m: f"USN-{m.group(1)}"),             # Ubuntu
     (re.compile(r"\b(RHSA-\d{4}:\d{4,5})\b", re.I), lambda m: m.group(1).upper()),        # Red Hat
     (re.compile(r"\b(DSA-\d{3,5}(?:-\d+)?)\b", re.I), lambda m: m.group(1).upper()),      # Debian
+    (re.compile(r"support\.apple\.com/(?:[a-z-]+/)?(?:kb/)?(HT\d+)", re.I), lambda m: f"Apple {m.group(1).upper()}"),
     # Guide des mises à jour de Microsoft (remplace les bulletins MSxx-xxx depuis 2017)
     (re.compile(r"msrc\.microsoft\.com/.*?(CVE-\d{4}-\d{4,7})", re.I), lambda m: f"MSRC {m.group(1).upper()}"),
 ]
@@ -222,7 +223,8 @@ _EDITEURS = {"microsoft": "Microsoft", "ubuntu": "Ubuntu", "apache.org": "Apache
 
 
 # Préfixe des bulletins publiés par l'éditeur de chaque système
-PREFIXE_BULLETINS = {"microsoft": "MS", "canonical": "USN", "debian": "DSA", "redhat": "RHSA"}
+PREFIXE_BULLETINS = {"microsoft": "MS", "canonical": "USN", "debian": "DSA", "redhat": "RHSA",
+                     "apple": "Apple"}
 
 
 def editeur_systeme(logiciels: list[dict]) -> str:
@@ -405,6 +407,10 @@ def analyser_logiciel(logiciel: dict, actif: dict, client: ClientNVD, kev: dict,
     cves = [resumer_cve(b, kev, logiciel["cpe"], editeur_os) for b in brutes]
     if config.SEULEMENT_CVE_CONNUES_A_LA_CAPTURE:
         cves = [c for c in cves if c["publiee_le"] and c["publiee_le"] <= config.DATE_CAPTURE]
+    # Failles publiées avant la sortie du système : déjà corrigées dans la version livrée
+    sortie = next((d for p, d in config.SORTIE_SYSTEME.items() if logiciel["cpe"].startswith(p)), None)
+    anterieures = [c for c in cves if sortie and c["publiee_le"] < sortie]
+    cves = [c for c in cves if c not in anterieures]
     # Failles de logiciels optionnels (Java, Firefox...) : comptées à part, puis écartées
     optionnelles = [c for c in cves if not c["concerne_le_systeme"]]
     if config.GARDER_SEULEMENT_PAQUETS_DE_BASE:
@@ -432,6 +438,7 @@ def analyser_logiciel(logiciel: dict, actif: dict, client: ClientNVD, kev: dict,
         # choisir les correctifs à déployer, pas seulement les 10 plus graves.
         "cves_kev": [{"id": c["id"], "score": c["score"], "rancongiciel": c["rancongiciel"],
                       "bulletins": c["bulletins"]} for c in cves if c["dans_kev"]],
+        "nb_cve_anterieures_a_la_sortie": len(anterieures),
         "nb_cve_logiciels_optionnels_ecartees":
             len(optionnelles) if config.GARDER_SEULEMENT_PAQUETS_DE_BASE else 0,
         "logiciels_optionnels_les_plus_cites": _plus_cites(optionnelles),

@@ -1359,6 +1359,7 @@
             ]
           }
         ],
+        "nb_cve_anterieures_a_la_sortie": 0,
         "nb_cve_logiciels_optionnels_ecartees": 1,
         "logiciels_optionnels_les_plus_cites": [
           "google chrome (1)"
@@ -1378,6 +1379,7 @@
         "cvss_max": 0,
         "cves_prioritaires": [],
         "cves_kev": [],
+        "nb_cve_anterieures_a_la_sortie": 0,
         "nb_cve_logiciels_optionnels_ecartees": 0,
         "logiciels_optionnels_les_plus_cites": [],
         "erreur": null
@@ -1496,6 +1498,7 @@
           }
         ],
         "cves_kev": [],
+        "nb_cve_anterieures_a_la_sortie": 0,
         "nb_cve_logiciels_optionnels_ecartees": 0,
         "logiciels_optionnels_les_plus_cites": [],
         "erreur": null
@@ -2864,6 +2867,7 @@
             ]
           }
         ],
+        "nb_cve_anterieures_a_la_sortie": 0,
         "nb_cve_logiciels_optionnels_ecartees": 0,
         "logiciels_optionnels_les_plus_cites": [],
         "erreur": null
@@ -2906,6 +2910,7 @@
           }
         ],
         "cves_kev": [],
+        "nb_cve_anterieures_a_la_sortie": 0,
         "nb_cve_logiciels_optionnels_ecartees": 0,
         "logiciels_optionnels_les_plus_cites": [],
         "erreur": null
@@ -2923,6 +2928,7 @@
         "cvss_max": 0,
         "cves_prioritaires": [],
         "cves_kev": [],
+        "nb_cve_anterieures_a_la_sortie": 0,
         "nb_cve_logiciels_optionnels_ecartees": 0,
         "logiciels_optionnels_les_plus_cites": [],
         "erreur": null
@@ -4171,6 +4177,7 @@
             ]
           }
         ],
+        "nb_cve_anterieures_a_la_sortie": 0,
         "nb_cve_logiciels_optionnels_ecartees": 298,
         "logiciels_optionnels_les_plus_cites": [
           "adobe flash_player (298)",
@@ -4194,6 +4201,7 @@
         "cvss_max": 0,
         "cves_prioritaires": [],
         "cves_kev": [],
+        "nb_cve_anterieures_a_la_sortie": 0,
         "nb_cve_logiciels_optionnels_ecartees": 0,
         "logiciels_optionnels_les_plus_cites": [],
         "erreur": null
@@ -4312,6 +4320,7 @@
           }
         ],
         "cves_kev": [],
+        "nb_cve_anterieures_a_la_sortie": 0,
         "nb_cve_logiciels_optionnels_ecartees": 0,
         "logiciels_optionnels_les_plus_cites": [],
         "erreur": null
@@ -4429,70 +4438,12 @@
         "source": "topologie publiée (version exacte inconnue : toutes les versions de Windows 10 sorties avant la capture)",
         "ports": [],
         "expose_internet": false,
-        "nb_cve": 451,
-        "nb_critiques": 27,
-        "nb_kev": 41,
-        "nb_exploitables_a_distance": 187,
+        "nb_cve": 447,
+        "nb_critiques": 25,
+        "nb_kev": 37,
+        "nb_exploitables_a_distance": 184,
         "cvss_max": 9.8,
         "cves_prioritaires": [
-          {
-            "id": "CVE-2015-0311",
-            "publiee_le": "2015-01-23",
-            "score": 9.8,
-            "gravite": "CRITICAL",
-            "vecteur": "NETWORK",
-            "version_cvss": "3.1",
-            "dans_kev": true,
-            "rancongiciel": false,
-            "produits": [
-              "adobe flash_player",
-              "microsoft edge",
-              "microsoft internet_explorer"
-            ],
-            "concerne_le_systeme": true,
-            "bulletins": [
-              {
-                "id": null,
-                "editeur": "",
-                "url": "http://helpx.adobe.com/security/products/flash-player/apsa15-01.html"
-              },
-              {
-                "id": null,
-                "editeur": "Microsoft",
-                "url": "https://technet.microsoft.com/library/security/2755801"
-              }
-            ],
-            "description": "Unspecified vulnerability in Adobe Flash Player through 13.0.0.262 and 14.x, 15.x, and 16.x through 16.0.0.287 on Windows and OS X and through 11.2.202.438 on Linux allows remote attackers to execute arbitrary code via unknown vectors, as exploited in the wild in January 2015."
-          },
-          {
-            "id": "CVE-2015-0313",
-            "publiee_le": "2015-02-02",
-            "score": 9.8,
-            "gravite": "CRITICAL",
-            "vecteur": "NETWORK",
-            "version_cvss": "3.1",
-            "dans_kev": true,
-            "rancongiciel": false,
-            "produits": [
-              "adobe flash_player",
-              "microsoft edge",
-              "microsoft internet_explorer"
-            ],
-            "concerne_le_systeme": true,
-            "bulletins": [
-              {
-                "id": null,
-                "editeur": "",
-                "url": "https://helpx.adobe.com/security/products/flash-player/apsa15-02.html"
-              },
-              {
-                "id": null,
-                "editeur": "Microsoft",
-                "url": "https://technet.microsoft.com/library/security/2755801"
-              }
-            ],
-            "description": "Use-after-free vulnerability in Adobe Flash Player before 13.0.0.269 and 14.x through 16.x before 16.0.0.305 on Windows and OS X and before 11.2.202.442 on Linux allows remote attackers to execute arbitrary code via unspecified vectors, as exploited in the wild in February 2015, a different vulnerab"
-          },
           {
             "id": "CVE-2017-8543",
             "publiee_le": "2017-06-15",
@@ -4518,32 +4469,6 @@
               }
             ],
             "description": "Microsoft Windows XP SP3, Windows XP x64 XP2, Windows Server 2003 SP2, Windows Vista, Windows 7 SP1, Windows Server 2008 SP2 and R2 SP1, Windows 8, Windows 8.1 and Windows RT 8.1, Windows Server 2012 and R2, Windows 10 Gold, 1511, 1607, and 1703, and Windows Server 2016 allow an attacker to take con"
-          },
-          {
-            "id": "CVE-2015-2426",
-            "publiee_le": "2015-07-20",
-            "score": 8.8,
-            "gravite": "HIGH",
-            "vecteur": "NETWORK",
-            "version_cvss": "3.1",
-            "dans_kev": true,
-            "rancongiciel": false,
-            "produits": [
-              "microsoft windows_10",
-              "microsoft windows_7",
-              "microsoft windows_8",
-              "microsoft windows_8.1",
-              "microsoft windows_rt"
-            ],
-            "concerne_le_systeme": true,
-            "bulletins": [
-              {
-                "id": "MS15-078",
-                "editeur": "Microsoft",
-                "url": "https://docs.microsoft.com/en-us/security-updates/securitybulletins/2015/ms15-078"
-              }
-            ],
-            "description": "Buffer underflow in atmfd.dll in the Windows Adobe Type Manager Library in Microsoft Windows Vista SP2, Windows Server 2008 SP2 and R2 SP1, Windows 7 SP1, Windows 8, Windows 8.1, Windows Server 2012 Gold and R2, and Windows RT Gold and 8.1 allows remote attackers to execute arbitrary code via a craf"
           },
           {
             "id": "CVE-2015-2502",
@@ -4700,43 +4625,95 @@
               }
             ],
             "description": "The SMBv1 server in Microsoft Windows Vista SP2; Windows Server 2008 SP2 and R2 SP1; Windows 7 SP1; Windows 8.1; Windows Server 2012 Gold and R2; Windows RT 8.1; and Windows 10 Gold, 1511, and 1607; and Windows Server 2016 allows remote attackers to execute arbitrary code via crafted packets, aka \"W"
+          },
+          {
+            "id": "CVE-2017-0145",
+            "publiee_le": "2017-03-17",
+            "score": 8.8,
+            "gravite": "HIGH",
+            "vecteur": "NETWORK",
+            "version_cvss": "3.1",
+            "dans_kev": true,
+            "rancongiciel": true,
+            "produits": [
+              "microsoft server_message_block",
+              "siemens acuson_p300_firmware",
+              "siemens acuson_p500_firmware",
+              "siemens acuson_sc2000_firmware",
+              "siemens acuson_x700_firmware"
+            ],
+            "concerne_le_systeme": true,
+            "bulletins": [
+              {
+                "id": "MS17-010",
+                "editeur": "Microsoft",
+                "url": "https://learn.microsoft.com/en-us/security-updates/securitybulletins/2017/ms17-010",
+                "source": "table locale"
+              },
+              {
+                "id": "MSRC CVE-2017-0145",
+                "editeur": "Microsoft",
+                "url": "https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2017-0145"
+              }
+            ],
+            "description": "The SMBv1 server in Microsoft Windows Vista SP2; Windows Server 2008 SP2 and R2 SP1; Windows 7 SP1; Windows 8.1; Windows Server 2012 Gold and R2; Windows RT 8.1; and Windows 10 Gold, 1511, and 1607; and Windows Server 2016 allows remote attackers to execute arbitrary code via crafted packets, aka \"W"
+          },
+          {
+            "id": "CVE-2017-0146",
+            "publiee_le": "2017-03-17",
+            "score": 8.8,
+            "gravite": "HIGH",
+            "vecteur": "NETWORK",
+            "version_cvss": "3.1",
+            "dans_kev": true,
+            "rancongiciel": true,
+            "produits": [
+              "microsoft server_message_block",
+              "siemens acuson_p300_firmware",
+              "siemens acuson_p500_firmware",
+              "siemens acuson_sc2000_firmware",
+              "siemens acuson_x700_firmware"
+            ],
+            "concerne_le_systeme": true,
+            "bulletins": [
+              {
+                "id": "MS17-010",
+                "editeur": "Microsoft",
+                "url": "https://learn.microsoft.com/en-us/security-updates/securitybulletins/2017/ms17-010",
+                "source": "table locale"
+              },
+              {
+                "id": "MSRC CVE-2017-0146",
+                "editeur": "Microsoft",
+                "url": "https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2017-0146"
+              }
+            ],
+            "description": "The SMBv1 server in Microsoft Windows Vista SP2; Windows Server 2008 SP2 and R2 SP1; Windows 7 SP1; Windows 8.1; Windows Server 2012 Gold and R2; Windows RT 8.1; and Windows 10 Gold, 1511, and 1607; and Windows Server 2016 allows remote attackers to execute arbitrary code via crafted packets, aka \"W"
+          },
+          {
+            "id": "CVE-2017-0149",
+            "publiee_le": "2017-03-17",
+            "score": 8.8,
+            "gravite": "HIGH",
+            "vecteur": "NETWORK",
+            "version_cvss": "3.1",
+            "dans_kev": true,
+            "rancongiciel": false,
+            "produits": [
+              "microsoft internet_explorer"
+            ],
+            "concerne_le_systeme": true,
+            "bulletins": [
+              {
+                "id": "MSRC CVE-2017-0149",
+                "editeur": "Microsoft",
+                "url": "https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2017-0149"
+              }
+            ],
+            "description": "Microsoft Internet Explorer 9 through 11 allow remote attackers to execute arbitrary code or cause a denial of service (memory corruption) via a crafted web site, aka \"Internet Explorer Memory Corruption Vulnerability.\" This vulnerability is different from those described in CVE-2017-0018 and CVE-20"
           }
         ],
         "cves_kev": [
-          {
-            "id": "CVE-2015-0311",
-            "score": 9.8,
-            "rancongiciel": false,
-            "bulletins": [
-              {
-                "id": null,
-                "editeur": "",
-                "url": "http://helpx.adobe.com/security/products/flash-player/apsa15-01.html"
-              },
-              {
-                "id": null,
-                "editeur": "Microsoft",
-                "url": "https://technet.microsoft.com/library/security/2755801"
-              }
-            ]
-          },
-          {
-            "id": "CVE-2015-0313",
-            "score": 9.8,
-            "rancongiciel": false,
-            "bulletins": [
-              {
-                "id": null,
-                "editeur": "",
-                "url": "https://helpx.adobe.com/security/products/flash-player/apsa15-02.html"
-              },
-              {
-                "id": null,
-                "editeur": "Microsoft",
-                "url": "https://technet.microsoft.com/library/security/2755801"
-              }
-            ]
-          },
           {
             "id": "CVE-2017-8543",
             "score": 9.8,
@@ -4746,18 +4723,6 @@
                 "id": "MSRC CVE-2017-8543",
                 "editeur": "Microsoft",
                 "url": "https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2017-8543"
-              }
-            ]
-          },
-          {
-            "id": "CVE-2015-2426",
-            "score": 8.8,
-            "rancongiciel": false,
-            "bulletins": [
-              {
-                "id": "MS15-078",
-                "editeur": "Microsoft",
-                "url": "https://docs.microsoft.com/en-us/security-updates/securitybulletins/2015/ms15-078"
               }
             ]
           },
@@ -5231,23 +5196,6 @@
             ]
           },
           {
-            "id": "CVE-2013-3900",
-            "score": 5.5,
-            "rancongiciel": false,
-            "bulletins": [
-              {
-                "id": "MS13-098",
-                "editeur": "",
-                "url": "http://blogs.technet.com/b/srd/archive/2013/12/10/ms13-098-update-to-enhance-the-security-of-authenticode.aspx"
-              },
-              {
-                "id": "MSRC CVE-2013-3900",
-                "editeur": "Microsoft",
-                "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2013-3900"
-              }
-            ]
-          },
-          {
             "id": "CVE-2016-0162",
             "score": 4.3,
             "rancongiciel": false,
@@ -5272,6 +5220,7 @@
             ]
           }
         ],
+        "nb_cve_anterieures_a_la_sortie": 4,
         "nb_cve_logiciels_optionnels_ecartees": 298,
         "logiciels_optionnels_les_plus_cites": [
           "adobe flash_player (294)",
@@ -5295,16 +5244,17 @@
         "cvss_max": 0,
         "cves_prioritaires": [],
         "cves_kev": [],
+        "nb_cve_anterieures_a_la_sortie": 0,
         "nb_cve_logiciels_optionnels_ecartees": 0,
         "logiciels_optionnels_les_plus_cites": [],
         "erreur": null
       }
     ],
     "resume_vulnerabilites": {
-      "nb_cve": 451,
-      "nb_critiques": 27,
-      "nb_kev": 41,
-      "nb_exploitables_a_distance": 187,
+      "nb_cve": 447,
+      "nb_critiques": 25,
+      "nb_kev": 37,
+      "nb_exploitables_a_distance": 184,
       "cvss_max": 9.8,
       "logiciels_connus": true
     }
@@ -5426,70 +5376,12 @@
         "source": "topologie publiée (version exacte inconnue : toutes les versions de Windows 10 sorties avant la capture)",
         "ports": [],
         "expose_internet": false,
-        "nb_cve": 451,
-        "nb_critiques": 27,
-        "nb_kev": 41,
-        "nb_exploitables_a_distance": 187,
+        "nb_cve": 447,
+        "nb_critiques": 25,
+        "nb_kev": 37,
+        "nb_exploitables_a_distance": 184,
         "cvss_max": 9.8,
         "cves_prioritaires": [
-          {
-            "id": "CVE-2015-0311",
-            "publiee_le": "2015-01-23",
-            "score": 9.8,
-            "gravite": "CRITICAL",
-            "vecteur": "NETWORK",
-            "version_cvss": "3.1",
-            "dans_kev": true,
-            "rancongiciel": false,
-            "produits": [
-              "adobe flash_player",
-              "microsoft edge",
-              "microsoft internet_explorer"
-            ],
-            "concerne_le_systeme": true,
-            "bulletins": [
-              {
-                "id": null,
-                "editeur": "",
-                "url": "http://helpx.adobe.com/security/products/flash-player/apsa15-01.html"
-              },
-              {
-                "id": null,
-                "editeur": "Microsoft",
-                "url": "https://technet.microsoft.com/library/security/2755801"
-              }
-            ],
-            "description": "Unspecified vulnerability in Adobe Flash Player through 13.0.0.262 and 14.x, 15.x, and 16.x through 16.0.0.287 on Windows and OS X and through 11.2.202.438 on Linux allows remote attackers to execute arbitrary code via unknown vectors, as exploited in the wild in January 2015."
-          },
-          {
-            "id": "CVE-2015-0313",
-            "publiee_le": "2015-02-02",
-            "score": 9.8,
-            "gravite": "CRITICAL",
-            "vecteur": "NETWORK",
-            "version_cvss": "3.1",
-            "dans_kev": true,
-            "rancongiciel": false,
-            "produits": [
-              "adobe flash_player",
-              "microsoft edge",
-              "microsoft internet_explorer"
-            ],
-            "concerne_le_systeme": true,
-            "bulletins": [
-              {
-                "id": null,
-                "editeur": "",
-                "url": "https://helpx.adobe.com/security/products/flash-player/apsa15-02.html"
-              },
-              {
-                "id": null,
-                "editeur": "Microsoft",
-                "url": "https://technet.microsoft.com/library/security/2755801"
-              }
-            ],
-            "description": "Use-after-free vulnerability in Adobe Flash Player before 13.0.0.269 and 14.x through 16.x before 16.0.0.305 on Windows and OS X and before 11.2.202.442 on Linux allows remote attackers to execute arbitrary code via unspecified vectors, as exploited in the wild in February 2015, a different vulnerab"
-          },
           {
             "id": "CVE-2017-8543",
             "publiee_le": "2017-06-15",
@@ -5515,32 +5407,6 @@
               }
             ],
             "description": "Microsoft Windows XP SP3, Windows XP x64 XP2, Windows Server 2003 SP2, Windows Vista, Windows 7 SP1, Windows Server 2008 SP2 and R2 SP1, Windows 8, Windows 8.1 and Windows RT 8.1, Windows Server 2012 and R2, Windows 10 Gold, 1511, 1607, and 1703, and Windows Server 2016 allow an attacker to take con"
-          },
-          {
-            "id": "CVE-2015-2426",
-            "publiee_le": "2015-07-20",
-            "score": 8.8,
-            "gravite": "HIGH",
-            "vecteur": "NETWORK",
-            "version_cvss": "3.1",
-            "dans_kev": true,
-            "rancongiciel": false,
-            "produits": [
-              "microsoft windows_10",
-              "microsoft windows_7",
-              "microsoft windows_8",
-              "microsoft windows_8.1",
-              "microsoft windows_rt"
-            ],
-            "concerne_le_systeme": true,
-            "bulletins": [
-              {
-                "id": "MS15-078",
-                "editeur": "Microsoft",
-                "url": "https://docs.microsoft.com/en-us/security-updates/securitybulletins/2015/ms15-078"
-              }
-            ],
-            "description": "Buffer underflow in atmfd.dll in the Windows Adobe Type Manager Library in Microsoft Windows Vista SP2, Windows Server 2008 SP2 and R2 SP1, Windows 7 SP1, Windows 8, Windows 8.1, Windows Server 2012 Gold and R2, and Windows RT Gold and 8.1 allows remote attackers to execute arbitrary code via a craf"
           },
           {
             "id": "CVE-2015-2502",
@@ -5697,43 +5563,95 @@
               }
             ],
             "description": "The SMBv1 server in Microsoft Windows Vista SP2; Windows Server 2008 SP2 and R2 SP1; Windows 7 SP1; Windows 8.1; Windows Server 2012 Gold and R2; Windows RT 8.1; and Windows 10 Gold, 1511, and 1607; and Windows Server 2016 allows remote attackers to execute arbitrary code via crafted packets, aka \"W"
+          },
+          {
+            "id": "CVE-2017-0145",
+            "publiee_le": "2017-03-17",
+            "score": 8.8,
+            "gravite": "HIGH",
+            "vecteur": "NETWORK",
+            "version_cvss": "3.1",
+            "dans_kev": true,
+            "rancongiciel": true,
+            "produits": [
+              "microsoft server_message_block",
+              "siemens acuson_p300_firmware",
+              "siemens acuson_p500_firmware",
+              "siemens acuson_sc2000_firmware",
+              "siemens acuson_x700_firmware"
+            ],
+            "concerne_le_systeme": true,
+            "bulletins": [
+              {
+                "id": "MS17-010",
+                "editeur": "Microsoft",
+                "url": "https://learn.microsoft.com/en-us/security-updates/securitybulletins/2017/ms17-010",
+                "source": "table locale"
+              },
+              {
+                "id": "MSRC CVE-2017-0145",
+                "editeur": "Microsoft",
+                "url": "https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2017-0145"
+              }
+            ],
+            "description": "The SMBv1 server in Microsoft Windows Vista SP2; Windows Server 2008 SP2 and R2 SP1; Windows 7 SP1; Windows 8.1; Windows Server 2012 Gold and R2; Windows RT 8.1; and Windows 10 Gold, 1511, and 1607; and Windows Server 2016 allows remote attackers to execute arbitrary code via crafted packets, aka \"W"
+          },
+          {
+            "id": "CVE-2017-0146",
+            "publiee_le": "2017-03-17",
+            "score": 8.8,
+            "gravite": "HIGH",
+            "vecteur": "NETWORK",
+            "version_cvss": "3.1",
+            "dans_kev": true,
+            "rancongiciel": true,
+            "produits": [
+              "microsoft server_message_block",
+              "siemens acuson_p300_firmware",
+              "siemens acuson_p500_firmware",
+              "siemens acuson_sc2000_firmware",
+              "siemens acuson_x700_firmware"
+            ],
+            "concerne_le_systeme": true,
+            "bulletins": [
+              {
+                "id": "MS17-010",
+                "editeur": "Microsoft",
+                "url": "https://learn.microsoft.com/en-us/security-updates/securitybulletins/2017/ms17-010",
+                "source": "table locale"
+              },
+              {
+                "id": "MSRC CVE-2017-0146",
+                "editeur": "Microsoft",
+                "url": "https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2017-0146"
+              }
+            ],
+            "description": "The SMBv1 server in Microsoft Windows Vista SP2; Windows Server 2008 SP2 and R2 SP1; Windows 7 SP1; Windows 8.1; Windows Server 2012 Gold and R2; Windows RT 8.1; and Windows 10 Gold, 1511, and 1607; and Windows Server 2016 allows remote attackers to execute arbitrary code via crafted packets, aka \"W"
+          },
+          {
+            "id": "CVE-2017-0149",
+            "publiee_le": "2017-03-17",
+            "score": 8.8,
+            "gravite": "HIGH",
+            "vecteur": "NETWORK",
+            "version_cvss": "3.1",
+            "dans_kev": true,
+            "rancongiciel": false,
+            "produits": [
+              "microsoft internet_explorer"
+            ],
+            "concerne_le_systeme": true,
+            "bulletins": [
+              {
+                "id": "MSRC CVE-2017-0149",
+                "editeur": "Microsoft",
+                "url": "https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2017-0149"
+              }
+            ],
+            "description": "Microsoft Internet Explorer 9 through 11 allow remote attackers to execute arbitrary code or cause a denial of service (memory corruption) via a crafted web site, aka \"Internet Explorer Memory Corruption Vulnerability.\" This vulnerability is different from those described in CVE-2017-0018 and CVE-20"
           }
         ],
         "cves_kev": [
-          {
-            "id": "CVE-2015-0311",
-            "score": 9.8,
-            "rancongiciel": false,
-            "bulletins": [
-              {
-                "id": null,
-                "editeur": "",
-                "url": "http://helpx.adobe.com/security/products/flash-player/apsa15-01.html"
-              },
-              {
-                "id": null,
-                "editeur": "Microsoft",
-                "url": "https://technet.microsoft.com/library/security/2755801"
-              }
-            ]
-          },
-          {
-            "id": "CVE-2015-0313",
-            "score": 9.8,
-            "rancongiciel": false,
-            "bulletins": [
-              {
-                "id": null,
-                "editeur": "",
-                "url": "https://helpx.adobe.com/security/products/flash-player/apsa15-02.html"
-              },
-              {
-                "id": null,
-                "editeur": "Microsoft",
-                "url": "https://technet.microsoft.com/library/security/2755801"
-              }
-            ]
-          },
           {
             "id": "CVE-2017-8543",
             "score": 9.8,
@@ -5743,18 +5661,6 @@
                 "id": "MSRC CVE-2017-8543",
                 "editeur": "Microsoft",
                 "url": "https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2017-8543"
-              }
-            ]
-          },
-          {
-            "id": "CVE-2015-2426",
-            "score": 8.8,
-            "rancongiciel": false,
-            "bulletins": [
-              {
-                "id": "MS15-078",
-                "editeur": "Microsoft",
-                "url": "https://docs.microsoft.com/en-us/security-updates/securitybulletins/2015/ms15-078"
               }
             ]
           },
@@ -6228,23 +6134,6 @@
             ]
           },
           {
-            "id": "CVE-2013-3900",
-            "score": 5.5,
-            "rancongiciel": false,
-            "bulletins": [
-              {
-                "id": "MS13-098",
-                "editeur": "",
-                "url": "http://blogs.technet.com/b/srd/archive/2013/12/10/ms13-098-update-to-enhance-the-security-of-authenticode.aspx"
-              },
-              {
-                "id": "MSRC CVE-2013-3900",
-                "editeur": "Microsoft",
-                "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2013-3900"
-              }
-            ]
-          },
-          {
             "id": "CVE-2016-0162",
             "score": 4.3,
             "rancongiciel": false,
@@ -6269,6 +6158,7 @@
             ]
           }
         ],
+        "nb_cve_anterieures_a_la_sortie": 4,
         "nb_cve_logiciels_optionnels_ecartees": 298,
         "logiciels_optionnels_les_plus_cites": [
           "adobe flash_player (294)",
@@ -6292,16 +6182,17 @@
         "cvss_max": 0,
         "cves_prioritaires": [],
         "cves_kev": [],
+        "nb_cve_anterieures_a_la_sortie": 0,
         "nb_cve_logiciels_optionnels_ecartees": 0,
         "logiciels_optionnels_les_plus_cites": [],
         "erreur": null
       }
     ],
     "resume_vulnerabilites": {
-      "nb_cve": 451,
-      "nb_critiques": 27,
-      "nb_kev": 41,
-      "nb_exploitables_a_distance": 187,
+      "nb_cve": 447,
+      "nb_critiques": 25,
+      "nb_kev": 37,
+      "nb_exploitables_a_distance": 184,
       "cvss_max": 9.8,
       "logiciels_connus": true
     }
@@ -6422,9 +6313,9 @@
         "source": "topologie publiée",
         "ports": [],
         "expose_internet": false,
-        "nb_cve": 240,
+        "nb_cve": 239,
         "nb_critiques": 2,
-        "nb_kev": 24,
+        "nb_kev": 23,
         "nb_exploitables_a_distance": 116,
         "cvss_max": 9.8,
         "cves_prioritaires": [
@@ -7004,23 +6895,6 @@
             ]
           },
           {
-            "id": "CVE-2013-3900",
-            "score": 5.5,
-            "rancongiciel": false,
-            "bulletins": [
-              {
-                "id": "MS13-098",
-                "editeur": "",
-                "url": "http://blogs.technet.com/b/srd/archive/2013/12/10/ms13-098-update-to-enhance-the-security-of-authenticode.aspx"
-              },
-              {
-                "id": "MSRC CVE-2013-3900",
-                "editeur": "Microsoft",
-                "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2013-3900"
-              }
-            ]
-          },
-          {
             "id": "CVE-2017-0059",
             "score": 4.3,
             "rancongiciel": false,
@@ -7033,6 +6907,7 @@
             ]
           }
         ],
+        "nb_cve_anterieures_a_la_sortie": 1,
         "nb_cve_logiciels_optionnels_ecartees": 8,
         "logiciels_optionnels_les_plus_cites": [
           "adobe flash_player (8)",
@@ -7042,9 +6917,9 @@
       }
     ],
     "resume_vulnerabilites": {
-      "nb_cve": 240,
+      "nb_cve": 239,
       "nb_critiques": 2,
-      "nb_kev": 24,
+      "nb_kev": 23,
       "nb_exploitables_a_distance": 116,
       "cvss_max": 9.8,
       "logiciels_connus": true
@@ -7166,24 +7041,24 @@
             "concerne_le_systeme": true,
             "bulletins": [
               {
+                "id": "Apple HT6495",
+                "editeur": "",
+                "url": "http://support.apple.com/kb/HT6495"
+              },
+              {
                 "id": "USN-2362-1",
                 "editeur": "Ubuntu",
                 "url": "http://www.ubuntu.com/usn/USN-2362-1"
               },
               {
+                "id": "Apple HT6535",
+                "editeur": "",
+                "url": "https://support.apple.com/kb/HT6535"
+              },
+              {
                 "id": null,
                 "editeur": "",
                 "url": "http://jvn.jp/en/jp/JVN55667175/index.html"
-              },
-              {
-                "id": null,
-                "editeur": "",
-                "url": "http://jvndb.jvn.jp/jvndb/JVNDB-2014-000126"
-              },
-              {
-                "id": null,
-                "editeur": "Red Hat",
-                "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1141597"
               }
             ],
             "description": "GNU Bash through 4.3 processes trailing strings after function definitions in the values of environment variables, which allows remote attackers to execute arbitrary code via a crafted environment, as demonstrated by vectors involving the ForceCommand feature in OpenSSH sshd, the mod_cgi and mod_cgi"
@@ -7207,6 +7082,11 @@
             "concerne_le_systeme": true,
             "bulletins": [
               {
+                "id": "Apple HT6495",
+                "editeur": "",
+                "url": "http://support.apple.com/kb/HT6495"
+              },
+              {
                 "id": "USN-2363-1",
                 "editeur": "Ubuntu",
                 "url": "http://www.ubuntu.com/usn/USN-2363-1"
@@ -7217,9 +7097,9 @@
                 "url": "http://www.ubuntu.com/usn/USN-2363-2"
               },
               {
-                "id": null,
+                "id": "Apple HT6535",
                 "editeur": "",
-                "url": "http://www.oracle.com/technetwork/topics/security/bashcve-2014-7169-2317675.html"
+                "url": "https://support.apple.com/kb/HT6535"
               }
             ],
             "description": "GNU Bash through 4.3 bash43-025 processes trailing strings after certain malformed function definitions in the values of environment variables, which allows remote attackers to write to files or possibly have unknown other impact via a crafted environment, as demonstrated by vectors involving the Fo"
@@ -7540,24 +7420,24 @@
             "rancongiciel": false,
             "bulletins": [
               {
+                "id": "Apple HT6495",
+                "editeur": "",
+                "url": "http://support.apple.com/kb/HT6495"
+              },
+              {
                 "id": "USN-2362-1",
                 "editeur": "Ubuntu",
                 "url": "http://www.ubuntu.com/usn/USN-2362-1"
               },
               {
+                "id": "Apple HT6535",
+                "editeur": "",
+                "url": "https://support.apple.com/kb/HT6535"
+              },
+              {
                 "id": null,
                 "editeur": "",
                 "url": "http://jvn.jp/en/jp/JVN55667175/index.html"
-              },
-              {
-                "id": null,
-                "editeur": "",
-                "url": "http://jvndb.jvn.jp/jvndb/JVNDB-2014-000126"
-              },
-              {
-                "id": null,
-                "editeur": "Red Hat",
-                "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1141597"
               }
             ]
           },
@@ -7566,6 +7446,11 @@
             "score": 9.8,
             "rancongiciel": false,
             "bulletins": [
+              {
+                "id": "Apple HT6495",
+                "editeur": "",
+                "url": "http://support.apple.com/kb/HT6495"
+              },
               {
                 "id": "USN-2363-1",
                 "editeur": "Ubuntu",
@@ -7577,9 +7462,9 @@
                 "url": "http://www.ubuntu.com/usn/USN-2363-2"
               },
               {
-                "id": null,
+                "id": "Apple HT6535",
                 "editeur": "",
-                "url": "http://www.oracle.com/technetwork/topics/security/bashcve-2014-7169-2317675.html"
+                "url": "https://support.apple.com/kb/HT6535"
               }
             ]
           },
@@ -7692,6 +7577,7 @@
             ]
           }
         ],
+        "nb_cve_anterieures_a_la_sortie": 0,
         "nb_cve_logiciels_optionnels_ecartees": 862,
         "logiciels_optionnels_les_plus_cites": [
           "mozilla firefox (222)",
@@ -8052,6 +7938,7 @@
             ]
           }
         ],
+        "nb_cve_anterieures_a_la_sortie": 0,
         "nb_cve_logiciels_optionnels_ecartees": 0,
         "logiciels_optionnels_les_plus_cites": [],
         "erreur": null
@@ -8172,24 +8059,24 @@
             "concerne_le_systeme": true,
             "bulletins": [
               {
+                "id": "Apple HT6495",
+                "editeur": "",
+                "url": "http://support.apple.com/kb/HT6495"
+              },
+              {
                 "id": "USN-2362-1",
                 "editeur": "Ubuntu",
                 "url": "http://www.ubuntu.com/usn/USN-2362-1"
               },
               {
+                "id": "Apple HT6535",
+                "editeur": "",
+                "url": "https://support.apple.com/kb/HT6535"
+              },
+              {
                 "id": null,
                 "editeur": "",
                 "url": "http://jvn.jp/en/jp/JVN55667175/index.html"
-              },
-              {
-                "id": null,
-                "editeur": "",
-                "url": "http://jvndb.jvn.jp/jvndb/JVNDB-2014-000126"
-              },
-              {
-                "id": null,
-                "editeur": "Red Hat",
-                "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1141597"
               }
             ],
             "description": "GNU Bash through 4.3 processes trailing strings after function definitions in the values of environment variables, which allows remote attackers to execute arbitrary code via a crafted environment, as demonstrated by vectors involving the ForceCommand feature in OpenSSH sshd, the mod_cgi and mod_cgi"
@@ -8213,6 +8100,11 @@
             "concerne_le_systeme": true,
             "bulletins": [
               {
+                "id": "Apple HT6495",
+                "editeur": "",
+                "url": "http://support.apple.com/kb/HT6495"
+              },
+              {
                 "id": "USN-2363-1",
                 "editeur": "Ubuntu",
                 "url": "http://www.ubuntu.com/usn/USN-2363-1"
@@ -8223,9 +8115,9 @@
                 "url": "http://www.ubuntu.com/usn/USN-2363-2"
               },
               {
-                "id": null,
+                "id": "Apple HT6535",
                 "editeur": "",
-                "url": "http://www.oracle.com/technetwork/topics/security/bashcve-2014-7169-2317675.html"
+                "url": "https://support.apple.com/kb/HT6535"
               }
             ],
             "description": "GNU Bash through 4.3 bash43-025 processes trailing strings after certain malformed function definitions in the values of environment variables, which allows remote attackers to write to files or possibly have unknown other impact via a crafted environment, as demonstrated by vectors involving the Fo"
@@ -8537,24 +8429,24 @@
             "rancongiciel": false,
             "bulletins": [
               {
+                "id": "Apple HT6495",
+                "editeur": "",
+                "url": "http://support.apple.com/kb/HT6495"
+              },
+              {
                 "id": "USN-2362-1",
                 "editeur": "Ubuntu",
                 "url": "http://www.ubuntu.com/usn/USN-2362-1"
               },
               {
+                "id": "Apple HT6535",
+                "editeur": "",
+                "url": "https://support.apple.com/kb/HT6535"
+              },
+              {
                 "id": null,
                 "editeur": "",
                 "url": "http://jvn.jp/en/jp/JVN55667175/index.html"
-              },
-              {
-                "id": null,
-                "editeur": "",
-                "url": "http://jvndb.jvn.jp/jvndb/JVNDB-2014-000126"
-              },
-              {
-                "id": null,
-                "editeur": "Red Hat",
-                "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1141597"
               }
             ]
           },
@@ -8563,6 +8455,11 @@
             "score": 9.8,
             "rancongiciel": false,
             "bulletins": [
+              {
+                "id": "Apple HT6495",
+                "editeur": "",
+                "url": "http://support.apple.com/kb/HT6495"
+              },
               {
                 "id": "USN-2363-1",
                 "editeur": "Ubuntu",
@@ -8574,9 +8471,9 @@
                 "url": "http://www.ubuntu.com/usn/USN-2363-2"
               },
               {
-                "id": null,
+                "id": "Apple HT6535",
                 "editeur": "",
-                "url": "http://www.oracle.com/technetwork/topics/security/bashcve-2014-7169-2317675.html"
+                "url": "https://support.apple.com/kb/HT6535"
               }
             ]
           },
@@ -8662,6 +8559,7 @@
             ]
           }
         ],
+        "nb_cve_anterieures_a_la_sortie": 0,
         "nb_cve_logiciels_optionnels_ecartees": 690,
         "logiciels_optionnels_les_plus_cites": [
           "oracle solaris (100)",
@@ -9022,6 +8920,7 @@
             ]
           }
         ],
+        "nb_cve_anterieures_a_la_sortie": 0,
         "nb_cve_logiciels_optionnels_ecartees": 0,
         "logiciels_optionnels_les_plus_cites": [],
         "erreur": null
@@ -9142,24 +9041,24 @@
             "concerne_le_systeme": true,
             "bulletins": [
               {
+                "id": "Apple HT6495",
+                "editeur": "",
+                "url": "http://support.apple.com/kb/HT6495"
+              },
+              {
                 "id": "USN-2362-1",
                 "editeur": "Ubuntu",
                 "url": "http://www.ubuntu.com/usn/USN-2362-1"
               },
               {
+                "id": "Apple HT6535",
+                "editeur": "",
+                "url": "https://support.apple.com/kb/HT6535"
+              },
+              {
                 "id": null,
                 "editeur": "",
                 "url": "http://jvn.jp/en/jp/JVN55667175/index.html"
-              },
-              {
-                "id": null,
-                "editeur": "",
-                "url": "http://jvndb.jvn.jp/jvndb/JVNDB-2014-000126"
-              },
-              {
-                "id": null,
-                "editeur": "Red Hat",
-                "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1141597"
               }
             ],
             "description": "GNU Bash through 4.3 processes trailing strings after function definitions in the values of environment variables, which allows remote attackers to execute arbitrary code via a crafted environment, as demonstrated by vectors involving the ForceCommand feature in OpenSSH sshd, the mod_cgi and mod_cgi"
@@ -9183,6 +9082,11 @@
             "concerne_le_systeme": true,
             "bulletins": [
               {
+                "id": "Apple HT6495",
+                "editeur": "",
+                "url": "http://support.apple.com/kb/HT6495"
+              },
+              {
                 "id": "USN-2363-1",
                 "editeur": "Ubuntu",
                 "url": "http://www.ubuntu.com/usn/USN-2363-1"
@@ -9193,9 +9097,9 @@
                 "url": "http://www.ubuntu.com/usn/USN-2363-2"
               },
               {
-                "id": null,
+                "id": "Apple HT6535",
                 "editeur": "",
-                "url": "http://www.oracle.com/technetwork/topics/security/bashcve-2014-7169-2317675.html"
+                "url": "https://support.apple.com/kb/HT6535"
               }
             ],
             "description": "GNU Bash through 4.3 bash43-025 processes trailing strings after certain malformed function definitions in the values of environment variables, which allows remote attackers to write to files or possibly have unknown other impact via a crafted environment, as demonstrated by vectors involving the Fo"
@@ -9507,24 +9411,24 @@
             "rancongiciel": false,
             "bulletins": [
               {
+                "id": "Apple HT6495",
+                "editeur": "",
+                "url": "http://support.apple.com/kb/HT6495"
+              },
+              {
                 "id": "USN-2362-1",
                 "editeur": "Ubuntu",
                 "url": "http://www.ubuntu.com/usn/USN-2362-1"
               },
               {
+                "id": "Apple HT6535",
+                "editeur": "",
+                "url": "https://support.apple.com/kb/HT6535"
+              },
+              {
                 "id": null,
                 "editeur": "",
                 "url": "http://jvn.jp/en/jp/JVN55667175/index.html"
-              },
-              {
-                "id": null,
-                "editeur": "",
-                "url": "http://jvndb.jvn.jp/jvndb/JVNDB-2014-000126"
-              },
-              {
-                "id": null,
-                "editeur": "Red Hat",
-                "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1141597"
               }
             ]
           },
@@ -9533,6 +9437,11 @@
             "score": 9.8,
             "rancongiciel": false,
             "bulletins": [
+              {
+                "id": "Apple HT6495",
+                "editeur": "",
+                "url": "http://support.apple.com/kb/HT6495"
+              },
               {
                 "id": "USN-2363-1",
                 "editeur": "Ubuntu",
@@ -9544,9 +9453,9 @@
                 "url": "http://www.ubuntu.com/usn/USN-2363-2"
               },
               {
-                "id": null,
+                "id": "Apple HT6535",
                 "editeur": "",
-                "url": "http://www.oracle.com/technetwork/topics/security/bashcve-2014-7169-2317675.html"
+                "url": "https://support.apple.com/kb/HT6535"
               }
             ]
           },
@@ -9632,6 +9541,7 @@
             ]
           }
         ],
+        "nb_cve_anterieures_a_la_sortie": 0,
         "nb_cve_logiciels_optionnels_ecartees": 690,
         "logiciels_optionnels_les_plus_cites": [
           "oracle solaris (100)",
@@ -9992,6 +9902,7 @@
             ]
           }
         ],
+        "nb_cve_anterieures_a_la_sortie": 0,
         "nb_cve_logiciels_optionnels_ecartees": 0,
         "logiciels_optionnels_les_plus_cites": [],
         "erreur": null
@@ -10115,6 +10026,11 @@
             "concerne_le_systeme": true,
             "bulletins": [
               {
+                "id": "Apple HT5282",
+                "editeur": "",
+                "url": "http://support.apple.com/kb/HT5282"
+              },
+              {
                 "id": null,
                 "editeur": "",
                 "url": "http://code.google.com/p/chromium/issues/detail?id=117226"
@@ -10128,11 +10044,6 @@
                 "id": null,
                 "editeur": "",
                 "url": "http://googlechromereleases.blogspot.com/2012/03/chrome-stable-channel-update.html"
-              },
-              {
-                "id": null,
-                "editeur": "",
-                "url": "https://plus.google.com/u/0/116651741222993143554/posts/5Eq5d9XgFqs"
               }
             ],
             "description": "The extension subsystem in Google Chrome before 17.0.963.78 does not properly handle history navigation, which allows remote attackers to execute arbitrary code by leveraging a \"Universal XSS (UXSS)\" issue."
@@ -10152,14 +10063,14 @@
             "concerne_le_systeme": true,
             "bulletins": [
               {
-                "id": null,
+                "id": "Apple HT205265",
                 "editeur": "",
-                "url": "http://lists.apple.com/archives/security-announce/2015/Sep/msg00007.html"
+                "url": "https://support.apple.com/HT205265"
               },
               {
                 "id": null,
                 "editeur": "",
-                "url": "https://support.apple.com/HT205265"
+                "url": "http://lists.apple.com/archives/security-announce/2015/Sep/msg00007.html"
               }
             ],
             "description": "The Safari Extensions implementation in Apple Safari before 9 does not require user confirmation before replacing an installed extension, which has unspecified impact and attack vectors."
@@ -10181,17 +10092,17 @@
             "concerne_le_systeme": true,
             "bulletins": [
               {
-                "id": null,
+                "id": "Apple HT207142",
                 "editeur": "",
                 "url": "https://support.apple.com/HT207142"
               },
               {
-                "id": null,
+                "id": "Apple HT207143",
                 "editeur": "",
                 "url": "https://support.apple.com/HT207143"
               },
               {
-                "id": null,
+                "id": "Apple HT207157",
                 "editeur": "",
                 "url": "https://support.apple.com/HT207157"
               }
@@ -10235,14 +10146,24 @@
             "concerne_le_systeme": true,
             "bulletins": [
               {
-                "id": null,
+                "id": "Apple HT5400",
                 "editeur": "",
-                "url": "http://code.google.com/p/chromium/issues/detail?id=121899"
+                "url": "http://support.apple.com/kb/HT5400"
+              },
+              {
+                "id": "Apple HT5485",
+                "editeur": "",
+                "url": "http://support.apple.com/kb/HT5485"
+              },
+              {
+                "id": "Apple HT5503",
+                "editeur": "",
+                "url": "http://support.apple.com/kb/HT5503"
               },
               {
                 "id": null,
                 "editeur": "",
-                "url": "http://googlechromereleases.blogspot.com/2012/04/stable-channel-update_30.html"
+                "url": "http://code.google.com/p/chromium/issues/detail?id=121899"
               }
             ],
             "description": "Use-after-free vulnerability in Google Chrome before 18.0.1025.168 allows remote attackers to cause a denial of service or possibly have unspecified other impact via vectors related to the floating of elements, a different vulnerability than CVE-2011-3078."
@@ -10262,14 +10183,24 @@
             "concerne_le_systeme": true,
             "bulletins": [
               {
-                "id": null,
+                "id": "Apple HT5400",
                 "editeur": "",
-                "url": "http://lists.apple.com/archives/security-announce/2012/Jul/msg00000.html"
+                "url": "http://support.apple.com/kb/HT5400"
+              },
+              {
+                "id": "Apple HT5485",
+                "editeur": "",
+                "url": "http://support.apple.com/kb/HT5485"
+              },
+              {
+                "id": "Apple HT5503",
+                "editeur": "",
+                "url": "http://support.apple.com/kb/HT5503"
               },
               {
                 "id": null,
                 "editeur": "",
-                "url": "http://support.apple.com/kb/HT5400"
+                "url": "http://lists.apple.com/archives/security-announce/2012/Jul/msg00000.html"
               }
             ],
             "description": "WebKit, as used in Apple Safari before 6.0, allows remote attackers to execute arbitrary code or cause a denial of service (memory corruption and application crash) via a crafted web site, a different vulnerability than other WebKit CVEs listed in APPLE-SA-2012-07-25-1."
@@ -10289,14 +10220,24 @@
             "concerne_le_systeme": true,
             "bulletins": [
               {
-                "id": null,
+                "id": "Apple HT5400",
                 "editeur": "",
-                "url": "http://lists.apple.com/archives/security-announce/2012/Jul/msg00000.html"
+                "url": "http://support.apple.com/kb/HT5400"
+              },
+              {
+                "id": "Apple HT5485",
+                "editeur": "",
+                "url": "http://support.apple.com/kb/HT5485"
+              },
+              {
+                "id": "Apple HT5503",
+                "editeur": "",
+                "url": "http://support.apple.com/kb/HT5503"
               },
               {
                 "id": null,
                 "editeur": "",
-                "url": "http://support.apple.com/kb/HT5400"
+                "url": "http://lists.apple.com/archives/security-announce/2012/Jul/msg00000.html"
               }
             ],
             "description": "WebKit, as used in Apple Safari before 6.0, allows remote attackers to execute arbitrary code or cause a denial of service (memory corruption and application crash) via a crafted web site, a different vulnerability than other WebKit CVEs listed in APPLE-SA-2012-07-25-1."
@@ -10316,14 +10257,24 @@
             "concerne_le_systeme": true,
             "bulletins": [
               {
-                "id": null,
+                "id": "Apple HT5400",
                 "editeur": "",
-                "url": "http://lists.apple.com/archives/security-announce/2012/Jul/msg00000.html"
+                "url": "http://support.apple.com/kb/HT5400"
+              },
+              {
+                "id": "Apple HT5485",
+                "editeur": "",
+                "url": "http://support.apple.com/kb/HT5485"
+              },
+              {
+                "id": "Apple HT5503",
+                "editeur": "",
+                "url": "http://support.apple.com/kb/HT5503"
               },
               {
                 "id": null,
                 "editeur": "",
-                "url": "http://support.apple.com/kb/HT5400"
+                "url": "http://lists.apple.com/archives/security-announce/2012/Jul/msg00000.html"
               }
             ],
             "description": "WebKit, as used in Apple Safari before 6.0, allows remote attackers to execute arbitrary code or cause a denial of service (memory corruption and application crash) via a crafted web site, a different vulnerability than other WebKit CVEs listed in APPLE-SA-2012-07-25-1."
@@ -10343,14 +10294,24 @@
             "concerne_le_systeme": true,
             "bulletins": [
               {
-                "id": null,
+                "id": "Apple HT5400",
                 "editeur": "",
-                "url": "http://lists.apple.com/archives/security-announce/2012/Jul/msg00000.html"
+                "url": "http://support.apple.com/kb/HT5400"
+              },
+              {
+                "id": "Apple HT5485",
+                "editeur": "",
+                "url": "http://support.apple.com/kb/HT5485"
+              },
+              {
+                "id": "Apple HT5503",
+                "editeur": "",
+                "url": "http://support.apple.com/kb/HT5503"
               },
               {
                 "id": null,
                 "editeur": "",
-                "url": "http://support.apple.com/kb/HT5400"
+                "url": "http://lists.apple.com/archives/security-announce/2012/Jul/msg00000.html"
               }
             ],
             "description": "WebKit, as used in Apple Safari before 6.0, allows remote attackers to execute arbitrary code or cause a denial of service (memory corruption and application crash) via a crafted web site, a different vulnerability than other WebKit CVEs listed in APPLE-SA-2012-07-25-1."
@@ -10370,20 +10331,31 @@
             "concerne_le_systeme": true,
             "bulletins": [
               {
-                "id": null,
+                "id": "Apple HT5400",
                 "editeur": "",
-                "url": "http://lists.apple.com/archives/security-announce/2012/Jul/msg00000.html"
+                "url": "http://support.apple.com/kb/HT5400"
+              },
+              {
+                "id": "Apple HT5485",
+                "editeur": "",
+                "url": "http://support.apple.com/kb/HT5485"
+              },
+              {
+                "id": "Apple HT5503",
+                "editeur": "",
+                "url": "http://support.apple.com/kb/HT5503"
               },
               {
                 "id": null,
                 "editeur": "",
-                "url": "http://support.apple.com/kb/HT5400"
+                "url": "http://lists.apple.com/archives/security-announce/2012/Jul/msg00000.html"
               }
             ],
             "description": "WebKit, as used in Apple Safari before 6.0, allows remote attackers to execute arbitrary code or cause a denial of service (memory corruption and application crash) via a crafted web site, a different vulnerability than other WebKit CVEs listed in APPLE-SA-2012-07-25-1."
           }
         ],
         "cves_kev": [],
+        "nb_cve_anterieures_a_la_sortie": 0,
         "nb_cve_logiciels_optionnels_ecartees": 0,
         "logiciels_optionnels_les_plus_cites": [],
         "erreur": null
@@ -10419,14 +10391,14 @@
             "concerne_le_systeme": true,
             "bulletins": [
               {
-                "id": "DSA-3032",
-                "editeur": "Debian",
-                "url": "http://www.debian.org/security/2014/dsa-3032"
+                "id": "Apple HT6495",
+                "editeur": "",
+                "url": "http://support.apple.com/kb/HT6495"
               },
               {
-                "id": "USN-2362-1",
-                "editeur": "Ubuntu",
-                "url": "http://www.ubuntu.com/usn/USN-2362-1"
+                "id": "Apple HT6535",
+                "editeur": "",
+                "url": "https://support.apple.com/kb/HT6535"
               },
               {
                 "id": null,
@@ -10460,19 +10432,14 @@
             "concerne_le_systeme": true,
             "bulletins": [
               {
-                "id": "DSA-3035",
-                "editeur": "Debian",
-                "url": "http://www.debian.org/security/2014/dsa-3035"
+                "id": "Apple HT6495",
+                "editeur": "",
+                "url": "http://support.apple.com/kb/HT6495"
               },
               {
-                "id": "USN-2363-1",
-                "editeur": "Ubuntu",
-                "url": "http://www.ubuntu.com/usn/USN-2363-1"
-              },
-              {
-                "id": "USN-2363-2",
-                "editeur": "Ubuntu",
-                "url": "http://www.ubuntu.com/usn/USN-2363-2"
+                "id": "Apple HT6535",
+                "editeur": "",
+                "url": "https://support.apple.com/kb/HT6535"
               },
               {
                 "id": null,
@@ -10499,24 +10466,24 @@
             "concerne_le_systeme": true,
             "bulletins": [
               {
-                "id": null,
-                "editeur": "",
-                "url": "http://lists.apple.com/archives/security-announce/2015/Apr/msg00001.html"
-              },
-              {
-                "id": null,
+                "id": "Apple HT6441",
                 "editeur": "",
                 "url": "http://support.apple.com/kb/HT6441"
               },
               {
-                "id": null,
+                "id": "Apple HT6442",
                 "editeur": "",
                 "url": "http://support.apple.com/kb/HT6442"
               },
               {
-                "id": null,
+                "id": "Apple HT204659",
                 "editeur": "",
                 "url": "https://support.apple.com/HT204659"
+              },
+              {
+                "id": "Apple HT6535",
+                "editeur": "",
+                "url": "https://support.apple.com/kb/HT6535"
               }
             ],
             "description": "Heap-based buffer overflow in IOHIDFamily in Apple iOS before 8 and Apple TV before 7 allows attackers to execute arbitrary code in a privileged context via an application that provides crafted key-mapping properties."
@@ -10536,14 +10503,14 @@
             "concerne_le_systeme": true,
             "bulletins": [
               {
-                "id": null,
+                "id": "Apple HT204659",
                 "editeur": "",
-                "url": "http://lists.apple.com/archives/security-announce/2015/Apr/msg00001.html"
+                "url": "https://support.apple.com/HT204659"
               },
               {
                 "id": null,
                 "editeur": "",
-                "url": "https://support.apple.com/HT204659"
+                "url": "http://lists.apple.com/archives/security-announce/2015/Apr/msg00001.html"
               }
             ],
             "description": "The XPC implementation in Admin Framework in Apple OS X before 10.10.3 allows local users to bypass authentication and obtain admin privileges via unspecified vectors."
@@ -10566,24 +10533,24 @@
             "concerne_le_systeme": true,
             "bulletins": [
               {
+                "id": "Apple HT4196",
+                "editeur": "",
+                "url": "http://support.apple.com/kb/HT4196"
+              },
+              {
+                "id": "Apple HT4220",
+                "editeur": "",
+                "url": "http://support.apple.com/kb/HT4220"
+              },
+              {
+                "id": "Apple HT4225",
+                "editeur": "",
+                "url": "http://support.apple.com/kb/HT4225"
+              },
+              {
                 "id": null,
                 "editeur": "",
                 "url": "http://lists.apple.com/archives/security-announce/2010//Jun/msg00002.html"
-              },
-              {
-                "id": null,
-                "editeur": "",
-                "url": "http://lists.apple.com/archives/security-announce/2010/Jun/msg00000.html"
-              },
-              {
-                "id": null,
-                "editeur": "",
-                "url": "http://lists.apple.com/archives/security-announce/2010/Jun/msg00003.html"
-              },
-              {
-                "id": null,
-                "editeur": "",
-                "url": "http://secunia.com/advisories/40105"
               }
             ],
             "description": "Use-after-free vulnerability in WebKit in Apple Safari before 5.0 on Mac OS X 10.5 through 10.6 and Windows, Safari before 4.1 on Mac OS X 10.4, and Safari on Apple iPhone OS allows remote attackers to execute arbitrary code or cause a denial of service (application crash), or read the SMS database "
@@ -10604,14 +10571,14 @@
             "concerne_le_systeme": true,
             "bulletins": [
               {
-                "id": null,
+                "id": "Apple HT4077",
                 "editeur": "",
-                "url": "http://lists.apple.com/archives/security-announce/2010//Mar/msg00001.html"
+                "url": "http://support.apple.com/kb/HT4077"
               },
               {
                 "id": null,
                 "editeur": "",
-                "url": "http://support.apple.com/kb/HT4077"
+                "url": "http://lists.apple.com/archives/security-announce/2010//Mar/msg00001.html"
               }
             ],
             "description": "xar in Apple Mac OS X 10.5.8 does not properly validate package signatures, which allows attackers to have an unspecified impact via a modified package."
@@ -10632,14 +10599,14 @@
             "concerne_le_systeme": true,
             "bulletins": [
               {
-                "id": null,
+                "id": "Apple HT4077",
                 "editeur": "",
-                "url": "http://lists.apple.com/archives/security-announce/2010//Mar/msg00001.html"
+                "url": "http://support.apple.com/kb/HT4077"
               },
               {
                 "id": null,
                 "editeur": "",
-                "url": "http://support.apple.com/kb/HT4077"
+                "url": "http://lists.apple.com/archives/security-announce/2010//Mar/msg00001.html"
               }
             ],
             "description": "Mail in Apple Mac OS X before 10.6.3 does not disable the filter rules associated with a deleted mail account, which has unspecified impact and attack vectors."
@@ -10689,7 +10656,13 @@
               "apple mac_os_x"
             ],
             "concerne_le_systeme": true,
-            "bulletins": [],
+            "bulletins": [
+              {
+                "id": "Apple HT6296",
+                "editeur": "",
+                "url": "http://support.apple.com/kb/HT6296"
+              }
+            ],
             "description": "Intel Graphics Driver in Apple OS X before 10.9.4 does not properly restrict an unspecified OpenGL API call, which allows attackers to execute arbitrary code via a crafted application."
           }
         ],
@@ -10700,14 +10673,14 @@
             "rancongiciel": false,
             "bulletins": [
               {
-                "id": "DSA-3032",
-                "editeur": "Debian",
-                "url": "http://www.debian.org/security/2014/dsa-3032"
+                "id": "Apple HT6495",
+                "editeur": "",
+                "url": "http://support.apple.com/kb/HT6495"
               },
               {
-                "id": "USN-2362-1",
-                "editeur": "Ubuntu",
-                "url": "http://www.ubuntu.com/usn/USN-2362-1"
+                "id": "Apple HT6535",
+                "editeur": "",
+                "url": "https://support.apple.com/kb/HT6535"
               },
               {
                 "id": null,
@@ -10727,19 +10700,14 @@
             "rancongiciel": false,
             "bulletins": [
               {
-                "id": "DSA-3035",
-                "editeur": "Debian",
-                "url": "http://www.debian.org/security/2014/dsa-3035"
+                "id": "Apple HT6495",
+                "editeur": "",
+                "url": "http://support.apple.com/kb/HT6495"
               },
               {
-                "id": "USN-2363-1",
-                "editeur": "Ubuntu",
-                "url": "http://www.ubuntu.com/usn/USN-2363-1"
-              },
-              {
-                "id": "USN-2363-2",
-                "editeur": "Ubuntu",
-                "url": "http://www.ubuntu.com/usn/USN-2363-2"
+                "id": "Apple HT6535",
+                "editeur": "",
+                "url": "https://support.apple.com/kb/HT6535"
               },
               {
                 "id": null,
@@ -10754,24 +10722,24 @@
             "rancongiciel": false,
             "bulletins": [
               {
-                "id": null,
-                "editeur": "",
-                "url": "http://lists.apple.com/archives/security-announce/2015/Apr/msg00001.html"
-              },
-              {
-                "id": null,
+                "id": "Apple HT6441",
                 "editeur": "",
                 "url": "http://support.apple.com/kb/HT6441"
               },
               {
-                "id": null,
+                "id": "Apple HT6442",
                 "editeur": "",
                 "url": "http://support.apple.com/kb/HT6442"
               },
               {
-                "id": null,
+                "id": "Apple HT204659",
                 "editeur": "",
                 "url": "https://support.apple.com/HT204659"
+              },
+              {
+                "id": "Apple HT6535",
+                "editeur": "",
+                "url": "https://support.apple.com/kb/HT6535"
               }
             ]
           },
@@ -10781,18 +10749,19 @@
             "rancongiciel": false,
             "bulletins": [
               {
-                "id": null,
+                "id": "Apple HT204659",
                 "editeur": "",
-                "url": "http://lists.apple.com/archives/security-announce/2015/Apr/msg00001.html"
+                "url": "https://support.apple.com/HT204659"
               },
               {
                 "id": null,
                 "editeur": "",
-                "url": "https://support.apple.com/HT204659"
+                "url": "http://lists.apple.com/archives/security-announce/2015/Apr/msg00001.html"
               }
             ]
           }
         ],
+        "nb_cve_anterieures_a_la_sortie": 0,
         "nb_cve_logiciels_optionnels_ecartees": 1,
         "logiciels_optionnels_les_plus_cites": [
           "ruby-lang ruby (1)"
@@ -11054,14 +11023,24 @@
             "concerne_le_systeme": true,
             "bulletins": [
               {
-                "id": "USN-4246-1",
-                "editeur": "Ubuntu",
-                "url": "https://usn.ubuntu.com/4246-1/"
+                "id": "Apple HT208112",
+                "editeur": "",
+                "url": "https://support.apple.com/HT208112"
               },
               {
-                "id": "USN-4292-1",
-                "editeur": "Ubuntu",
-                "url": "https://usn.ubuntu.com/4292-1/"
+                "id": "Apple HT208113",
+                "editeur": "",
+                "url": "https://support.apple.com/HT208113"
+              },
+              {
+                "id": "Apple HT208115",
+                "editeur": "",
+                "url": "https://support.apple.com/HT208115"
+              },
+              {
+                "id": "Apple HT208144",
+                "editeur": "",
+                "url": "https://support.apple.com/HT208144"
               }
             ],
             "description": "inffast.c in zlib 1.2.8 might allow context-dependent attackers to have unspecified impact by leveraging improper pointer arithmetic."
@@ -11085,14 +11064,24 @@
             "concerne_le_systeme": true,
             "bulletins": [
               {
-                "id": "USN-4246-1",
-                "editeur": "Ubuntu",
-                "url": "https://usn.ubuntu.com/4246-1/"
+                "id": "Apple HT208112",
+                "editeur": "",
+                "url": "https://support.apple.com/HT208112"
               },
               {
-                "id": "USN-4292-1",
-                "editeur": "Ubuntu",
-                "url": "https://usn.ubuntu.com/4292-1/"
+                "id": "Apple HT208113",
+                "editeur": "",
+                "url": "https://support.apple.com/HT208113"
+              },
+              {
+                "id": "Apple HT208115",
+                "editeur": "",
+                "url": "https://support.apple.com/HT208115"
+              },
+              {
+                "id": "Apple HT208144",
+                "editeur": "",
+                "url": "https://support.apple.com/HT208144"
               }
             ],
             "description": "The crc32_big function in crc32.c in zlib 1.2.8 might allow context-dependent attackers to have unspecified impact via vectors involving big-endian CRC calculation."
@@ -11158,6 +11147,21 @@
                 "id": "USN-3041-1",
                 "editeur": "Ubuntu",
                 "url": "http://www.ubuntu.com/usn/USN-3041-1"
+              },
+              {
+                "id": "Apple HT207141",
+                "editeur": "",
+                "url": "https://support.apple.com/HT207141"
+              },
+              {
+                "id": "Apple HT207142",
+                "editeur": "",
+                "url": "https://support.apple.com/HT207142"
+              },
+              {
+                "id": "Apple HT207143",
+                "editeur": "",
+                "url": "https://support.apple.com/HT207143"
               }
             ],
             "description": "Use-after-free vulnerability in libxml2 through 2.9.4, as used in Google Chrome before 52.0.2743.82, allows remote attackers to cause a denial of service or possibly have unspecified other impact via vectors related to the XPointer range-to function."
@@ -11181,19 +11185,24 @@
             "concerne_le_systeme": true,
             "bulletins": [
               {
-                "id": "USN-4246-1",
-                "editeur": "Ubuntu",
-                "url": "https://usn.ubuntu.com/4246-1/"
-              },
-              {
-                "id": "USN-4292-1",
-                "editeur": "Ubuntu",
-                "url": "https://usn.ubuntu.com/4292-1/"
-              },
-              {
-                "id": null,
+                "id": "Apple HT208112",
                 "editeur": "",
-                "url": "https://github.com/madler/zlib/commit/6a043145ca6e9c55184013841a67b2fef87e44c0"
+                "url": "https://support.apple.com/HT208112"
+              },
+              {
+                "id": "Apple HT208113",
+                "editeur": "",
+                "url": "https://support.apple.com/HT208113"
+              },
+              {
+                "id": "Apple HT208115",
+                "editeur": "",
+                "url": "https://support.apple.com/HT208115"
+              },
+              {
+                "id": "Apple HT208144",
+                "editeur": "",
+                "url": "https://support.apple.com/HT208144"
               }
             ],
             "description": "inftrees.c in zlib 1.2.8 might allow context-dependent attackers to have unspecified impact by leveraging improper pointer arithmetic."
@@ -11217,24 +11226,24 @@
             "concerne_le_systeme": true,
             "bulletins": [
               {
-                "id": "USN-4246-1",
-                "editeur": "Ubuntu",
-                "url": "https://usn.ubuntu.com/4246-1/"
-              },
-              {
-                "id": "USN-4292-1",
-                "editeur": "Ubuntu",
-                "url": "https://usn.ubuntu.com/4292-1/"
-              },
-              {
-                "id": null,
+                "id": "Apple HT208112",
                 "editeur": "",
-                "url": "http://www.openwall.com/lists/oss-security/2016/12/05/21"
+                "url": "https://support.apple.com/HT208112"
               },
               {
-                "id": null,
-                "editeur": "Red Hat",
-                "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1402348"
+                "id": "Apple HT208113",
+                "editeur": "",
+                "url": "https://support.apple.com/HT208113"
+              },
+              {
+                "id": "Apple HT208115",
+                "editeur": "",
+                "url": "https://support.apple.com/HT208115"
+              },
+              {
+                "id": "Apple HT208144",
+                "editeur": "",
+                "url": "https://support.apple.com/HT208144"
               }
             ],
             "description": "The inflateMark function in inflate.c in zlib 1.2.8 might allow context-dependent attackers to have unspecified impact via vectors involving left shifts of negative integers."
@@ -11263,19 +11272,19 @@
                 "url": "http://www.ubuntu.com/usn/USN-2994-1"
               },
               {
-                "id": null,
+                "id": "Apple HT206166",
                 "editeur": "",
-                "url": "http://lists.apple.com/archives/security-announce/2016/Mar/msg00000.html"
+                "url": "https://support.apple.com/HT206166"
               },
               {
-                "id": null,
+                "id": "Apple HT206167",
                 "editeur": "",
-                "url": "http://lists.apple.com/archives/security-announce/2016/Mar/msg00001.html"
+                "url": "https://support.apple.com/HT206167"
               },
               {
-                "id": null,
+                "id": "Apple HT206168",
                 "editeur": "",
-                "url": "http://lists.apple.com/archives/security-announce/2016/Mar/msg00002.html"
+                "url": "https://support.apple.com/HT206168"
               }
             ],
             "description": "The xmlNextChar function in libxml2 before 2.9.4 allows remote attackers to cause a denial of service (heap-based buffer over-read) via a crafted XML document."
@@ -11310,6 +11319,7 @@
             ]
           }
         ],
+        "nb_cve_anterieures_a_la_sortie": 0,
         "nb_cve_logiciels_optionnels_ecartees": 215,
         "logiciels_optionnels_les_plus_cites": [
           "google chrome (27)",
@@ -11354,6 +11364,11 @@
             "concerne_le_systeme": true,
             "bulletins": [
               {
+                "id": "Apple HT208221",
+                "editeur": "",
+                "url": "https://support.apple.com/HT208221"
+              },
+              {
                 "id": null,
                 "editeur": "",
                 "url": "http://www.oracle.com/technetwork/security-advisory/cpuoct2017-3236626.html"
@@ -11374,7 +11389,13 @@
               "apache http_server"
             ],
             "concerne_le_systeme": true,
-            "bulletins": [],
+            "bulletins": [
+              {
+                "id": "Apple HT208221",
+                "editeur": "",
+                "url": "https://support.apple.com/HT208221"
+              }
+            ],
             "description": "In Apache httpd 2.2.x before 2.2.33 and 2.4.x before 2.4.26, mod_ssl may dereference a NULL pointer when third-party modules call ap_hook_process_connection() during an HTTP request to an HTTPS port."
           },
           {
@@ -11391,6 +11412,11 @@
             ],
             "concerne_le_systeme": true,
             "bulletins": [
+              {
+                "id": "Apple HT208221",
+                "editeur": "",
+                "url": "https://support.apple.com/HT208221"
+              },
               {
                 "id": null,
                 "editeur": "",
@@ -11423,6 +11449,11 @@
                 "url": "http://www.ubuntu.com/usn/USN-3038-1"
               },
               {
+                "id": "Apple HT208221",
+                "editeur": "",
+                "url": "https://support.apple.com/HT208221"
+              },
+              {
                 "id": null,
                 "editeur": "",
                 "url": "http://www.oracle.com/technetwork/security-advisory/cpujan2018-3236628.html"
@@ -11431,11 +11462,6 @@
                 "id": null,
                 "editeur": "",
                 "url": "http://www.oracle.com/technetwork/security-advisory/cpujul2017-3236622.html"
-              },
-              {
-                "id": null,
-                "editeur": "Apache",
-                "url": "https://www.apache.org/security/asf-httpoxy-response.txt"
               }
             ],
             "description": "The Apache HTTP Server through 2.4.23 follows RFC 3875 section 4.1.18 and therefore does not protect applications from the presence of untrusted client data in the HTTP_PROXY environment variable, which might allow remote attackers to redirect an application's outbound HTTP traffic to an arbitrary p"
@@ -11477,6 +11503,11 @@
             "concerne_le_systeme": true,
             "bulletins": [
               {
+                "id": "Apple HT208221",
+                "editeur": "",
+                "url": "https://support.apple.com/HT208221"
+              },
+              {
                 "id": null,
                 "editeur": "",
                 "url": "https://github.com/apache/httpd/commit/29c63b786ae028d82405421585e91283c8fa0da3"
@@ -11508,6 +11539,7 @@
           }
         ],
         "cves_kev": [],
+        "nb_cve_anterieures_a_la_sortie": 0,
         "nb_cve_logiciels_optionnels_ecartees": 0,
         "logiciels_optionnels_les_plus_cites": [],
         "erreur": null
@@ -11746,6 +11778,7 @@
           }
         ],
         "cves_kev": [],
+        "nb_cve_anterieures_a_la_sortie": 0,
         "nb_cve_logiciels_optionnels_ecartees": 0,
         "logiciels_optionnels_les_plus_cites": [],
         "erreur": null
@@ -11963,14 +11996,24 @@
             "concerne_le_systeme": true,
             "bulletins": [
               {
-                "id": "USN-4246-1",
-                "editeur": "Ubuntu",
-                "url": "https://usn.ubuntu.com/4246-1/"
+                "id": "Apple HT208112",
+                "editeur": "",
+                "url": "https://support.apple.com/HT208112"
               },
               {
-                "id": "USN-4292-1",
-                "editeur": "Ubuntu",
-                "url": "https://usn.ubuntu.com/4292-1/"
+                "id": "Apple HT208113",
+                "editeur": "",
+                "url": "https://support.apple.com/HT208113"
+              },
+              {
+                "id": "Apple HT208115",
+                "editeur": "",
+                "url": "https://support.apple.com/HT208115"
+              },
+              {
+                "id": "Apple HT208144",
+                "editeur": "",
+                "url": "https://support.apple.com/HT208144"
               }
             ],
             "description": "inffast.c in zlib 1.2.8 might allow context-dependent attackers to have unspecified impact by leveraging improper pointer arithmetic."
@@ -11994,14 +12037,24 @@
             "concerne_le_systeme": true,
             "bulletins": [
               {
-                "id": "USN-4246-1",
-                "editeur": "Ubuntu",
-                "url": "https://usn.ubuntu.com/4246-1/"
+                "id": "Apple HT208112",
+                "editeur": "",
+                "url": "https://support.apple.com/HT208112"
               },
               {
-                "id": "USN-4292-1",
-                "editeur": "Ubuntu",
-                "url": "https://usn.ubuntu.com/4292-1/"
+                "id": "Apple HT208113",
+                "editeur": "",
+                "url": "https://support.apple.com/HT208113"
+              },
+              {
+                "id": "Apple HT208115",
+                "editeur": "",
+                "url": "https://support.apple.com/HT208115"
+              },
+              {
+                "id": "Apple HT208144",
+                "editeur": "",
+                "url": "https://support.apple.com/HT208144"
               }
             ],
             "description": "The crc32_big function in crc32.c in zlib 1.2.8 might allow context-dependent attackers to have unspecified impact via vectors involving big-endian CRC calculation."
@@ -12067,6 +12120,21 @@
                 "id": "USN-3041-1",
                 "editeur": "Ubuntu",
                 "url": "http://www.ubuntu.com/usn/USN-3041-1"
+              },
+              {
+                "id": "Apple HT207141",
+                "editeur": "",
+                "url": "https://support.apple.com/HT207141"
+              },
+              {
+                "id": "Apple HT207142",
+                "editeur": "",
+                "url": "https://support.apple.com/HT207142"
+              },
+              {
+                "id": "Apple HT207143",
+                "editeur": "",
+                "url": "https://support.apple.com/HT207143"
               }
             ],
             "description": "Use-after-free vulnerability in libxml2 through 2.9.4, as used in Google Chrome before 52.0.2743.82, allows remote attackers to cause a denial of service or possibly have unspecified other impact via vectors related to the XPointer range-to function."
@@ -12090,19 +12158,24 @@
             "concerne_le_systeme": true,
             "bulletins": [
               {
-                "id": "USN-4246-1",
-                "editeur": "Ubuntu",
-                "url": "https://usn.ubuntu.com/4246-1/"
-              },
-              {
-                "id": "USN-4292-1",
-                "editeur": "Ubuntu",
-                "url": "https://usn.ubuntu.com/4292-1/"
-              },
-              {
-                "id": null,
+                "id": "Apple HT208112",
                 "editeur": "",
-                "url": "https://github.com/madler/zlib/commit/6a043145ca6e9c55184013841a67b2fef87e44c0"
+                "url": "https://support.apple.com/HT208112"
+              },
+              {
+                "id": "Apple HT208113",
+                "editeur": "",
+                "url": "https://support.apple.com/HT208113"
+              },
+              {
+                "id": "Apple HT208115",
+                "editeur": "",
+                "url": "https://support.apple.com/HT208115"
+              },
+              {
+                "id": "Apple HT208144",
+                "editeur": "",
+                "url": "https://support.apple.com/HT208144"
               }
             ],
             "description": "inftrees.c in zlib 1.2.8 might allow context-dependent attackers to have unspecified impact by leveraging improper pointer arithmetic."
@@ -12126,24 +12199,24 @@
             "concerne_le_systeme": true,
             "bulletins": [
               {
-                "id": "USN-4246-1",
-                "editeur": "Ubuntu",
-                "url": "https://usn.ubuntu.com/4246-1/"
-              },
-              {
-                "id": "USN-4292-1",
-                "editeur": "Ubuntu",
-                "url": "https://usn.ubuntu.com/4292-1/"
-              },
-              {
-                "id": null,
+                "id": "Apple HT208112",
                 "editeur": "",
-                "url": "http://www.openwall.com/lists/oss-security/2016/12/05/21"
+                "url": "https://support.apple.com/HT208112"
               },
               {
-                "id": null,
-                "editeur": "Red Hat",
-                "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1402348"
+                "id": "Apple HT208113",
+                "editeur": "",
+                "url": "https://support.apple.com/HT208113"
+              },
+              {
+                "id": "Apple HT208115",
+                "editeur": "",
+                "url": "https://support.apple.com/HT208115"
+              },
+              {
+                "id": "Apple HT208144",
+                "editeur": "",
+                "url": "https://support.apple.com/HT208144"
               }
             ],
             "description": "The inflateMark function in inflate.c in zlib 1.2.8 might allow context-dependent attackers to have unspecified impact via vectors involving left shifts of negative integers."
@@ -12172,19 +12245,19 @@
                 "url": "http://www.ubuntu.com/usn/USN-2994-1"
               },
               {
-                "id": null,
+                "id": "Apple HT206166",
                 "editeur": "",
-                "url": "http://lists.apple.com/archives/security-announce/2016/Mar/msg00000.html"
+                "url": "https://support.apple.com/HT206166"
               },
               {
-                "id": null,
+                "id": "Apple HT206167",
                 "editeur": "",
-                "url": "http://lists.apple.com/archives/security-announce/2016/Mar/msg00001.html"
+                "url": "https://support.apple.com/HT206167"
               },
               {
-                "id": null,
+                "id": "Apple HT206168",
                 "editeur": "",
-                "url": "http://lists.apple.com/archives/security-announce/2016/Mar/msg00002.html"
+                "url": "https://support.apple.com/HT206168"
               }
             ],
             "description": "The xmlNextChar function in libxml2 before 2.9.4 allows remote attackers to cause a denial of service (heap-based buffer over-read) via a crafted XML document."
@@ -12219,6 +12292,7 @@
             ]
           }
         ],
+        "nb_cve_anterieures_a_la_sortie": 0,
         "nb_cve_logiciels_optionnels_ecartees": 215,
         "logiciels_optionnels_les_plus_cites": [
           "google chrome (27)",
@@ -12242,6 +12316,7 @@
         "cvss_max": 0,
         "cves_prioritaires": [],
         "cves_kev": [],
+        "nb_cve_anterieures_a_la_sortie": 0,
         "nb_cve_logiciels_optionnels_ecartees": 0,
         "logiciels_optionnels_les_plus_cites": [],
         "erreur": null
@@ -12459,14 +12534,24 @@
             "concerne_le_systeme": true,
             "bulletins": [
               {
-                "id": "USN-4246-1",
-                "editeur": "Ubuntu",
-                "url": "https://usn.ubuntu.com/4246-1/"
+                "id": "Apple HT208112",
+                "editeur": "",
+                "url": "https://support.apple.com/HT208112"
               },
               {
-                "id": "USN-4292-1",
-                "editeur": "Ubuntu",
-                "url": "https://usn.ubuntu.com/4292-1/"
+                "id": "Apple HT208113",
+                "editeur": "",
+                "url": "https://support.apple.com/HT208113"
+              },
+              {
+                "id": "Apple HT208115",
+                "editeur": "",
+                "url": "https://support.apple.com/HT208115"
+              },
+              {
+                "id": "Apple HT208144",
+                "editeur": "",
+                "url": "https://support.apple.com/HT208144"
               }
             ],
             "description": "inffast.c in zlib 1.2.8 might allow context-dependent attackers to have unspecified impact by leveraging improper pointer arithmetic."
@@ -12490,14 +12575,24 @@
             "concerne_le_systeme": true,
             "bulletins": [
               {
-                "id": "USN-4246-1",
-                "editeur": "Ubuntu",
-                "url": "https://usn.ubuntu.com/4246-1/"
+                "id": "Apple HT208112",
+                "editeur": "",
+                "url": "https://support.apple.com/HT208112"
               },
               {
-                "id": "USN-4292-1",
-                "editeur": "Ubuntu",
-                "url": "https://usn.ubuntu.com/4292-1/"
+                "id": "Apple HT208113",
+                "editeur": "",
+                "url": "https://support.apple.com/HT208113"
+              },
+              {
+                "id": "Apple HT208115",
+                "editeur": "",
+                "url": "https://support.apple.com/HT208115"
+              },
+              {
+                "id": "Apple HT208144",
+                "editeur": "",
+                "url": "https://support.apple.com/HT208144"
               }
             ],
             "description": "The crc32_big function in crc32.c in zlib 1.2.8 might allow context-dependent attackers to have unspecified impact via vectors involving big-endian CRC calculation."
@@ -12563,6 +12658,21 @@
                 "id": "USN-3041-1",
                 "editeur": "Ubuntu",
                 "url": "http://www.ubuntu.com/usn/USN-3041-1"
+              },
+              {
+                "id": "Apple HT207141",
+                "editeur": "",
+                "url": "https://support.apple.com/HT207141"
+              },
+              {
+                "id": "Apple HT207142",
+                "editeur": "",
+                "url": "https://support.apple.com/HT207142"
+              },
+              {
+                "id": "Apple HT207143",
+                "editeur": "",
+                "url": "https://support.apple.com/HT207143"
               }
             ],
             "description": "Use-after-free vulnerability in libxml2 through 2.9.4, as used in Google Chrome before 52.0.2743.82, allows remote attackers to cause a denial of service or possibly have unspecified other impact via vectors related to the XPointer range-to function."
@@ -12586,19 +12696,24 @@
             "concerne_le_systeme": true,
             "bulletins": [
               {
-                "id": "USN-4246-1",
-                "editeur": "Ubuntu",
-                "url": "https://usn.ubuntu.com/4246-1/"
-              },
-              {
-                "id": "USN-4292-1",
-                "editeur": "Ubuntu",
-                "url": "https://usn.ubuntu.com/4292-1/"
-              },
-              {
-                "id": null,
+                "id": "Apple HT208112",
                 "editeur": "",
-                "url": "https://github.com/madler/zlib/commit/6a043145ca6e9c55184013841a67b2fef87e44c0"
+                "url": "https://support.apple.com/HT208112"
+              },
+              {
+                "id": "Apple HT208113",
+                "editeur": "",
+                "url": "https://support.apple.com/HT208113"
+              },
+              {
+                "id": "Apple HT208115",
+                "editeur": "",
+                "url": "https://support.apple.com/HT208115"
+              },
+              {
+                "id": "Apple HT208144",
+                "editeur": "",
+                "url": "https://support.apple.com/HT208144"
               }
             ],
             "description": "inftrees.c in zlib 1.2.8 might allow context-dependent attackers to have unspecified impact by leveraging improper pointer arithmetic."
@@ -12622,24 +12737,24 @@
             "concerne_le_systeme": true,
             "bulletins": [
               {
-                "id": "USN-4246-1",
-                "editeur": "Ubuntu",
-                "url": "https://usn.ubuntu.com/4246-1/"
-              },
-              {
-                "id": "USN-4292-1",
-                "editeur": "Ubuntu",
-                "url": "https://usn.ubuntu.com/4292-1/"
-              },
-              {
-                "id": null,
+                "id": "Apple HT208112",
                 "editeur": "",
-                "url": "http://www.openwall.com/lists/oss-security/2016/12/05/21"
+                "url": "https://support.apple.com/HT208112"
               },
               {
-                "id": null,
-                "editeur": "Red Hat",
-                "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1402348"
+                "id": "Apple HT208113",
+                "editeur": "",
+                "url": "https://support.apple.com/HT208113"
+              },
+              {
+                "id": "Apple HT208115",
+                "editeur": "",
+                "url": "https://support.apple.com/HT208115"
+              },
+              {
+                "id": "Apple HT208144",
+                "editeur": "",
+                "url": "https://support.apple.com/HT208144"
               }
             ],
             "description": "The inflateMark function in inflate.c in zlib 1.2.8 might allow context-dependent attackers to have unspecified impact via vectors involving left shifts of negative integers."
@@ -12668,19 +12783,19 @@
                 "url": "http://www.ubuntu.com/usn/USN-2994-1"
               },
               {
-                "id": null,
+                "id": "Apple HT206166",
                 "editeur": "",
-                "url": "http://lists.apple.com/archives/security-announce/2016/Mar/msg00000.html"
+                "url": "https://support.apple.com/HT206166"
               },
               {
-                "id": null,
+                "id": "Apple HT206167",
                 "editeur": "",
-                "url": "http://lists.apple.com/archives/security-announce/2016/Mar/msg00001.html"
+                "url": "https://support.apple.com/HT206167"
               },
               {
-                "id": null,
+                "id": "Apple HT206168",
                 "editeur": "",
-                "url": "http://lists.apple.com/archives/security-announce/2016/Mar/msg00002.html"
+                "url": "https://support.apple.com/HT206168"
               }
             ],
             "description": "The xmlNextChar function in libxml2 before 2.9.4 allows remote attackers to cause a denial of service (heap-based buffer over-read) via a crafted XML document."
@@ -12715,6 +12830,7 @@
             ]
           }
         ],
+        "nb_cve_anterieures_a_la_sortie": 0,
         "nb_cve_logiciels_optionnels_ecartees": 215,
         "logiciels_optionnels_les_plus_cites": [
           "google chrome (27)",
@@ -12738,6 +12854,7 @@
         "cvss_max": 0,
         "cves_prioritaires": [],
         "cves_kev": [],
+        "nb_cve_anterieures_a_la_sortie": 0,
         "nb_cve_logiciels_optionnels_ecartees": 0,
         "logiciels_optionnels_les_plus_cites": [],
         "erreur": null

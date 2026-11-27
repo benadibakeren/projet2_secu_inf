@@ -84,7 +84,15 @@ def recommandations_par_regles(actif: dict) -> list[dict]:
             "cves": [],
         })
 
+    # Failles KEV parmi les plus menaçantes, complétées par les autres failles KEV de la machine
+    # (une faille KEV locale peut être hors des 5 plus menaçantes, ex. Dirty COW sur le serveur web).
     kev = [c for c in risque["cves_a_traiter"] if c["dans_kev"]]
+    deja = {c["id"] for c in kev}
+    for c in sorted(actif.get("cves_kev", []), key=lambda c: -(c.get("score") or 0)):
+        if len(kev) >= config.NB_CVE_A_TRAITER:
+            break
+        if c["id"] not in deja:
+            kev.append(c); deja.add(c["id"])
     if kev:
         recos.append({
             "priorite": "immédiate",
@@ -166,6 +174,13 @@ Règles :
   fiche. "correctifs_disponibles_pour_failles_kev" liste les bulletins qui corrigent le plus de failles
   déjà exploitées sur cette machine : nomme-les, c'est ce qu'un administrateur applique.
   N'invente aucune CVE, aucun bulletin, aucun numéro de correctif, aucune version.
+- N'attribue une CVE qu'au logiciel indiqué dans son champ "logiciel".
+- Ne généralise pas (par exemple "toutes les failles concernent Flash") si les descriptions ne le montrent pas.
+- Ne dis pas qu'un logiciel est obsolète ou plus maintenu si la fiche ne donne pas sa fin de support.
+- Ne cite aucun produit ni aucune version sortis après la date de référence (pas de Windows 11,
+  pas d'Ubuntu 18.04 ou 20.04) : écris plutôt "une version maintenue".
+- N'écris jamais le nom d'un champ de la fiche (par exemple correctifs_disponibles_pour_failles_kev) :
+  écris "les correctifs disponibles".
 - Écris en français simple, phrases courtes, sans jargon inutile.
 - Réponds uniquement avec un objet JSON, sans texte autour :
 {"resume": "1 ou 2 phrases sur la situation de la machine",
@@ -198,7 +213,7 @@ def fiche_pour_llm(actif: dict, recos: list[dict]) -> dict:
     }
 
 
-MOTIF_BULLETIN = re.compile(r"\b(?:MS\d{2}-\d{3}|USN-\d{3,5}-\d+|RHSA-\d{4}:\d{4,5}|DSA-\d{3,5}(?:-\d+)?)\b")
+MOTIF_BULLETIN = re.compile(r"\b(?:Apple HT\d+|MS\d{2}-\d{3}|USN-\d{3,5}-\d+|RHSA-\d{4}:\d{4,5}|DSA-\d{3,5}(?:-\d+)?)\b")
 
 
 def verifier_cves(plan: dict, connues: set[str], bulletins_connus: set[str] = frozenset()) -> list[str]:
@@ -222,19 +237,31 @@ def verifier_cves(plan: dict, connues: set[str], bulletins_connus: set[str] = fr
     return sorted(inventees)
 
 
+CHAMPS_INTERNES = {"correctifs_disponibles_pour_failles_kev": "les correctifs disponibles",
+                   "failles_les_plus_menacantes": "les failles les plus menaçantes",
+                   "recommandations_des_regles": "les recommandations", "dans_kev": "KEV"}
+
+
+def _texte_propre(texte: str) -> str:
+    """Remplace les noms de champs que le LLM recopie parfois par des mots simples."""
+    for champ, mots in CHAMPS_INTERNES.items():
+        texte = texte.replace(champ, mots)
+    return texte
+
+
 def valider_plan(brut: dict) -> dict:
     actions = []
     for a in brut.get("actions", []):
         if not isinstance(a, dict) or not a.get("action"):
             continue
         priorite = a.get("priorite") if a.get("priorite") in PRIORITES else "moyen terme"
-        actions.append({"priorite": priorite, "action": str(a["action"]),
-                        "justification": str(a.get("justification", "")),
+        actions.append({"priorite": priorite, "action": _texte_propre(str(a["action"])),
+                        "justification": _texte_propre(str(a.get("justification", ""))),
                         "cves": [str(c) for c in (a.get("cves") or [])]})
     if not actions:
         raise ValueError("Plan vide")
     actions.sort(key=lambda a: PRIORITES.index(a["priorite"]))
-    return {"resume": str(brut.get("resume", "")), "actions": actions}
+    return {"resume": _texte_propre(str(brut.get("resume", ""))), "actions": actions}
 
 
 def plan_par_llm(client, actif: dict, recos: list[dict], essais: int = 3) -> dict:
@@ -337,7 +364,8 @@ def ecrire_rapport(plans: list[dict], ecarts: dict, balayages: list[dict], chemi
         "",
         "## Résumé",
         "",
-        f"{len(plans)} actifs analysés : " + ", ".join(f"{compte[n]} {n.lower()}" for n in ordre if n in compte) + ".",
+        f"{len(plans)} actifs analysés. Par niveau de risque : "
+        + ", ".join(f"{n} {compte[n]}" for n in ordre if n in compte) + ".",
         "",
     ]
     for p in plans:
@@ -434,7 +462,7 @@ def executer(dossier_sortie: Path = config.DOSSIER_SORTIE, utiliser_llm: bool = 
     plans = []
     for actif in actifs:
         recos = recommandations_par_regles(actif)
-        connues = {c["id"] for c in actif["risque"]["cves_a_traiter"]}
+        connues = {c["id"] for c in actif["risque"]["cves_a_traiter"] + actif.get("cves_kev", [])}
         plan, methode, retirees = plan_par_regles(actif, recos), "règles", []
 
         if client is not None and actif["risque"]["niveau"] in NIVEAUX_AVEC_LLM:

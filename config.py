@@ -181,6 +181,16 @@ FIN_DE_SUPPORT = {
     "cpe:2.3:o:canonical:ubuntu_linux:14.04": "2019-04-30",
     "cpe:2.3:o:canonical:ubuntu_linux:16.04": "2021-04-30",
     "cpe:2.3:o:microsoft:windows_8.1": "2023-01-10",
+    # Apple n'annonce pas de date. Dernière mise à jour de sécurité du système en juin 2011 (Computerworld).
+    "cpe:2.3:o:apple:mac_os_x:10.5": "2011-06",
+}
+
+# Date de sortie de certains systèmes. Une faille publiée AVANT la sortie est déjà corrigée
+# dans le système livré : on l'écarte. Exemple : la NVD associe à Windows 10 des failles de
+# Flash de janvier 2015, alors que Windows 10 est sorti en juillet 2015 avec un Flash corrigé.
+SORTIE_SYSTEME = {
+    "cpe:2.3:o:microsoft:windows_10": "2015-07-29",
+    "cpe:2.3:o:microsoft:windows_server_2016": "2016-10-12",
 }
 
 # Ports qui ne devraient pas être ouverts à tout Internet (administration, transfert de fichiers)
