@@ -264,7 +264,19 @@ def valider_plan(brut: dict) -> dict:
     return {"resume": _texte_propre(str(brut.get("resume", ""))), "actions": actions}
 
 
-def plan_par_llm(client, actif: dict, recos: list[dict], essais: int = 3) -> dict:
+def attente_avant_nouvel_essai(erreur: Exception, essai: int) -> float:
+    """
+    Temps d'attente avant de réessayer. Groq limite les jetons par minute et indique
+    dans son message combien attendre ("try again in 12.5s" ou "in 1m3s").
+    Sinon on attend de plus en plus longtemps : 20 s, 40 s, 60 s...
+    """
+    m = re.search(r"try again in (?:(\d+)m)?([\d.]+)s", str(erreur))
+    if m:
+        return int(m.group(1) or 0) * 60 + float(m.group(2)) + 2
+    return 20 * essai
+
+
+def plan_par_llm(client, actif: dict, recos: list[dict], essais: int = 5) -> dict:
     message = json.dumps(fiche_pour_llm(actif, recos), ensure_ascii=False)
     for essai in range(1, essais + 1):
         try:
@@ -276,8 +288,16 @@ def plan_par_llm(client, actif: dict, recos: list[dict], essais: int = 3) -> dic
             )
             return valider_plan(extraire_json(reponse.choices[0].message.content))
         except Exception as erreur:
-            print(f"[Agent 5] {actif['ip']} : essai {essai} raté ({type(erreur).__name__})")
-            time.sleep(10 * essai)  # souvent la limite de jetons par minute de Groq
+            attente = attente_avant_nouvel_essai(erreur, essai)
+            if attente > 120:
+                # Plusieurs minutes d'attente : c'est le quota du JOUR qui est presque vide.
+                print(f"[Agent 5] {actif['ip']} : quota du jour de Groq épuisé "
+                      f"(il faudrait attendre {attente / 60:.0f} min). On garde le plan par règles.")
+                break
+            print(f"[Agent 5] {actif['ip']} : essai {essai} raté ({type(erreur).__name__}), "
+                  f"nouvel essai dans {attente:.0f} s")
+            if essai < essais:
+                time.sleep(attente)
     raise RuntimeError("LLM indisponible")
 
 

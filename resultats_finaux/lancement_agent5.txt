@@ -1,0 +1,21 @@
+[Agent 5] 192.168.10.3     Critique  6 actions  (règles + LLM)
+[Agent 5] 192.168.10.8     Critique  5 actions  (règles + LLM)
+[Agent 5] 192.168.10.50    Élevé     5 actions  (règles + LLM)
+[Agent 5] 192.168.10.9     Moyen     5 actions  (règles + LLM)
+[Agent 5] 192.168.10.5 : essai 1 raté (RateLimitError), nouvel essai dans 7 s
+[Agent 5] 192.168.10.5     Moyen     6 actions  (règles + LLM)
+[Agent 5] 192.168.10.14 : essai 1 raté (RateLimitError), nouvel essai dans 12 s
+[Agent 5] 192.168.10.14    Moyen     6 actions  (règles + LLM)
+[Agent 5] 192.168.10.15 : essai 1 raté (RateLimitError), nouvel essai dans 11 s
+[Agent 5] 192.168.10.15    Moyen     5 actions  (règles + LLM)
+[Agent 5] 192.168.10.51 : essai 1 raté (RateLimitError), nouvel essai dans 20 s
+[Agent 5] 192.168.10.51    Moyen     5 actions  (règles + LLM)
+[Agent 5] 192.168.10.19    Moyen     6 actions  (règles + LLM)
+[Agent 5] 192.168.10.17 : essai 1 raté (RateLimitError), nouvel essai dans 9 s
+[Agent 5] 192.168.10.17    Moyen     5 actions  (règles + LLM)
+[Agent 5] 192.168.10.12 : essai 1 raté (RateLimitError), nouvel essai dans 5 s
+[Agent 5] 192.168.10.12    Moyen     4 actions  (règles + LLM)
+[Agent 5] 192.168.10.25    Faible    3 actions  (règles)
+[Agent 5] 192.168.10.16    Faible    2 actions  (règles)
+[Agent 5] 192.168.10.1     Inconnu   5 actions  (règles + LLM)
+[Agent 5] Rapport écrit : /workspaces/projet2_secu_inf/output/rapport.md

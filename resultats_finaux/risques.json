@@ -1761,11 +1761,6 @@
           ],
           "bulletins": [
             {
-              "id": "Apple HT208221",
-              "editeur": "",
-              "url": "https://support.apple.com/HT208221"
-            },
-            {
               "id": null,
               "editeur": "",
               "url": "https://github.com/apache/httpd/commit/29c63b786ae028d82405421585e91283c8fa0da3"
@@ -1817,11 +1812,6 @@
               "url": "http://www.ubuntu.com/usn/USN-3038-1"
             },
             {
-              "id": "Apple HT208221",
-              "editeur": "",
-              "url": "https://support.apple.com/HT208221"
-            },
-            {
               "id": null,
               "editeur": "",
               "url": "http://www.oracle.com/technetwork/security-advisory/cpujan2018-3236628.html"
@@ -1830,6 +1820,11 @@
               "id": null,
               "editeur": "",
               "url": "http://www.oracle.com/technetwork/security-advisory/cpujul2017-3236622.html"
+            },
+            {
+              "id": null,
+              "editeur": "Apache",
+              "url": "https://www.apache.org/security/asf-httpoxy-response.txt"
             }
           ],
           "description": "The Apache HTTP Server through 2.4.23 follows RFC 3875 section 4.1.18 and therefore does not protect applications from the presence of untrusted client data in the HTTP_PROXY environment variable, which might allow remote attackers to redirect an application's outbound HTTP traffic to an arbitrary p"
@@ -5477,24 +5472,24 @@
         "rancongiciel": false,
         "bulletins": [
           {
-            "id": "Apple HT6495",
-            "editeur": "",
-            "url": "http://support.apple.com/kb/HT6495"
-          },
-          {
             "id": "USN-2362-1",
             "editeur": "Ubuntu",
             "url": "http://www.ubuntu.com/usn/USN-2362-1"
           },
           {
-            "id": "Apple HT6535",
+            "id": null,
             "editeur": "",
-            "url": "https://support.apple.com/kb/HT6535"
+            "url": "http://jvn.jp/en/jp/JVN55667175/index.html"
           },
           {
             "id": null,
             "editeur": "",
-            "url": "http://jvn.jp/en/jp/JVN55667175/index.html"
+            "url": "http://jvndb.jvn.jp/jvndb/JVNDB-2014-000126"
+          },
+          {
+            "id": null,
+            "editeur": "Red Hat",
+            "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1141597"
           }
         ]
       },
@@ -5503,11 +5498,6 @@
         "score": 9.8,
         "rancongiciel": false,
         "bulletins": [
-          {
-            "id": "Apple HT6495",
-            "editeur": "",
-            "url": "http://support.apple.com/kb/HT6495"
-          },
           {
             "id": "USN-2363-1",
             "editeur": "Ubuntu",
@@ -5519,9 +5509,9 @@
             "url": "http://www.ubuntu.com/usn/USN-2363-2"
           },
           {
-            "id": "Apple HT6535",
+            "id": null,
             "editeur": "",
-            "url": "https://support.apple.com/kb/HT6535"
+            "url": "http://www.oracle.com/technetwork/topics/security/bashcve-2014-7169-2317675.html"
           }
         ]
       },
@@ -5688,24 +5678,24 @@
           ],
           "bulletins": [
             {
-              "id": "Apple HT6495",
-              "editeur": "",
-              "url": "http://support.apple.com/kb/HT6495"
-            },
-            {
               "id": "USN-2362-1",
               "editeur": "Ubuntu",
               "url": "http://www.ubuntu.com/usn/USN-2362-1"
             },
             {
-              "id": "Apple HT6535",
+              "id": null,
               "editeur": "",
-              "url": "https://support.apple.com/kb/HT6535"
+              "url": "http://jvn.jp/en/jp/JVN55667175/index.html"
             },
             {
               "id": null,
               "editeur": "",
-              "url": "http://jvn.jp/en/jp/JVN55667175/index.html"
+              "url": "http://jvndb.jvn.jp/jvndb/JVNDB-2014-000126"
+            },
+            {
+              "id": null,
+              "editeur": "Red Hat",
+              "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1141597"
             }
           ],
           "description": "GNU Bash through 4.3 processes trailing strings after function definitions in the values of environment variables, which allows remote attackers to execute arbitrary code via a crafted environment, as demonstrated by vectors involving the ForceCommand feature in OpenSSH sshd, the mod_cgi and mod_cgi"
@@ -5728,11 +5718,6 @@
           ],
           "bulletins": [
             {
-              "id": "Apple HT6495",
-              "editeur": "",
-              "url": "http://support.apple.com/kb/HT6495"
-            },
-            {
               "id": "USN-2363-1",
               "editeur": "Ubuntu",
               "url": "http://www.ubuntu.com/usn/USN-2363-1"
@@ -5743,9 +5728,9 @@
               "url": "http://www.ubuntu.com/usn/USN-2363-2"
             },
             {
-              "id": "Apple HT6535",
+              "id": null,
               "editeur": "",
-              "url": "https://support.apple.com/kb/HT6535"
+              "url": "http://www.oracle.com/technetwork/topics/security/bashcve-2014-7169-2317675.html"
             }
           ],
           "description": "GNU Bash through 4.3 bash43-025 processes trailing strings after certain malformed function definitions in the values of environment variables, which allows remote attackers to write to files or possibly have unknown other impact via a crafted environment, as demonstrated by vectors involving the Fo"
@@ -5909,24 +5894,24 @@
         "rancongiciel": false,
         "bulletins": [
           {
-            "id": "Apple HT6495",
-            "editeur": "",
-            "url": "http://support.apple.com/kb/HT6495"
-          },
-          {
             "id": "USN-2362-1",
             "editeur": "Ubuntu",
             "url": "http://www.ubuntu.com/usn/USN-2362-1"
           },
           {
-            "id": "Apple HT6535",
+            "id": null,
             "editeur": "",
-            "url": "https://support.apple.com/kb/HT6535"
+            "url": "http://jvn.jp/en/jp/JVN55667175/index.html"
           },
           {
             "id": null,
             "editeur": "",
-            "url": "http://jvn.jp/en/jp/JVN55667175/index.html"
+            "url": "http://jvndb.jvn.jp/jvndb/JVNDB-2014-000126"
+          },
+          {
+            "id": null,
+            "editeur": "Red Hat",
+            "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1141597"
           }
         ]
       },
@@ -5935,11 +5920,6 @@
         "score": 9.8,
         "rancongiciel": false,
         "bulletins": [
-          {
-            "id": "Apple HT6495",
-            "editeur": "",
-            "url": "http://support.apple.com/kb/HT6495"
-          },
           {
             "id": "USN-2363-1",
             "editeur": "Ubuntu",
@@ -5951,9 +5931,9 @@
             "url": "http://www.ubuntu.com/usn/USN-2363-2"
           },
           {
-            "id": "Apple HT6535",
+            "id": null,
             "editeur": "",
-            "url": "https://support.apple.com/kb/HT6535"
+            "url": "http://www.oracle.com/technetwork/topics/security/bashcve-2014-7169-2317675.html"
           }
         ]
       },
@@ -6093,24 +6073,24 @@
           ],
           "bulletins": [
             {
-              "id": "Apple HT6495",
-              "editeur": "",
-              "url": "http://support.apple.com/kb/HT6495"
-            },
-            {
               "id": "USN-2362-1",
               "editeur": "Ubuntu",
               "url": "http://www.ubuntu.com/usn/USN-2362-1"
             },
             {
-              "id": "Apple HT6535",
+              "id": null,
               "editeur": "",
-              "url": "https://support.apple.com/kb/HT6535"
+              "url": "http://jvn.jp/en/jp/JVN55667175/index.html"
             },
             {
               "id": null,
               "editeur": "",
-              "url": "http://jvn.jp/en/jp/JVN55667175/index.html"
+              "url": "http://jvndb.jvn.jp/jvndb/JVNDB-2014-000126"
+            },
+            {
+              "id": null,
+              "editeur": "Red Hat",
+              "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1141597"
             }
           ],
           "description": "GNU Bash through 4.3 processes trailing strings after function definitions in the values of environment variables, which allows remote attackers to execute arbitrary code via a crafted environment, as demonstrated by vectors involving the ForceCommand feature in OpenSSH sshd, the mod_cgi and mod_cgi"
@@ -6133,11 +6113,6 @@
           ],
           "bulletins": [
             {
-              "id": "Apple HT6495",
-              "editeur": "",
-              "url": "http://support.apple.com/kb/HT6495"
-            },
-            {
               "id": "USN-2363-1",
               "editeur": "Ubuntu",
               "url": "http://www.ubuntu.com/usn/USN-2363-1"
@@ -6148,9 +6123,9 @@
               "url": "http://www.ubuntu.com/usn/USN-2363-2"
             },
             {
-              "id": "Apple HT6535",
+              "id": null,
               "editeur": "",
-              "url": "https://support.apple.com/kb/HT6535"
+              "url": "http://www.oracle.com/technetwork/topics/security/bashcve-2014-7169-2317675.html"
             }
           ],
           "description": "GNU Bash through 4.3 bash43-025 processes trailing strings after certain malformed function definitions in the values of environment variables, which allows remote attackers to write to files or possibly have unknown other impact via a crafted environment, as demonstrated by vectors involving the Fo"
@@ -6314,24 +6289,24 @@
         "rancongiciel": false,
         "bulletins": [
           {
-            "id": "Apple HT6495",
-            "editeur": "",
-            "url": "http://support.apple.com/kb/HT6495"
-          },
-          {
             "id": "USN-2362-1",
             "editeur": "Ubuntu",
             "url": "http://www.ubuntu.com/usn/USN-2362-1"
           },
           {
-            "id": "Apple HT6535",
+            "id": null,
             "editeur": "",
-            "url": "https://support.apple.com/kb/HT6535"
+            "url": "http://jvn.jp/en/jp/JVN55667175/index.html"
           },
           {
             "id": null,
             "editeur": "",
-            "url": "http://jvn.jp/en/jp/JVN55667175/index.html"
+            "url": "http://jvndb.jvn.jp/jvndb/JVNDB-2014-000126"
+          },
+          {
+            "id": null,
+            "editeur": "Red Hat",
+            "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1141597"
           }
         ]
       },
@@ -6340,11 +6315,6 @@
         "score": 9.8,
         "rancongiciel": false,
         "bulletins": [
-          {
-            "id": "Apple HT6495",
-            "editeur": "",
-            "url": "http://support.apple.com/kb/HT6495"
-          },
           {
             "id": "USN-2363-1",
             "editeur": "Ubuntu",
@@ -6356,9 +6326,9 @@
             "url": "http://www.ubuntu.com/usn/USN-2363-2"
           },
           {
-            "id": "Apple HT6535",
+            "id": null,
             "editeur": "",
-            "url": "https://support.apple.com/kb/HT6535"
+            "url": "http://www.oracle.com/technetwork/topics/security/bashcve-2014-7169-2317675.html"
           }
         ]
       },
@@ -6498,24 +6468,24 @@
           ],
           "bulletins": [
             {
-              "id": "Apple HT6495",
-              "editeur": "",
-              "url": "http://support.apple.com/kb/HT6495"
-            },
-            {
               "id": "USN-2362-1",
               "editeur": "Ubuntu",
               "url": "http://www.ubuntu.com/usn/USN-2362-1"
             },
             {
-              "id": "Apple HT6535",
+              "id": null,
               "editeur": "",
-              "url": "https://support.apple.com/kb/HT6535"
+              "url": "http://jvn.jp/en/jp/JVN55667175/index.html"
             },
             {
               "id": null,
               "editeur": "",
-              "url": "http://jvn.jp/en/jp/JVN55667175/index.html"
+              "url": "http://jvndb.jvn.jp/jvndb/JVNDB-2014-000126"
+            },
+            {
+              "id": null,
+              "editeur": "Red Hat",
+              "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1141597"
             }
           ],
           "description": "GNU Bash through 4.3 processes trailing strings after function definitions in the values of environment variables, which allows remote attackers to execute arbitrary code via a crafted environment, as demonstrated by vectors involving the ForceCommand feature in OpenSSH sshd, the mod_cgi and mod_cgi"
@@ -6538,11 +6508,6 @@
           ],
           "bulletins": [
             {
-              "id": "Apple HT6495",
-              "editeur": "",
-              "url": "http://support.apple.com/kb/HT6495"
-            },
-            {
               "id": "USN-2363-1",
               "editeur": "Ubuntu",
               "url": "http://www.ubuntu.com/usn/USN-2363-1"
@@ -6553,9 +6518,9 @@
               "url": "http://www.ubuntu.com/usn/USN-2363-2"
             },
             {
-              "id": "Apple HT6535",
+              "id": null,
               "editeur": "",
-              "url": "https://support.apple.com/kb/HT6535"
+              "url": "http://www.oracle.com/technetwork/topics/security/bashcve-2014-7169-2317675.html"
             }
           ],
           "description": "GNU Bash through 4.3 bash43-025 processes trailing strings after certain malformed function definitions in the values of environment variables, which allows remote attackers to write to files or possibly have unknown other impact via a crafted environment, as demonstrated by vectors involving the Fo"
@@ -6883,24 +6848,14 @@
           ],
           "bulletins": [
             {
-              "id": "Apple HT208112",
-              "editeur": "",
-              "url": "https://support.apple.com/HT208112"
+              "id": "USN-4246-1",
+              "editeur": "Ubuntu",
+              "url": "https://usn.ubuntu.com/4246-1/"
             },
             {
-              "id": "Apple HT208113",
-              "editeur": "",
-              "url": "https://support.apple.com/HT208113"
-            },
-            {
-              "id": "Apple HT208115",
-              "editeur": "",
-              "url": "https://support.apple.com/HT208115"
-            },
-            {
-              "id": "Apple HT208144",
-              "editeur": "",
-              "url": "https://support.apple.com/HT208144"
+              "id": "USN-4292-1",
+              "editeur": "Ubuntu",
+              "url": "https://usn.ubuntu.com/4292-1/"
             }
           ],
           "description": "inffast.c in zlib 1.2.8 might allow context-dependent attackers to have unspecified impact by leveraging improper pointer arithmetic."
@@ -6923,24 +6878,14 @@
           ],
           "bulletins": [
             {
-              "id": "Apple HT208112",
-              "editeur": "",
-              "url": "https://support.apple.com/HT208112"
+              "id": "USN-4246-1",
+              "editeur": "Ubuntu",
+              "url": "https://usn.ubuntu.com/4246-1/"
             },
             {
-              "id": "Apple HT208113",
-              "editeur": "",
-              "url": "https://support.apple.com/HT208113"
-            },
-            {
-              "id": "Apple HT208115",
-              "editeur": "",
-              "url": "https://support.apple.com/HT208115"
-            },
-            {
-              "id": "Apple HT208144",
-              "editeur": "",
-              "url": "https://support.apple.com/HT208144"
+              "id": "USN-4292-1",
+              "editeur": "Ubuntu",
+              "url": "https://usn.ubuntu.com/4292-1/"
             }
           ],
           "description": "The crc32_big function in crc32.c in zlib 1.2.8 might allow context-dependent attackers to have unspecified impact via vectors involving big-endian CRC calculation."
@@ -7474,24 +7419,14 @@
           ],
           "bulletins": [
             {
-              "id": "Apple HT208112",
-              "editeur": "",
-              "url": "https://support.apple.com/HT208112"
+              "id": "USN-4246-1",
+              "editeur": "Ubuntu",
+              "url": "https://usn.ubuntu.com/4246-1/"
             },
             {
-              "id": "Apple HT208113",
-              "editeur": "",
-              "url": "https://support.apple.com/HT208113"
-            },
-            {
-              "id": "Apple HT208115",
-              "editeur": "",
-              "url": "https://support.apple.com/HT208115"
-            },
-            {
-              "id": "Apple HT208144",
-              "editeur": "",
-              "url": "https://support.apple.com/HT208144"
+              "id": "USN-4292-1",
+              "editeur": "Ubuntu",
+              "url": "https://usn.ubuntu.com/4292-1/"
             }
           ],
           "description": "inffast.c in zlib 1.2.8 might allow context-dependent attackers to have unspecified impact by leveraging improper pointer arithmetic."
@@ -7514,24 +7449,14 @@
           ],
           "bulletins": [
             {
-              "id": "Apple HT208112",
-              "editeur": "",
-              "url": "https://support.apple.com/HT208112"
+              "id": "USN-4246-1",
+              "editeur": "Ubuntu",
+              "url": "https://usn.ubuntu.com/4246-1/"
             },
             {
-              "id": "Apple HT208113",
-              "editeur": "",
-              "url": "https://support.apple.com/HT208113"
-            },
-            {
-              "id": "Apple HT208115",
-              "editeur": "",
-              "url": "https://support.apple.com/HT208115"
-            },
-            {
-              "id": "Apple HT208144",
-              "editeur": "",
-              "url": "https://support.apple.com/HT208144"
+              "id": "USN-4292-1",
+              "editeur": "Ubuntu",
+              "url": "https://usn.ubuntu.com/4292-1/"
             }
           ],
           "description": "The crc32_big function in crc32.c in zlib 1.2.8 might allow context-dependent attackers to have unspecified impact via vectors involving big-endian CRC calculation."

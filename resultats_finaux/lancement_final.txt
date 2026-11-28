@@ -78,27 +78,40 @@
   14   192.168.10.1    Équipement réseau (pare-feu, routeur)     3    0.0  Inconnu
        Aucun logiciel connu : impossible d'évaluer ses failles. Compléter l'inventaire.
 
-[Agent 5] 192.168.10.3     Critique  5 actions  (règles + LLM)
+[Agent 5] 192.168.10.3     Critique  4 actions  (règles + LLM)
 [Agent 5] 192.168.10.8     Critique  5 actions  (règles + LLM)
-[Agent 5] 192.168.10.50    Élevé     5 actions  (règles + LLM)
-[Agent 5] 192.168.10.9     Moyen     5 actions  (règles + LLM)
-[Agent 5] 192.168.10.5     Moyen     6 actions  (règles + LLM)
-[Agent 5] 192.168.10.14    Moyen     4 actions  (règles + LLM)
-[Agent 5] 192.168.10.15    Moyen     5 actions  (règles + LLM)
-[Agent 5] 192.168.10.51    Moyen     4 actions  (règles + LLM)
-[Agent 5] 192.168.10.19    Moyen     5 actions  (règles + LLM)
-[Agent 5] 192.168.10.17    Moyen     5 actions  (règles + LLM)
-[Agent 5] 192.168.10.12    Moyen     5 actions  (règles + LLM)
-[Agent 5] 192.168.10.25    Faible    3 actions  (règles)
-[Agent 5] 192.168.10.16    Faible    2 actions  (règles)
-[Agent 5] 192.168.10.1     Inconnu   4 actions  (règles + LLM)
-[Agent 5] Rapport écrit : /workspaces/projet2_secu_inf/output/rapport.md
-14 actifs classés. Machines attaquées selon les étiquettes :
-
-  IP               Rang  Niveau    Attaques reçues
-  192.168.10.50       3  Élevé     Web Attack - Brute Force (1507), Web Attack - XSS (652), Web Attack - Sql Injection (21)
-
-Machines internes qui ENVOIENT des attaques (donc compromises) selon les étiquettes :
-  192.168.10.8     repérée par nos agents   Infiltration (36)
-
-Signalées compromises à tort : aucune
+[Agent 5] 192.168.10.50 : essai 1 raté (RateLimitError)
+[Agent 5] 192.168.10.50 : essai 2 raté (RateLimitError)
+[Agent 5] 192.168.10.50 : essai 3 raté (RateLimitError)
+[Agent 5] 192.168.10.50 : on garde le plan par règles
+[Agent 5] 192.168.10.50    Élevé     3 actions  (règles)
+[Agent 5] 192.168.10.9 : essai 1 raté (RateLimitError)
+[Agent 5] 192.168.10.9 : essai 2 raté (RateLimitError)
+[Agent 5] 192.168.10.9 : essai 3 raté (RateLimitError)
+[Agent 5] 192.168.10.9 : on garde le plan par règles
+[Agent 5] 192.168.10.9     Moyen     1 actions  (règles)
+[Agent 5] 192.168.10.5 : essai 1 raté (RateLimitError)
+[Agent 5] 192.168.10.5 : essai 2 raté (RateLimitError)
+[Agent 5] 192.168.10.5 : essai 3 raté (RateLimitError)
+[Agent 5] 192.168.10.5 : on garde le plan par règles
+[Agent 5] 192.168.10.5     Moyen     1 actions  (règles)
+[Agent 5] 192.168.10.14 : essai 1 raté (RateLimitError)
+[Agent 5] 192.168.10.14 : essai 2 raté (RateLimitError)
+[Agent 5] 192.168.10.14 : essai 3 raté (RateLimitError)
+[Agent 5] 192.168.10.14 : on garde le plan par règles
+[Agent 5] 192.168.10.14    Moyen     1 actions  (règles)
+[Agent 5] 192.168.10.15 : essai 1 raté (RateLimitError)
+[Agent 5] 192.168.10.15 : essai 2 raté (RateLimitError)
+[Agent 5] 192.168.10.15 : essai 3 raté (RateLimitError)
+[Agent 5] 192.168.10.15 : on garde le plan par règles
+[Agent 5] 192.168.10.15    Moyen     1 actions  (règles)
+[Agent 5] 192.168.10.51 : essai 1 raté (RateLimitError)
+[Agent 5] 192.168.10.51 : essai 2 raté (RateLimitError)
+[Agent 5] 192.168.10.51 : essai 3 raté (RateLimitError)
+[Agent 5] 192.168.10.51 : on garde le plan par règles
+[Agent 5] 192.168.10.51    Moyen     2 actions  (règles)
+[Agent 5] 192.168.10.19 : essai 1 raté (RateLimitError)
+[Agent 5] 192.168.10.19 : essai 2 raté (RateLimitError)
+[Agent 5] 192.168.10.19 : essai 3 raté (RateLimitError)
+[Agent 5] 192.168.10.19 : on garde le plan par règles
+[Agent 5] 192.168.10.19    Moyen     1 actions  (règles)

@@ -198,7 +198,7 @@ PORTS_SENSIBLES = {21: "FTP", 22: "SSH", 23: "Telnet", 445: "SMB", 3389: "Bureau
                    1433: "SQL Server", 3306: "MySQL", 5432: "PostgreSQL"}
 
 # Pause entre deux appels au LLM (l'offre gratuite de Groq limite les jetons par minute)
-PAUSE_LLM = 3
+PAUSE_LLM = 10  # secondes entre deux machines : la version gratuite de Groq limite les jetons par minute
 
 # ---------------------------------------------------------------------------
 # LLM (agents 2 et 5)

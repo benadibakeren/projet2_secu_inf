@@ -267,7 +267,8 @@ def bulletins_securite(cve: dict, editeur_os: str = "", maximum: int = 4) -> lis
     # un administrateur Ubuntu applique les USN, pas les bulletins Debian (DSA).
     attendu = PREFIXE_BULLETINS.get(editeur_os)
     if attendu:
-        autres = tuple(p + "-" for p in PREFIXE_BULLETINS.values() if p != attendu)
+        # Les bulletins Apple s'écrivent "Apple HT6495", les autres "USN-3104-1" : séparateur différent
+        autres = tuple(p + (" " if p == "Apple" else "-") for p in PREFIXE_BULLETINS.values() if p != attendu)
         trouves = [b for b in trouves if not (b["id"] or "").startswith(autres)]
     # Bulletins connus que la NVD ne cite pas (voir config.BULLETINS_COMPLEMENTAIRES)
     for bid, info in config.BULLETINS_COMPLEMENTAIRES.items():

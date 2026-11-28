@@ -7041,24 +7041,24 @@
             "concerne_le_systeme": true,
             "bulletins": [
               {
-                "id": "Apple HT6495",
-                "editeur": "",
-                "url": "http://support.apple.com/kb/HT6495"
-              },
-              {
                 "id": "USN-2362-1",
                 "editeur": "Ubuntu",
                 "url": "http://www.ubuntu.com/usn/USN-2362-1"
               },
               {
-                "id": "Apple HT6535",
+                "id": null,
                 "editeur": "",
-                "url": "https://support.apple.com/kb/HT6535"
+                "url": "http://jvn.jp/en/jp/JVN55667175/index.html"
               },
               {
                 "id": null,
                 "editeur": "",
-                "url": "http://jvn.jp/en/jp/JVN55667175/index.html"
+                "url": "http://jvndb.jvn.jp/jvndb/JVNDB-2014-000126"
+              },
+              {
+                "id": null,
+                "editeur": "Red Hat",
+                "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1141597"
               }
             ],
             "description": "GNU Bash through 4.3 processes trailing strings after function definitions in the values of environment variables, which allows remote attackers to execute arbitrary code via a crafted environment, as demonstrated by vectors involving the ForceCommand feature in OpenSSH sshd, the mod_cgi and mod_cgi"
@@ -7082,11 +7082,6 @@
             "concerne_le_systeme": true,
             "bulletins": [
               {
-                "id": "Apple HT6495",
-                "editeur": "",
-                "url": "http://support.apple.com/kb/HT6495"
-              },
-              {
                 "id": "USN-2363-1",
                 "editeur": "Ubuntu",
                 "url": "http://www.ubuntu.com/usn/USN-2363-1"
@@ -7097,9 +7092,9 @@
                 "url": "http://www.ubuntu.com/usn/USN-2363-2"
               },
               {
-                "id": "Apple HT6535",
+                "id": null,
                 "editeur": "",
-                "url": "https://support.apple.com/kb/HT6535"
+                "url": "http://www.oracle.com/technetwork/topics/security/bashcve-2014-7169-2317675.html"
               }
             ],
             "description": "GNU Bash through 4.3 bash43-025 processes trailing strings after certain malformed function definitions in the values of environment variables, which allows remote attackers to write to files or possibly have unknown other impact via a crafted environment, as demonstrated by vectors involving the Fo"
@@ -7420,24 +7415,24 @@
             "rancongiciel": false,
             "bulletins": [
               {
-                "id": "Apple HT6495",
-                "editeur": "",
-                "url": "http://support.apple.com/kb/HT6495"
-              },
-              {
                 "id": "USN-2362-1",
                 "editeur": "Ubuntu",
                 "url": "http://www.ubuntu.com/usn/USN-2362-1"
               },
               {
-                "id": "Apple HT6535",
+                "id": null,
                 "editeur": "",
-                "url": "https://support.apple.com/kb/HT6535"
+                "url": "http://jvn.jp/en/jp/JVN55667175/index.html"
               },
               {
                 "id": null,
                 "editeur": "",
-                "url": "http://jvn.jp/en/jp/JVN55667175/index.html"
+                "url": "http://jvndb.jvn.jp/jvndb/JVNDB-2014-000126"
+              },
+              {
+                "id": null,
+                "editeur": "Red Hat",
+                "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1141597"
               }
             ]
           },
@@ -7446,11 +7441,6 @@
             "score": 9.8,
             "rancongiciel": false,
             "bulletins": [
-              {
-                "id": "Apple HT6495",
-                "editeur": "",
-                "url": "http://support.apple.com/kb/HT6495"
-              },
               {
                 "id": "USN-2363-1",
                 "editeur": "Ubuntu",
@@ -7462,9 +7452,9 @@
                 "url": "http://www.ubuntu.com/usn/USN-2363-2"
               },
               {
-                "id": "Apple HT6535",
+                "id": null,
                 "editeur": "",
-                "url": "https://support.apple.com/kb/HT6535"
+                "url": "http://www.oracle.com/technetwork/topics/security/bashcve-2014-7169-2317675.html"
               }
             ]
           },
@@ -8059,24 +8049,24 @@
             "concerne_le_systeme": true,
             "bulletins": [
               {
-                "id": "Apple HT6495",
-                "editeur": "",
-                "url": "http://support.apple.com/kb/HT6495"
-              },
-              {
                 "id": "USN-2362-1",
                 "editeur": "Ubuntu",
                 "url": "http://www.ubuntu.com/usn/USN-2362-1"
               },
               {
-                "id": "Apple HT6535",
+                "id": null,
                 "editeur": "",
-                "url": "https://support.apple.com/kb/HT6535"
+                "url": "http://jvn.jp/en/jp/JVN55667175/index.html"
               },
               {
                 "id": null,
                 "editeur": "",
-                "url": "http://jvn.jp/en/jp/JVN55667175/index.html"
+                "url": "http://jvndb.jvn.jp/jvndb/JVNDB-2014-000126"
+              },
+              {
+                "id": null,
+                "editeur": "Red Hat",
+                "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1141597"
               }
             ],
             "description": "GNU Bash through 4.3 processes trailing strings after function definitions in the values of environment variables, which allows remote attackers to execute arbitrary code via a crafted environment, as demonstrated by vectors involving the ForceCommand feature in OpenSSH sshd, the mod_cgi and mod_cgi"
@@ -8100,11 +8090,6 @@
             "concerne_le_systeme": true,
             "bulletins": [
               {
-                "id": "Apple HT6495",
-                "editeur": "",
-                "url": "http://support.apple.com/kb/HT6495"
-              },
-              {
                 "id": "USN-2363-1",
                 "editeur": "Ubuntu",
                 "url": "http://www.ubuntu.com/usn/USN-2363-1"
@@ -8115,9 +8100,9 @@
                 "url": "http://www.ubuntu.com/usn/USN-2363-2"
               },
               {
-                "id": "Apple HT6535",
+                "id": null,
                 "editeur": "",
-                "url": "https://support.apple.com/kb/HT6535"
+                "url": "http://www.oracle.com/technetwork/topics/security/bashcve-2014-7169-2317675.html"
               }
             ],
             "description": "GNU Bash through 4.3 bash43-025 processes trailing strings after certain malformed function definitions in the values of environment variables, which allows remote attackers to write to files or possibly have unknown other impact via a crafted environment, as demonstrated by vectors involving the Fo"
@@ -8429,24 +8414,24 @@
             "rancongiciel": false,
             "bulletins": [
               {
-                "id": "Apple HT6495",
-                "editeur": "",
-                "url": "http://support.apple.com/kb/HT6495"
-              },
-              {
                 "id": "USN-2362-1",
                 "editeur": "Ubuntu",
                 "url": "http://www.ubuntu.com/usn/USN-2362-1"
               },
               {
-                "id": "Apple HT6535",
+                "id": null,
                 "editeur": "",
-                "url": "https://support.apple.com/kb/HT6535"
+                "url": "http://jvn.jp/en/jp/JVN55667175/index.html"
               },
               {
                 "id": null,
                 "editeur": "",
-                "url": "http://jvn.jp/en/jp/JVN55667175/index.html"
+                "url": "http://jvndb.jvn.jp/jvndb/JVNDB-2014-000126"
+              },
+              {
+                "id": null,
+                "editeur": "Red Hat",
+                "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1141597"
               }
             ]
           },
@@ -8455,11 +8440,6 @@
             "score": 9.8,
             "rancongiciel": false,
             "bulletins": [
-              {
-                "id": "Apple HT6495",
-                "editeur": "",
-                "url": "http://support.apple.com/kb/HT6495"
-              },
               {
                 "id": "USN-2363-1",
                 "editeur": "Ubuntu",
@@ -8471,9 +8451,9 @@
                 "url": "http://www.ubuntu.com/usn/USN-2363-2"
               },
               {
-                "id": "Apple HT6535",
+                "id": null,
                 "editeur": "",
-                "url": "https://support.apple.com/kb/HT6535"
+                "url": "http://www.oracle.com/technetwork/topics/security/bashcve-2014-7169-2317675.html"
               }
             ]
           },
@@ -9041,24 +9021,24 @@
             "concerne_le_systeme": true,
             "bulletins": [
               {
-                "id": "Apple HT6495",
-                "editeur": "",
-                "url": "http://support.apple.com/kb/HT6495"
-              },
-              {
                 "id": "USN-2362-1",
                 "editeur": "Ubuntu",
                 "url": "http://www.ubuntu.com/usn/USN-2362-1"
               },
               {
-                "id": "Apple HT6535",
+                "id": null,
                 "editeur": "",
-                "url": "https://support.apple.com/kb/HT6535"
+                "url": "http://jvn.jp/en/jp/JVN55667175/index.html"
               },
               {
                 "id": null,
                 "editeur": "",
-                "url": "http://jvn.jp/en/jp/JVN55667175/index.html"
+                "url": "http://jvndb.jvn.jp/jvndb/JVNDB-2014-000126"
+              },
+              {
+                "id": null,
+                "editeur": "Red Hat",
+                "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1141597"
               }
             ],
             "description": "GNU Bash through 4.3 processes trailing strings after function definitions in the values of environment variables, which allows remote attackers to execute arbitrary code via a crafted environment, as demonstrated by vectors involving the ForceCommand feature in OpenSSH sshd, the mod_cgi and mod_cgi"
@@ -9082,11 +9062,6 @@
             "concerne_le_systeme": true,
             "bulletins": [
               {
-                "id": "Apple HT6495",
-                "editeur": "",
-                "url": "http://support.apple.com/kb/HT6495"
-              },
-              {
                 "id": "USN-2363-1",
                 "editeur": "Ubuntu",
                 "url": "http://www.ubuntu.com/usn/USN-2363-1"
@@ -9097,9 +9072,9 @@
                 "url": "http://www.ubuntu.com/usn/USN-2363-2"
               },
               {
-                "id": "Apple HT6535",
+                "id": null,
                 "editeur": "",
-                "url": "https://support.apple.com/kb/HT6535"
+                "url": "http://www.oracle.com/technetwork/topics/security/bashcve-2014-7169-2317675.html"
               }
             ],
             "description": "GNU Bash through 4.3 bash43-025 processes trailing strings after certain malformed function definitions in the values of environment variables, which allows remote attackers to write to files or possibly have unknown other impact via a crafted environment, as demonstrated by vectors involving the Fo"
@@ -9411,24 +9386,24 @@
             "rancongiciel": false,
             "bulletins": [
               {
-                "id": "Apple HT6495",
-                "editeur": "",
-                "url": "http://support.apple.com/kb/HT6495"
-              },
-              {
                 "id": "USN-2362-1",
                 "editeur": "Ubuntu",
                 "url": "http://www.ubuntu.com/usn/USN-2362-1"
               },
               {
-                "id": "Apple HT6535",
+                "id": null,
                 "editeur": "",
-                "url": "https://support.apple.com/kb/HT6535"
+                "url": "http://jvn.jp/en/jp/JVN55667175/index.html"
               },
               {
                 "id": null,
                 "editeur": "",
-                "url": "http://jvn.jp/en/jp/JVN55667175/index.html"
+                "url": "http://jvndb.jvn.jp/jvndb/JVNDB-2014-000126"
+              },
+              {
+                "id": null,
+                "editeur": "Red Hat",
+                "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1141597"
               }
             ]
           },
@@ -9437,11 +9412,6 @@
             "score": 9.8,
             "rancongiciel": false,
             "bulletins": [
-              {
-                "id": "Apple HT6495",
-                "editeur": "",
-                "url": "http://support.apple.com/kb/HT6495"
-              },
               {
                 "id": "USN-2363-1",
                 "editeur": "Ubuntu",
@@ -9453,9 +9423,9 @@
                 "url": "http://www.ubuntu.com/usn/USN-2363-2"
               },
               {
-                "id": "Apple HT6535",
+                "id": null,
                 "editeur": "",
-                "url": "https://support.apple.com/kb/HT6535"
+                "url": "http://www.oracle.com/technetwork/topics/security/bashcve-2014-7169-2317675.html"
               }
             ]
           },
@@ -11023,24 +10993,14 @@
             "concerne_le_systeme": true,
             "bulletins": [
               {
-                "id": "Apple HT208112",
-                "editeur": "",
-                "url": "https://support.apple.com/HT208112"
+                "id": "USN-4246-1",
+                "editeur": "Ubuntu",
+                "url": "https://usn.ubuntu.com/4246-1/"
               },
               {
-                "id": "Apple HT208113",
-                "editeur": "",
-                "url": "https://support.apple.com/HT208113"
-              },
-              {
-                "id": "Apple HT208115",
-                "editeur": "",
-                "url": "https://support.apple.com/HT208115"
-              },
-              {
-                "id": "Apple HT208144",
-                "editeur": "",
-                "url": "https://support.apple.com/HT208144"
+                "id": "USN-4292-1",
+                "editeur": "Ubuntu",
+                "url": "https://usn.ubuntu.com/4292-1/"
               }
             ],
             "description": "inffast.c in zlib 1.2.8 might allow context-dependent attackers to have unspecified impact by leveraging improper pointer arithmetic."
@@ -11064,24 +11024,14 @@
             "concerne_le_systeme": true,
             "bulletins": [
               {
-                "id": "Apple HT208112",
-                "editeur": "",
-                "url": "https://support.apple.com/HT208112"
+                "id": "USN-4246-1",
+                "editeur": "Ubuntu",
+                "url": "https://usn.ubuntu.com/4246-1/"
               },
               {
-                "id": "Apple HT208113",
-                "editeur": "",
-                "url": "https://support.apple.com/HT208113"
-              },
-              {
-                "id": "Apple HT208115",
-                "editeur": "",
-                "url": "https://support.apple.com/HT208115"
-              },
-              {
-                "id": "Apple HT208144",
-                "editeur": "",
-                "url": "https://support.apple.com/HT208144"
+                "id": "USN-4292-1",
+                "editeur": "Ubuntu",
+                "url": "https://usn.ubuntu.com/4292-1/"
               }
             ],
             "description": "The crc32_big function in crc32.c in zlib 1.2.8 might allow context-dependent attackers to have unspecified impact via vectors involving big-endian CRC calculation."
@@ -11147,21 +11097,6 @@
                 "id": "USN-3041-1",
                 "editeur": "Ubuntu",
                 "url": "http://www.ubuntu.com/usn/USN-3041-1"
-              },
-              {
-                "id": "Apple HT207141",
-                "editeur": "",
-                "url": "https://support.apple.com/HT207141"
-              },
-              {
-                "id": "Apple HT207142",
-                "editeur": "",
-                "url": "https://support.apple.com/HT207142"
-              },
-              {
-                "id": "Apple HT207143",
-                "editeur": "",
-                "url": "https://support.apple.com/HT207143"
               }
             ],
             "description": "Use-after-free vulnerability in libxml2 through 2.9.4, as used in Google Chrome before 52.0.2743.82, allows remote attackers to cause a denial of service or possibly have unspecified other impact via vectors related to the XPointer range-to function."
@@ -11185,24 +11120,19 @@
             "concerne_le_systeme": true,
             "bulletins": [
               {
-                "id": "Apple HT208112",
-                "editeur": "",
-                "url": "https://support.apple.com/HT208112"
+                "id": "USN-4246-1",
+                "editeur": "Ubuntu",
+                "url": "https://usn.ubuntu.com/4246-1/"
               },
               {
-                "id": "Apple HT208113",
-                "editeur": "",
-                "url": "https://support.apple.com/HT208113"
+                "id": "USN-4292-1",
+                "editeur": "Ubuntu",
+                "url": "https://usn.ubuntu.com/4292-1/"
               },
               {
-                "id": "Apple HT208115",
+                "id": null,
                 "editeur": "",
-                "url": "https://support.apple.com/HT208115"
-              },
-              {
-                "id": "Apple HT208144",
-                "editeur": "",
-                "url": "https://support.apple.com/HT208144"
+                "url": "https://github.com/madler/zlib/commit/6a043145ca6e9c55184013841a67b2fef87e44c0"
               }
             ],
             "description": "inftrees.c in zlib 1.2.8 might allow context-dependent attackers to have unspecified impact by leveraging improper pointer arithmetic."
@@ -11226,24 +11156,24 @@
             "concerne_le_systeme": true,
             "bulletins": [
               {
-                "id": "Apple HT208112",
-                "editeur": "",
-                "url": "https://support.apple.com/HT208112"
+                "id": "USN-4246-1",
+                "editeur": "Ubuntu",
+                "url": "https://usn.ubuntu.com/4246-1/"
               },
               {
-                "id": "Apple HT208113",
-                "editeur": "",
-                "url": "https://support.apple.com/HT208113"
+                "id": "USN-4292-1",
+                "editeur": "Ubuntu",
+                "url": "https://usn.ubuntu.com/4292-1/"
               },
               {
-                "id": "Apple HT208115",
+                "id": null,
                 "editeur": "",
-                "url": "https://support.apple.com/HT208115"
+                "url": "http://www.openwall.com/lists/oss-security/2016/12/05/21"
               },
               {
-                "id": "Apple HT208144",
-                "editeur": "",
-                "url": "https://support.apple.com/HT208144"
+                "id": null,
+                "editeur": "Red Hat",
+                "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1402348"
               }
             ],
             "description": "The inflateMark function in inflate.c in zlib 1.2.8 might allow context-dependent attackers to have unspecified impact via vectors involving left shifts of negative integers."
@@ -11272,19 +11202,19 @@
                 "url": "http://www.ubuntu.com/usn/USN-2994-1"
               },
               {
-                "id": "Apple HT206166",
+                "id": null,
                 "editeur": "",
-                "url": "https://support.apple.com/HT206166"
+                "url": "http://lists.apple.com/archives/security-announce/2016/Mar/msg00000.html"
               },
               {
-                "id": "Apple HT206167",
+                "id": null,
                 "editeur": "",
-                "url": "https://support.apple.com/HT206167"
+                "url": "http://lists.apple.com/archives/security-announce/2016/Mar/msg00001.html"
               },
               {
-                "id": "Apple HT206168",
+                "id": null,
                 "editeur": "",
-                "url": "https://support.apple.com/HT206168"
+                "url": "http://lists.apple.com/archives/security-announce/2016/Mar/msg00002.html"
               }
             ],
             "description": "The xmlNextChar function in libxml2 before 2.9.4 allows remote attackers to cause a denial of service (heap-based buffer over-read) via a crafted XML document."
@@ -11364,11 +11294,6 @@
             "concerne_le_systeme": true,
             "bulletins": [
               {
-                "id": "Apple HT208221",
-                "editeur": "",
-                "url": "https://support.apple.com/HT208221"
-              },
-              {
                 "id": null,
                 "editeur": "",
                 "url": "http://www.oracle.com/technetwork/security-advisory/cpuoct2017-3236626.html"
@@ -11389,13 +11314,7 @@
               "apache http_server"
             ],
             "concerne_le_systeme": true,
-            "bulletins": [
-              {
-                "id": "Apple HT208221",
-                "editeur": "",
-                "url": "https://support.apple.com/HT208221"
-              }
-            ],
+            "bulletins": [],
             "description": "In Apache httpd 2.2.x before 2.2.33 and 2.4.x before 2.4.26, mod_ssl may dereference a NULL pointer when third-party modules call ap_hook_process_connection() during an HTTP request to an HTTPS port."
           },
           {
@@ -11412,11 +11331,6 @@
             ],
             "concerne_le_systeme": true,
             "bulletins": [
-              {
-                "id": "Apple HT208221",
-                "editeur": "",
-                "url": "https://support.apple.com/HT208221"
-              },
               {
                 "id": null,
                 "editeur": "",
@@ -11449,11 +11363,6 @@
                 "url": "http://www.ubuntu.com/usn/USN-3038-1"
               },
               {
-                "id": "Apple HT208221",
-                "editeur": "",
-                "url": "https://support.apple.com/HT208221"
-              },
-              {
                 "id": null,
                 "editeur": "",
                 "url": "http://www.oracle.com/technetwork/security-advisory/cpujan2018-3236628.html"
@@ -11462,6 +11371,11 @@
                 "id": null,
                 "editeur": "",
                 "url": "http://www.oracle.com/technetwork/security-advisory/cpujul2017-3236622.html"
+              },
+              {
+                "id": null,
+                "editeur": "Apache",
+                "url": "https://www.apache.org/security/asf-httpoxy-response.txt"
               }
             ],
             "description": "The Apache HTTP Server through 2.4.23 follows RFC 3875 section 4.1.18 and therefore does not protect applications from the presence of untrusted client data in the HTTP_PROXY environment variable, which might allow remote attackers to redirect an application's outbound HTTP traffic to an arbitrary p"
@@ -11502,11 +11416,6 @@
             ],
             "concerne_le_systeme": true,
             "bulletins": [
-              {
-                "id": "Apple HT208221",
-                "editeur": "",
-                "url": "https://support.apple.com/HT208221"
-              },
               {
                 "id": null,
                 "editeur": "",
@@ -11996,24 +11905,14 @@
             "concerne_le_systeme": true,
             "bulletins": [
               {
-                "id": "Apple HT208112",
-                "editeur": "",
-                "url": "https://support.apple.com/HT208112"
+                "id": "USN-4246-1",
+                "editeur": "Ubuntu",
+                "url": "https://usn.ubuntu.com/4246-1/"
               },
               {
-                "id": "Apple HT208113",
-                "editeur": "",
-                "url": "https://support.apple.com/HT208113"
-              },
-              {
-                "id": "Apple HT208115",
-                "editeur": "",
-                "url": "https://support.apple.com/HT208115"
-              },
-              {
-                "id": "Apple HT208144",
-                "editeur": "",
-                "url": "https://support.apple.com/HT208144"
+                "id": "USN-4292-1",
+                "editeur": "Ubuntu",
+                "url": "https://usn.ubuntu.com/4292-1/"
               }
             ],
             "description": "inffast.c in zlib 1.2.8 might allow context-dependent attackers to have unspecified impact by leveraging improper pointer arithmetic."
@@ -12037,24 +11936,14 @@
             "concerne_le_systeme": true,
             "bulletins": [
               {
-                "id": "Apple HT208112",
-                "editeur": "",
-                "url": "https://support.apple.com/HT208112"
+                "id": "USN-4246-1",
+                "editeur": "Ubuntu",
+                "url": "https://usn.ubuntu.com/4246-1/"
               },
               {
-                "id": "Apple HT208113",
-                "editeur": "",
-                "url": "https://support.apple.com/HT208113"
-              },
-              {
-                "id": "Apple HT208115",
-                "editeur": "",
-                "url": "https://support.apple.com/HT208115"
-              },
-              {
-                "id": "Apple HT208144",
-                "editeur": "",
-                "url": "https://support.apple.com/HT208144"
+                "id": "USN-4292-1",
+                "editeur": "Ubuntu",
+                "url": "https://usn.ubuntu.com/4292-1/"
               }
             ],
             "description": "The crc32_big function in crc32.c in zlib 1.2.8 might allow context-dependent attackers to have unspecified impact via vectors involving big-endian CRC calculation."
@@ -12120,21 +12009,6 @@
                 "id": "USN-3041-1",
                 "editeur": "Ubuntu",
                 "url": "http://www.ubuntu.com/usn/USN-3041-1"
-              },
-              {
-                "id": "Apple HT207141",
-                "editeur": "",
-                "url": "https://support.apple.com/HT207141"
-              },
-              {
-                "id": "Apple HT207142",
-                "editeur": "",
-                "url": "https://support.apple.com/HT207142"
-              },
-              {
-                "id": "Apple HT207143",
-                "editeur": "",
-                "url": "https://support.apple.com/HT207143"
               }
             ],
             "description": "Use-after-free vulnerability in libxml2 through 2.9.4, as used in Google Chrome before 52.0.2743.82, allows remote attackers to cause a denial of service or possibly have unspecified other impact via vectors related to the XPointer range-to function."
@@ -12158,24 +12032,19 @@
             "concerne_le_systeme": true,
             "bulletins": [
               {
-                "id": "Apple HT208112",
-                "editeur": "",
-                "url": "https://support.apple.com/HT208112"
+                "id": "USN-4246-1",
+                "editeur": "Ubuntu",
+                "url": "https://usn.ubuntu.com/4246-1/"
               },
               {
-                "id": "Apple HT208113",
-                "editeur": "",
-                "url": "https://support.apple.com/HT208113"
+                "id": "USN-4292-1",
+                "editeur": "Ubuntu",
+                "url": "https://usn.ubuntu.com/4292-1/"
               },
               {
-                "id": "Apple HT208115",
+                "id": null,
                 "editeur": "",
-                "url": "https://support.apple.com/HT208115"
-              },
-              {
-                "id": "Apple HT208144",
-                "editeur": "",
-                "url": "https://support.apple.com/HT208144"
+                "url": "https://github.com/madler/zlib/commit/6a043145ca6e9c55184013841a67b2fef87e44c0"
               }
             ],
             "description": "inftrees.c in zlib 1.2.8 might allow context-dependent attackers to have unspecified impact by leveraging improper pointer arithmetic."
@@ -12199,24 +12068,24 @@
             "concerne_le_systeme": true,
             "bulletins": [
               {
-                "id": "Apple HT208112",
-                "editeur": "",
-                "url": "https://support.apple.com/HT208112"
+                "id": "USN-4246-1",
+                "editeur": "Ubuntu",
+                "url": "https://usn.ubuntu.com/4246-1/"
               },
               {
-                "id": "Apple HT208113",
-                "editeur": "",
-                "url": "https://support.apple.com/HT208113"
+                "id": "USN-4292-1",
+                "editeur": "Ubuntu",
+                "url": "https://usn.ubuntu.com/4292-1/"
               },
               {
-                "id": "Apple HT208115",
+                "id": null,
                 "editeur": "",
-                "url": "https://support.apple.com/HT208115"
+                "url": "http://www.openwall.com/lists/oss-security/2016/12/05/21"
               },
               {
-                "id": "Apple HT208144",
-                "editeur": "",
-                "url": "https://support.apple.com/HT208144"
+                "id": null,
+                "editeur": "Red Hat",
+                "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1402348"
               }
             ],
             "description": "The inflateMark function in inflate.c in zlib 1.2.8 might allow context-dependent attackers to have unspecified impact via vectors involving left shifts of negative integers."
@@ -12245,19 +12114,19 @@
                 "url": "http://www.ubuntu.com/usn/USN-2994-1"
               },
               {
-                "id": "Apple HT206166",
+                "id": null,
                 "editeur": "",
-                "url": "https://support.apple.com/HT206166"
+                "url": "http://lists.apple.com/archives/security-announce/2016/Mar/msg00000.html"
               },
               {
-                "id": "Apple HT206167",
+                "id": null,
                 "editeur": "",
-                "url": "https://support.apple.com/HT206167"
+                "url": "http://lists.apple.com/archives/security-announce/2016/Mar/msg00001.html"
               },
               {
-                "id": "Apple HT206168",
+                "id": null,
                 "editeur": "",
-                "url": "https://support.apple.com/HT206168"
+                "url": "http://lists.apple.com/archives/security-announce/2016/Mar/msg00002.html"
               }
             ],
             "description": "The xmlNextChar function in libxml2 before 2.9.4 allows remote attackers to cause a denial of service (heap-based buffer over-read) via a crafted XML document."
@@ -12534,24 +12403,14 @@
             "concerne_le_systeme": true,
             "bulletins": [
               {
-                "id": "Apple HT208112",
-                "editeur": "",
-                "url": "https://support.apple.com/HT208112"
+                "id": "USN-4246-1",
+                "editeur": "Ubuntu",
+                "url": "https://usn.ubuntu.com/4246-1/"
               },
               {
-                "id": "Apple HT208113",
-                "editeur": "",
-                "url": "https://support.apple.com/HT208113"
-              },
-              {
-                "id": "Apple HT208115",
-                "editeur": "",
-                "url": "https://support.apple.com/HT208115"
-              },
-              {
-                "id": "Apple HT208144",
-                "editeur": "",
-                "url": "https://support.apple.com/HT208144"
+                "id": "USN-4292-1",
+                "editeur": "Ubuntu",
+                "url": "https://usn.ubuntu.com/4292-1/"
               }
             ],
             "description": "inffast.c in zlib 1.2.8 might allow context-dependent attackers to have unspecified impact by leveraging improper pointer arithmetic."
@@ -12575,24 +12434,14 @@
             "concerne_le_systeme": true,
             "bulletins": [
               {
-                "id": "Apple HT208112",
-                "editeur": "",
-                "url": "https://support.apple.com/HT208112"
+                "id": "USN-4246-1",
+                "editeur": "Ubuntu",
+                "url": "https://usn.ubuntu.com/4246-1/"
               },
               {
-                "id": "Apple HT208113",
-                "editeur": "",
-                "url": "https://support.apple.com/HT208113"
-              },
-              {
-                "id": "Apple HT208115",
-                "editeur": "",
-                "url": "https://support.apple.com/HT208115"
-              },
-              {
-                "id": "Apple HT208144",
-                "editeur": "",
-                "url": "https://support.apple.com/HT208144"
+                "id": "USN-4292-1",
+                "editeur": "Ubuntu",
+                "url": "https://usn.ubuntu.com/4292-1/"
               }
             ],
             "description": "The crc32_big function in crc32.c in zlib 1.2.8 might allow context-dependent attackers to have unspecified impact via vectors involving big-endian CRC calculation."
@@ -12658,21 +12507,6 @@
                 "id": "USN-3041-1",
                 "editeur": "Ubuntu",
                 "url": "http://www.ubuntu.com/usn/USN-3041-1"
-              },
-              {
-                "id": "Apple HT207141",
-                "editeur": "",
-                "url": "https://support.apple.com/HT207141"
-              },
-              {
-                "id": "Apple HT207142",
-                "editeur": "",
-                "url": "https://support.apple.com/HT207142"
-              },
-              {
-                "id": "Apple HT207143",
-                "editeur": "",
-                "url": "https://support.apple.com/HT207143"
               }
             ],
             "description": "Use-after-free vulnerability in libxml2 through 2.9.4, as used in Google Chrome before 52.0.2743.82, allows remote attackers to cause a denial of service or possibly have unspecified other impact via vectors related to the XPointer range-to function."
@@ -12696,24 +12530,19 @@
             "concerne_le_systeme": true,
             "bulletins": [
               {
-                "id": "Apple HT208112",
-                "editeur": "",
-                "url": "https://support.apple.com/HT208112"
+                "id": "USN-4246-1",
+                "editeur": "Ubuntu",
+                "url": "https://usn.ubuntu.com/4246-1/"
               },
               {
-                "id": "Apple HT208113",
-                "editeur": "",
-                "url": "https://support.apple.com/HT208113"
+                "id": "USN-4292-1",
+                "editeur": "Ubuntu",
+                "url": "https://usn.ubuntu.com/4292-1/"
               },
               {
-                "id": "Apple HT208115",
+                "id": null,
                 "editeur": "",
-                "url": "https://support.apple.com/HT208115"
-              },
-              {
-                "id": "Apple HT208144",
-                "editeur": "",
-                "url": "https://support.apple.com/HT208144"
+                "url": "https://github.com/madler/zlib/commit/6a043145ca6e9c55184013841a67b2fef87e44c0"
               }
             ],
             "description": "inftrees.c in zlib 1.2.8 might allow context-dependent attackers to have unspecified impact by leveraging improper pointer arithmetic."
@@ -12737,24 +12566,24 @@
             "concerne_le_systeme": true,
             "bulletins": [
               {
-                "id": "Apple HT208112",
-                "editeur": "",
-                "url": "https://support.apple.com/HT208112"
+                "id": "USN-4246-1",
+                "editeur": "Ubuntu",
+                "url": "https://usn.ubuntu.com/4246-1/"
               },
               {
-                "id": "Apple HT208113",
-                "editeur": "",
-                "url": "https://support.apple.com/HT208113"
+                "id": "USN-4292-1",
+                "editeur": "Ubuntu",
+                "url": "https://usn.ubuntu.com/4292-1/"
               },
               {
-                "id": "Apple HT208115",
+                "id": null,
                 "editeur": "",
-                "url": "https://support.apple.com/HT208115"
+                "url": "http://www.openwall.com/lists/oss-security/2016/12/05/21"
               },
               {
-                "id": "Apple HT208144",
-                "editeur": "",
-                "url": "https://support.apple.com/HT208144"
+                "id": null,
+                "editeur": "Red Hat",
+                "url": "https://bugzilla.redhat.com/show_bug.cgi?id=1402348"
               }
             ],
             "description": "The inflateMark function in inflate.c in zlib 1.2.8 might allow context-dependent attackers to have unspecified impact via vectors involving left shifts of negative integers."
@@ -12783,19 +12612,19 @@
                 "url": "http://www.ubuntu.com/usn/USN-2994-1"
               },
               {
-                "id": "Apple HT206166",
+                "id": null,
                 "editeur": "",
-                "url": "https://support.apple.com/HT206166"
+                "url": "http://lists.apple.com/archives/security-announce/2016/Mar/msg00000.html"
               },
               {
-                "id": "Apple HT206167",
+                "id": null,
                 "editeur": "",
-                "url": "https://support.apple.com/HT206167"
+                "url": "http://lists.apple.com/archives/security-announce/2016/Mar/msg00001.html"
               },
               {
-                "id": "Apple HT206168",
+                "id": null,
                 "editeur": "",
-                "url": "https://support.apple.com/HT206168"
+                "url": "http://lists.apple.com/archives/security-announce/2016/Mar/msg00002.html"
               }
             ],
             "description": "The xmlNextChar function in libxml2 before 2.9.4 allows remote attackers to cause a denial of service (heap-based buffer over-read) via a crafted XML document."

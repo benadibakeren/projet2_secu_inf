@@ -1,6 +1,6 @@
 # Rapport de recommandations
 
-Généré le 2026-11-27 par la chaîne d'agents, à partir du trafic de CICIDS2017 du 2017-07-06. Ce rapport a été produit avec l'aide d'une IA générative.
+Généré le 2026-11-28 par la chaîne d'agents, à partir du trafic de CICIDS2017 du 2017-07-06. Ce rapport a été produit avec l'aide d'une IA générative.
 
 ## Résumé
 
@@ -38,9 +38,9 @@ Généré le 2026-11-27 par la chaîne d'agents, à partir du trafic de CICIDS20
 - **192.168.10.5** (Poste de travail) : Appliquer les mises à jour de sécurité qui corrigent les failles déjà exploitées par des attaquants : CVE-2014-1776, CVE-2015-0311, CVE-2015-0313, CVE-2015-1635, CVE-2017-8543. Bulletins de sécurité correspondants : MS14-021, MS15-034, MSRC CVE-2017-8543.
 - **192.168.10.14** (Poste de travail) : Appliquer les mises à jour de sécurité qui corrigent les failles déjà exploitées par des attaquants : CVE-2017-8543, CVE-2015-2502, CVE-2016-7200, CVE-2016-7201, CVE-2016-7256. Bulletins de sécurité correspondants : MS15-093, MS16-129, MS16-132, MSRC CVE-2017-8543.
 - **192.168.10.15** (Poste de travail) : Appliquer les mises à jour de sécurité qui corrigent les failles déjà exploitées par des attaquants : CVE-2017-8543, CVE-2015-2502, CVE-2016-7200, CVE-2016-7201, CVE-2016-7256. Bulletins de sécurité correspondants : MS15-093, MS16-129, MS16-132, MSRC CVE-2017-8543.
-- **192.168.10.51** (Poste de travail) : Appliquer les mises à jour de sécurité qui corrigent les failles déjà exploitées par des attaquants : CVE-2014-6271, CVE-2014-7169, CVE-2015-4495, CVE-2014-0160, CVE-2014-3153. Bulletins de sécurité correspondants : Apple HT6495, Apple HT6535, USN-2165-1, USN-2237-1, USN-2240-1, USN-2362-1, USN-2363-1, USN-2363-2, USN-2707-1.
-- **192.168.10.19** (Poste de travail) : Appliquer les mises à jour de sécurité qui corrigent les failles déjà exploitées par des attaquants : CVE-2014-6271, CVE-2014-7169, CVE-2015-4495, CVE-2014-3153, CVE-2016-5195. Bulletins de sécurité correspondants : Apple HT6495, Apple HT6535, USN-2237-1, USN-2240-1, USN-2362-1, USN-2363-1, USN-2363-2, USN-2707-1, USN-3104-1, USN-3104-2, USN-3105-1, USN-3105-2.
-- **192.168.10.17** (Poste de travail) : Appliquer les mises à jour de sécurité qui corrigent les failles déjà exploitées par des attaquants : CVE-2014-6271, CVE-2014-7169, CVE-2015-4495, CVE-2014-3153, CVE-2016-5195. Bulletins de sécurité correspondants : Apple HT6495, Apple HT6535, USN-2237-1, USN-2240-1, USN-2362-1, USN-2363-1, USN-2363-2, USN-2707-1, USN-3104-1, USN-3104-2, USN-3105-1, USN-3105-2.
+- **192.168.10.51** (Poste de travail) : Appliquer les mises à jour de sécurité qui corrigent les failles déjà exploitées par des attaquants : CVE-2014-6271, CVE-2014-7169, CVE-2015-4495, CVE-2014-0160, CVE-2014-3153. Bulletins de sécurité correspondants : USN-2165-1, USN-2237-1, USN-2240-1, USN-2362-1, USN-2363-1, USN-2363-2, USN-2707-1.
+- **192.168.10.19** (Poste de travail) : Appliquer les mises à jour de sécurité qui corrigent les failles déjà exploitées par des attaquants : CVE-2014-6271, CVE-2014-7169, CVE-2015-4495, CVE-2014-3153, CVE-2016-5195. Bulletins de sécurité correspondants : USN-2237-1, USN-2240-1, USN-2362-1, USN-2363-1, USN-2363-2, USN-2707-1, USN-3104-1, USN-3104-2, USN-3105-1, USN-3105-2.
+- **192.168.10.17** (Poste de travail) : Appliquer les mises à jour de sécurité qui corrigent les failles déjà exploitées par des attaquants : CVE-2014-6271, CVE-2014-7169, CVE-2015-4495, CVE-2014-3153, CVE-2016-5195. Bulletins de sécurité correspondants : USN-2237-1, USN-2240-1, USN-2362-1, USN-2363-1, USN-2363-2, USN-2707-1, USN-3104-1, USN-3104-2, USN-3105-1, USN-3105-2.
 - **192.168.10.12** (Poste de travail) : Appliquer les mises à jour de sécurité qui corrigent les failles déjà exploitées par des attaquants : CVE-2016-5195. Bulletins de sécurité correspondants : USN-3104-1, USN-3104-2, USN-3105-1, USN-3105-2.
 - **192.168.10.25** (Poste de travail) : Appliquer les mises à jour de sécurité qui corrigent les failles déjà exploitées par des attaquants : CVE-2014-6271, CVE-2014-7169, CVE-2014-4404, CVE-2015-1130. Bulletins de sécurité correspondants : Apple HT204659, Apple HT6441, Apple HT6442, Apple HT6495, Apple HT6535.
 - **192.168.10.16** (Poste de travail) : Appliquer les mises à jour de sécurité qui corrigent les failles déjà exploitées par des attaquants : CVE-2016-5195. Bulletins de sécurité correspondants : USN-3104-1, USN-3104-2, USN-3105-1, USN-3105-2.
@@ -73,7 +73,7 @@ Bulletins des éditeurs qui corrigent des failles déjà exploitées (CISA KEV).
 
 ### 192.168.10.3 : Contrôleur de domaine (Critique, score 68.6)
 
-Le contrôleur de domaine Windows Server 2016 présente plusieurs failles critiques déjà exploitées (KEV) et expose des services internes sensibles.
+Le contrôleur de domaine Windows Server 2016 présente plusieurs failles critiques déjà exploitées (KEV) et reste exposé depuis le réseau interne.
 
 **Constats établis par les règles**
 
@@ -83,23 +83,24 @@ Le contrôleur de domaine Windows Server 2016 présente plusieurs failles critiq
 
 *Priorité immédiate*
 
-- Installer les correctifs de sécurité correspondant aux bulletins MS16-129, MS16-132, MS17-010 et MSRC CVE-2017-8543. *Ces correctifs corrigent les vulnérabilités déjà exploitées par des attaquants et réduisent le risque d’escalade depuis le réseau interne.*
-- Restreindre le trafic réseau vers le contrôleur de domaine en ne laissant passer que les ports nécessaires (53, 88, 135, 389, 445, 3268) depuis les sous‑réseaux autorisés. *Les failles sont exploitables depuis le réseau interne ; limiter l’accès diminue la surface d’attaque.*
+- Appliquer les correctifs de sécurité disponibles (MS16-129, MS16-132, MS17-010, MSRC CVE-2017-8543) pour corriger les vulnérabilités CVE-2017-8543, CVE-2016-7200, CVE-2016-7201, CVE-2016-7256 et CVE-2017-0143. *Ces failles sont répertoriées dans le catalogue KEV et leur exploitation a été confirmée. Leur correction élimine la possibilité d'attaque depuis le réseau interne.*
 
 *Priorité court terme*
 
-- Activer l’authentification forte (MFA) pour tous les comptes administratifs et désactiver les comptes inutilisés ou inactifs. *Renforcer la protection des identités stockées sur le serveur contre le vol de mots de passe hachés.*
-- Mettre en place une journalisation détaillée et une alerte en temps réel sur les connexions SMB, LDAP et Kerberos. *Détecter rapidement toute tentative d’exploitation des services exposés.*
+- Désactiver SMBv1 et restreindre les ports critiques (445, 135, 389, 3268) aux seules machines autorisées via des règles de pare‑feu internes. *SMBv1 est la cible de la vulnérabilité CVE-2017-0143. Limiter l’accès réseau réduit la surface d’attaque pour les failles restantes.*
+- Mettre en place une authentification forte (ex. MFA) pour les comptes administratifs du domaine et appliquer la politique de mot de passe robuste. *Le contrôleur de domaine détient les mots de passe hachés et les politiques de sécurité ; renforcer l’authentification empêche la compromission même si une faille est exploitée.*
 
 *Priorité moyen terme*
 
-- Établir des sauvegardes complètes et hors ligne de l’annuaire Active Directory, avec des tests de restauration périodiques. *Assurer la continuité de l’activité et la récupération des données d’identité en cas de compromission.*
+- Segmenter le réseau en isolant le contrôleur de domaine sur un VLAN dédié avec des contrôles d’accès stricts. *La plupart des failles sont exploitables depuis le réseau interne. La segmentation limite la propagation d’une éventuelle compromission.*
+- Déployer une solution de surveillance et de journalisation centralisée (SIEM) pour détecter les tentatives d’exploitation sur les ports exposés et les services critiques. *Une visibilité en temps réel permet d’identifier rapidement les activités suspectes liées aux vulnérabilités connues.*
+- Établir des sauvegardes quotidiennes chiffrées du contrôleur de domaine et tester régulièrement la restauration. *En cas de compromission, des sauvegardes fiables assurent la continuité de l’annuaire et la récupération des données d’identité.*
 
 *Plan rédigé par : règles + LLM.*
 
 ### 192.168.10.8 : Poste de travail (Critique, score 27.4)
 
-La machine Windows Vista SP2 montre des signes de compromission et possède plusieurs failles critiques déjà exploitées dans le monde.
+La machine Windows Vista SP2 montre des signes de compromission et possède plusieurs failles exploitées dans le monde, dont la plus critique CVE-2014-1776.
 
 **Constats établis par les règles**
 
@@ -111,51 +112,51 @@ La machine Windows Vista SP2 montre des signes de compromission et possède plus
 
 *Priorité immédiate*
 
-- Isoler la machine du réseau, conserver les journaux pour l'analyse, la réinstaller complètement puis changer les mots de passe des comptes locaux. *Compromission probable détectée : balayage de 11 machines et présence d'outils d'attaque dans le trafic.*
-- Appliquer les correctifs de sécurité qui corrigent les failles exploitées (CVE‑2014‑1776, CVE‑2010‑0249, CVE‑2011‑3402, CVE‑2012‑1889, CVE‑2012‑4792) en suivant les bulletins MS10‑002, MS11‑087, MS12‑034, MS12‑039, MS12‑043, MS13‑008, MS14‑021. *Ces vulnérabilités sont répertoriées dans le catalogue KEV et ont été exploitées en pratique.*
-- Installer les correctifs disponibles listés dans les bulletins de sécurité (MS10‑002, MS11‑087, MS12‑034, MS12‑039, MS12‑043, MS13‑008, MS14‑021) afin de couvrir l’ensemble des failles connues. *Les correctifs disponibles corrigent les vulnérabilités déjà exploitées et réduisent le risque d’une nouvelle compromission.*
+- Isoler la station du réseau, sauvegarder les journaux pour analyse, réinstaller le système d’exploitation et changer tous les mots de passe des comptes locaux. *Des outils d’attaque ont été détectés dans le trafic et la machine a probablement compromis d’autres postes.*
+- Appliquer les correctifs de sécurité qui corrigent les vulnérabilités déjà exploitées : installer les bulletins MS14-021, MS10-002, MS11-087, MS12-034, MS12-039, MS12-043, MS13-008 ainsi que les correctifs disponibles listés (MS10-002, MS10-046, MS10-090, MS14-058, MS14-064, MS16-039, MS17-010, MS09-025). *Ces correctifs couvrent les CVE-2014-1776, CVE-2010-0249, CVE-2011-3402, CVE-2012-1889 et CVE-2012-4792, qui sont connues comme exploitées dans le monde.*
 
 *Priorité court terme*
 
-- Remplacer Windows Vista SP2 par une version maintenue du système d’exploitation. *Le support de Windows Vista SP2 a pris fin le 11 avril 2017, aucune mise à jour de sécurité n’est plus fournie depuis cette date.*
+- Remplacer Windows Vista SP2 par une version maintenue du système d’exploitation. *Le support de Vista a pris fin le 11 avril 2017, aucune mise à jour ne sera plus fournie, ce qui laisse la machine exposée aux nouvelles vulnérabilités.*
 
 *Priorité moyen terme*
 
-- Mettre en place une authentification forte pour les comptes locaux, segmenter le réseau interne pour limiter l’accès depuis les postes de travail, déployer une surveillance du trafic et instaurer des sauvegardes régulières des données utilisateurs. *Ces mesures renforcent la défense en profondeur et limitent l’impact d’éventuelles futures compromissions.*
+- Mettre à jour ou désinstaller les navigateurs et les runtimes obsolètes (Firefox 52.0, Java 8 u131) et désactiver l’exécution de Java dans le navigateur. *Ces composants sont anciens, ne reçoivent plus de correctifs récents et peuvent être exploités via le web.*
+- Renforcer la sécurité d’accès : implémenter une authentification forte pour les comptes locaux et segmenter le réseau afin de limiter les communications internes vers les postes critiques. *Réduire la surface d’attaque interne limite la propagation d’éventuelles compromissions futures.*
 
 *Plan rédigé par : règles + LLM.*
 
 ### 192.168.10.50 : Serveur web (Élevé, score 35.6)
 
-Le serveur web Ubuntu 16.04 expose Apache, SSH et FTP à Internet et présente plusieurs failles graves, dont une déjà exploitée dans le catalogue KEV.
+Le serveur web expose plusieurs services Internet et présente des failles graves sur Apache, OpenSSH et le système d'exploitation, dont certaines sont déjà exploitées ailleurs.
 
 **Constats établis par les règles**
 
 - (immédiate) Appliquer les mises à jour de sécurité qui corrigent les failles déjà exploitées par des attaquants : CVE-2016-5195. Bulletins de sécurité correspondants : USN-3104-1, USN-3104-2, USN-3105-1, USN-3105-2.
-- (court terme) Corriger les autres failles graves (CVSS 7 ou plus) : CVE-2016-8740, CVE-2016-5387, CVE-2016-6515, CVE-2016-4971. Bulletins de sécurité correspondants : Apple HT208221, USN-3012-1, USN-3038-1.
+- (court terme) Corriger les autres failles graves (CVSS 7 ou plus) : CVE-2016-8740, CVE-2016-5387, CVE-2016-6515, CVE-2016-4971. Bulletins de sécurité correspondants : USN-3012-1, USN-3038-1.
 - (immédiate) Fermer l'accès depuis Internet à FTP (21), SSH (22), ou le limiter à un VPN ou à une liste d'adresses autorisées.
 
 **Plan d'action détaillé**
 
 *Priorité immédiate*
 
-- Appliquer les correctifs de sécurité disponibles (USN-3104-1, USN-3104-2, USN-3105-1, USN-3105-2) pour corriger la faille CVE-2016-5195. *Cette vulnérabilité est répertoriée dans le catalogue KEV, son exploitation réelle est prouvée.*
-- Restreindre l’accès Internet aux services FTP (port 21) et SSH (port 22) en les limitant à un VPN ou à une liste d’adresses autorisées. *Ces services d’administration sont exposés à Internet, ce qui les rend vulnérables aux attaques par force brute.*
+- Appliquer les mises à jour de sécurité qui corrigent la faille CVE-2016-5195 en suivant les bulletins USN-3104-1, USN-3104-2, USN-3105-1 et USN-3105-2. *Cette faille figure dans le catalogue KEV, son exploitation réelle est prouvée ailleurs.*
+- Restreindre l'accès depuis Internet aux services FTP (port 21) et SSH (port 22) en les limitant à un VPN ou à une liste d'adresses IP autorisées. *Ces services d'administration sont exposés à Internet, ce qui les rend vulnérables aux attaques par force brute.*
 
 *Priorité court terme*
 
-- Mettre à jour Apache vers une version qui corrige les vulnérabilités CVE-2016-8740 et CVE-2016-5387, ou désactiver le module HTTP/2 et retirer les protocoles h2/h2c de la configuration. *Ces failles graves permettent un déni de service ou une redirection du trafic HTTP vers des destinations arbitraires.*
-- Mettre à jour OpenSSH vers une version corrigée ou renforcer la configuration : désactiver l’authentification par mot de passe, imposer l’usage de clés SSH, et limiter la longueur des mots de passe. *Les vulnérabilités CVE-2016-6210 et CVE-2016-6515 permettent l’énumération d’utilisateurs et un déni de service par consommation CPU.*
+- Mettre à jour Apache 2.4.18 afin de corriger les failles CVE-2016-8740 et CVE-2016-5387, en appliquant les correctifs indiqués dans les bulletins USN-3038-1 et USN-3012-1. *Ces vulnérabilités graves permettent un déni de service et une redirection de trafic HTTP.*
+- Mettre à jour OpenSSH 7.2p2 pour corriger les failles CVE-2016-6515 et CVE-2016-6210. *Ces vulnérabilités peuvent entraîner un déni de service et l'énumération d'utilisateurs.*
 
 *Priorité moyen terme*
 
-- Instaurer des sauvegardes quotidiennes des pages web et des logs, et déployer une surveillance des connexions HTTP/2 et des tentatives de connexion SSH. *Une sauvegarde régulière assure la restauration rapide en cas d’incident, et la surveillance permet de détecter rapidement toute tentative d’exploitation.*
+- Passer à une authentification forte (clé publique) pour SSH, désactiver l'authentification par mot de passe et activer une journalisation détaillée avec alertes sur les tentatives d'accès. *Renforcer la sécurité d'accès réduit le risque d'attaque par force brute et améliore la détection d'activités suspectes.*
 
 *Plan rédigé par : règles + LLM.*
 
 ### 192.168.10.9 : Poste de travail (Moyen, score 27.4)
 
-Le poste de travail Windows 7 SP1 possède plusieurs vulnérabilités critiques déjà exploitées (KEV) et n’est pas à jour.
+Le poste de travail sous Windows 7 SP1 possède plusieurs failles critiques déjà exploitées (KEV) et utilise des navigateurs et Java non à jour.
 
 **Constats établis par les règles**
 
@@ -165,23 +166,23 @@ Le poste de travail Windows 7 SP1 possède plusieurs vulnérabilités critique
 
 *Priorité immédiate*
 
-- Installer les correctifs de sécurité correspondant aux CVE‑2014‑1776, CVE‑2015‑1635, CVE‑2017‑8543, CVE‑2011‑3402 et CVE‑2012‑1889 en appliquant les bulletins MS14‑021, MS15‑034, MSRC CVE‑2017‑8543, MS11‑087, MS12‑034, MS12‑039 et MS12‑043, ainsi que les correctifs disponibles listés (MS17‑010, MS14‑058, MS14‑064, MS15‑065, MS16‑039, MS11‑087, MS12‑024, MS12‑034). *Ces failles sont répertoriées dans le catalogue KEV ; leur exploitation a été observée. Les correctifs éliminent la vulnérabilité.*
+- Appliquer les correctifs de sécurité correspondant aux CVE‑2014‑1776, CVE‑2015‑1635, CVE‑2017‑8543, CVE‑2011‑3402 et CVE‑2012‑1889 via les bulletins MS14‑021, MS15‑034, MSRC CVE‑2017‑8543, MS11‑087, MS12‑034, MS12‑039 et MS12‑043. *Ces vulnérabilités sont répertoriées dans le catalogue KEV et ont déjà fait l'objet d'exploits confirmés.*
+- Activer le pare‑feu local et restreindre les connexions entrantes depuis le réseau interne aux services strictement nécessaires. *Toutes les failles critiques sont exploitables depuis le réseau interne ; le filtrage limite la surface d’attaque.*
 
 *Priorité court terme*
 
-- Activer l’authentification forte (MFA) pour les comptes locaux et les accès aux services réseau depuis ce poste. *Réduit le risque de compromission d’identifiants, surtout si une vulnérabilité était exploitée.*
-- Isoler le poste sur un VLAN dédié et restreindre les flux réseau entrants depuis le réseau interne aux seuls services nécessaires. *Limite la surface d’attaque et empêche un attaquant interne d’exploiter les failles depuis le réseau.*
+- Mettre à jour Firefox vers la dernière version maintenue et installer les dernières mises à jour de Java 8. *Des versions anciennes du navigateur et de Java augmentent le risque de compromission via des vecteurs client‑side.*
+- Déployer une authentification forte (MFA) pour les comptes locaux et les accès aux ressources critiques, et appliquer une politique de mots de passe robustes. *Renforcer la protection des comptes réduit l’impact d’une éventuelle compromission de la machine.*
 
 *Priorité moyen terme*
 
-- Déployer une solution de détection et de réponse sur les points d’extrémité (EDR) et configurer une surveillance continue des tentatives d’exploitation des services Internet Explorer, HTTP.sys et du moteur de rendu de police. *Permet de détecter rapidement toute tentative d’exploitation des vulnérabilités connues.*
-- Mettre en place des sauvegardes régulières et hors ligne des documents utilisateurs, courriels et données de travail stockées sur le poste. *Assure la disponibilité des données en cas d’incident ou de compromission du système.*
+- Planifier la migration du poste de travail vers un système d’exploitation supporté (ex. Windows 10) avant la fin du support de Windows 7 en 2020. *Un OS supporté reçoit régulièrement des correctifs, ce qui diminue la probabilité d’exploitation de vulnérabilités non corrigées.*
 
 *Plan rédigé par : règles + LLM.*
 
 ### 192.168.10.5 : Poste de travail (Moyen, score 27.4)
 
-Poste de travail sous Windows 8.1 contenant plusieurs vulnérabilités très critiques déjà exploitées (KEV) et exposées depuis le réseau interne, ce qui place la machine à risque moyen.
+Poste de travail Windows 8.1 avec plusieurs vulnérabilités déjà exploitées (KEV) et un risque moyen.
 
 **Constats établis par les règles**
 
@@ -191,24 +192,24 @@ Poste de travail sous Windows 8.1 contenant plusieurs vulnérabilités très c
 
 *Priorité immédiate*
 
-- Installer les correctifs de sécurité correspondant aux CVE‑2014‑1776, CVE‑2015‑0311, CVE‑2015‑0313, CVE‑2015‑1635 et CVE‑2017‑8543 en appliquant les bulletins MS14‑021, MS15‑034 et MSRC CVE‑2017‑8543. *Ces failles sont répertoriées dans le catalogue KEV et leur exploitation a été observée. Leur correction élimine la vulnérabilité la plus dangereuse.*
-- Appliquer l’ensemble des correctifs de sécurité disponibles listés (MS17‑010, MS14‑058, MS14‑064, MS15‑065, MS16‑039, MS13‑080, MS13‑090, MS13‑098). *Ces bulletins corrigent d’autres vulnérabilités déjà exploitées dans le monde et renforcent la posture de la machine.*
+- Appliquer les correctifs de sécurité disponibles pour les CVE‑2014‑1776, CVE‑2015‑0311, CVE‑2015‑0313, CVE‑2015‑1635 et CVE‑2017‑8543 en suivant les bulletins MS14‑021, MS15‑034 et MSRC CVE‑2017‑8543, ainsi que les bulletins listés comme correctifs disponibles (MS17‑010, MS14‑058, MS14‑064, MS15‑065, MS16‑039, MS13‑080, MS13‑090, MS13‑098). *Ces failles sont répertoriées dans le catalogue KEV et leur exploitation a été observée. Les correctifs éliminent les vulnérabilités critiques.*
 
 *Priorité court terme*
 
-- Activer et configurer le pare‑feu Windows pour bloquer tout trafic entrant non nécessaire depuis le réseau interne. *Les vulnérabilités sont exploitables depuis le réseau interne ; limiter les ports ouverts réduit la surface d’attaque.*
-- Déployer une solution de protection des points de terminaison avec détection comportementale et activer les mises à jour automatiques pour le système d’exploitation, le navigateur Firefox et Java. *Une protection en temps réel détecte les tentatives d’exploitation et les mises à jour régulières préviennent l’apparition de nouvelles failles.*
+- Activer le pare‑feu Windows et le configurer pour bloquer tout trafic entrant non nécessaire depuis le réseau interne, en autorisant uniquement les ports requis par les applications légitimes. *Réduire la surface d’attaque et empêcher l’exploitation des vulnérabilités depuis le réseau interne.*
+- Mettre en place une authentification forte (ex. mot de passe complexe + MFA) pour les connexions locales et les accès distants au poste de travail. *Limite le risque de compromission d’identifiants qui pourrait faciliter l’exploitation des failles existantes.*
 
 *Priorité moyen terme*
 
-- Mettre en place une authentification forte (ex. MFA) pour les sessions locales et les accès distants, et appliquer la politique de mots de passe robustes. *Renforcer l’authentification limite les mouvements latéraux après une éventuelle compromission.*
-- Instaurer des sauvegardes quotidiennes des documents utilisateurs et des courriels, stockées hors ligne et testées régulièrement. *En cas d’incident, les sauvegardes permettent de restaurer rapidement les données critiques.*
+- Isoler le poste de travail sur un VLAN dédié ou segmenté, séparé des serveurs critiques et des autres postes, avec des contrôles d’accès stricts. *Empêche la propagation latérale d’une éventuelle infection vers des systèmes plus sensibles.*
+- Instaurer des sauvegardes quotidiennes des documents utilisateurs et des courriels, stockées hors ligne ou sur un serveur de sauvegarde dédié, et tester régulièrement les restaurations. *Assure la disponibilité des données en cas de compromission ou de perte suite à une exploitation.*
+- Déployer une solution de détection et de réponse sur les points d’extrémité (EDR) ou un système de surveillance du trafic réseau pour identifier rapidement toute tentative d’exploitation des vulnérabilités connues. *Permet une détection précoce et une réponse rapide aux attaques ciblant les failles présentes.*
 
 *Plan rédigé par : règles + LLM.*
 
 ### 192.168.10.14 : Poste de travail (Moyen, score 27.4)
 
-Le poste de travail Windows 10 expose plusieurs failles déjà exploitées (CVE‑2017‑8543, CVE‑2015‑2502, CVE‑2016‑7200, CVE‑2016‑7201, CVE‑2016‑7256) accessibles depuis le réseau interne.
+Le poste de travail Windows 10 possède plusieurs vulnérabilités critiques déjà exploitées (KEV) et expose des données utilisateur sensibles.
 
 **Constats établis par les règles**
 
@@ -218,22 +219,24 @@ Le poste de travail Windows 10 expose plusieurs failles déjà exploitées (CV
 
 *Priorité immédiate*
 
-- Installer les correctifs de sécurité correspondant aux failles exploitées : appliquer les bulletins MS15‑093, MS16‑129, MS16‑132 et le correctif MSRC CVE‑2017‑8543. *Ces vulnérabilités sont répertoriées dans le catalogue KEV et leur exploitation a été observée. Les correctifs éliminent la possibilité d’exploitation.*
+- Appliquer les correctifs de sécurité correspondant aux vulnérabilités exploitées : installer les mises à jour des bulletins MSRC CVE‑2017‑8543, MS15‑093, MS16‑129 et MS16‑132. *Ces failles sont répertoriées dans le catalogue KEV et leur exploitation a été observée. Leur correction élimine le vecteur d’attaque depuis le réseau interne.*
 
 *Priorité court terme*
 
-- Activer le pare‑feu Windows et restreindre les connexions entrantes depuis le réseau interne aux services strictement nécessaires. *Toutes les failles listées sont exploitables depuis le réseau interne ; limiter les ports ouverts réduit la surface d’attaque.*
-- Mettre en place une authentification forte (MFA) pour les comptes locaux et les accès distants au poste de travail. *Renforcer la vérification d’identité limite les risques de compromission par vol de mots de passe ou exploitation de vulnérabilités côté client.*
+- Activer l’authentification forte (MFA) pour les comptes locaux et les services d’accès à distance. *Renforce la résistance aux tentatives d’accès non autorisé même si une vulnérabilité était exploitée.*
+- Segmenter le poste de travail du reste du réseau interne en le plaçant dans un VLAN dédié avec des règles de pare‑feu limitant les communications entrantes uniquement aux services nécessaires. *Réduit la surface d’exposition aux attaques provenant du réseau interne où les vulnérabilités sont exploitables.*
 
 *Priorité moyen terme*
 
-- Déployer une solution de détection et de réponse sur les points d’extrémité (EDR) et activer la journalisation détaillée des processus et des connexions réseau. *Une visibilité continue permet de détecter rapidement toute tentative d’exploitation des vulnérabilités connues et d’y répondre.*
+- Déployer une solution de détection et de réponse sur les points de terminaison (EDR) et configurer la journalisation des événements de sécurité pour alerter sur toute tentative d’exploitation des CVE connues. *Permet une détection précoce d’activités suspectes et une réponse rapide en cas d’incident.*
+- Mettre en place des sauvegardes quotidiennes chiffrées des données utilisateur (courriels, documents, historiques) et tester régulièrement la restauration. *Assure la disponibilité des données en cas de compromission ou de perte suite à une exploitation.*
+- Mettre à jour le navigateur Firefox vers la dernière version maintenue et désactiver les fonctionnalités non nécessaires (JavaScript, plugins) pour limiter les vecteurs d’attaque web. *Réduit le risque d’exploitation de vulnérabilités liées au navigateur, même si aucune CVE spécifique n’est mentionnée dans la fiche.*
 
 *Plan rédigé par : règles + LLM.*
 
 ### 192.168.10.15 : Poste de travail (Moyen, score 27.4)
 
-Le poste de travail Windows 10 expose plusieurs vulnérabilités critiques déjà exploitées (CVE‑2017‑8543, CVE‑2015‑2502, etc.) et présente un risque moyen.
+Poste de travail Windows 10 avec Firefox 54, contenant plusieurs vulnérabilités critiques déjà exploitées (CVE-2017-8543, CVE-2015-2502, CVE-2016-7200, CVE-2016-7201, CVE-2016-7256) et exploitables depuis le réseau interne.
 
 **Constats établis par les règles**
 
@@ -243,122 +246,123 @@ Le poste de travail Windows 10 expose plusieurs vulnérabilités critiques dé
 
 *Priorité immédiate*
 
-- Installer les correctifs de sécurité correspondant aux vulnérabilités exploitées : appliquer les bulletins MSRC CVE‑2017‑8543, MS15‑093, MS16‑129, MS16‑132 et les autres correctifs disponibles. *Ces failles sont répertoriées dans le catalogue KEV et leur exploitation a été confirmée. Leur correction élimine la possibilité d’exploitation depuis le réseau interne.*
-- Activer l’authentification forte (MFA) pour tous les comptes utilisateurs du poste de travail. *Renforce la protection des identifiants même si une vulnérabilité était exploitée, limitant l’accès non autorisé.*
+- Installer les correctifs de sécurité disponibles pour toutes les vulnérabilités répertoriées, en appliquant les bulletins MS15-093, MS16-129, MS16-132 et le correctif MSRC correspondant à CVE-2017-8543. *Ces failles sont présentes dans le catalogue KEV et leur exploitation a été confirmée. Leur correction élimine le vecteur d'attaque le plus critique.*
+- Activer le pare-feu local et restreindre les communications entrantes au strict nécessaire, en bloquant tout trafic non autorisé depuis le réseau interne vers le poste. *Les vulnérabilités sont exploitables depuis le réseau interne ; limiter les flux réduit la surface d'attaque.*
 
 *Priorité court terme*
 
-- Isoler le poste de travail du reste du réseau interne via segmentation VLAN ou règles de pare‑feu, en limitant les communications entrantes non nécessaires. *Réduit la surface d’attaque et empêche un attaquant qui aurait compromis un autre système d’atteindre directement ce poste.*
+- Mettre en place une authentification forte (MFA) pour les comptes utilisateurs locaux et les services d’accès distant. *Renforcer la protection des identifiants empêche la compromission même si une faille est exploitée.*
 
 *Priorité moyen terme*
 
-- Déployer une solution EDR ou un système de détection d’intrusion capable de surveiller les tentatives d’exploitation des CVE critiques. *Permet de détecter rapidement toute tentative d’exploitation des vulnérabilités connues et d’intervenir avant compromission.*
-- Mettre en place des sauvegardes régulières et hors ligne des documents bureautiques et courriels, avec des tests de restauration périodiques. *Assure la disponibilité des données en cas d’incident ou de compromission du poste.*
+- Déployer une solution de sauvegarde automatisée et régulièrement testée des documents bureautiques et des courriels. *En cas d’infection ou de perte de données, des sauvegardes récentes permettent une restauration rapide et limitent l’impact.*
+- Installer un agent de détection d’intrusion ou de surveillance des processus et des connexions réseau sur le poste, avec alertes en temps réel. *Une visibilité accrue permet de détecter rapidement toute tentative d’exploitation des vulnérabilités restantes.*
 
 *Plan rédigé par : règles + LLM.*
 
 ### 192.168.10.51 : Poste de travail (Moyen, score 27.4)
 
-Le poste de travail exécute Ubuntu 12.04 et Firefox 31.0, avec plusieurs failles critiques déjà exploitées (KEV) et dont le support d'Ubuntu a pris fin le 28‑04‑2017.
+La machine exécute Ubuntu 12.04 et Firefox 31.0 ; plusieurs failles critiques déjà exploitées (Bash, OpenSSL, Firefox PDF) sont présentes.
 
 **Constats établis par les règles**
 
-- (immédiate) Appliquer les mises à jour de sécurité qui corrigent les failles déjà exploitées par des attaquants : CVE-2014-6271, CVE-2014-7169, CVE-2015-4495, CVE-2014-0160, CVE-2014-3153. Bulletins de sécurité correspondants : Apple HT6495, Apple HT6535, USN-2165-1, USN-2237-1, USN-2240-1, USN-2362-1, USN-2363-1, USN-2363-2, USN-2707-1.
+- (immédiate) Appliquer les mises à jour de sécurité qui corrigent les failles déjà exploitées par des attaquants : CVE-2014-6271, CVE-2014-7169, CVE-2015-4495, CVE-2014-0160, CVE-2014-3153. Bulletins de sécurité correspondants : USN-2165-1, USN-2237-1, USN-2240-1, USN-2362-1, USN-2363-1, USN-2363-2, USN-2707-1.
 - (court terme) Remplacer Ubuntu 12.04 par une version maintenue.
 
 **Plan d'action détaillé**
 
 *Priorité immédiate*
 
-- Appliquer les correctifs de sécurité disponibles (Apple HT6495, Apple HT6535, USN‑2165‑1, USN‑2237‑1, USN‑2240‑1, USN‑2362‑1, USN‑2363‑1, USN‑2363‑2, USN‑2707‑1) afin de corriger les CVE‑2014‑6271, CVE‑2014‑7169, CVE‑2015‑4495, CVE‑2014‑0160 et CVE‑2014‑3153. *Ces vulnérabilités sont répertoriées dans le catalogue KEV et leur exploitation a été observée. Les correctifs éliminent les vecteurs d'attaque connus.*
+- Appliquer les correctifs de sécurité disponibles pour les failles connues (USN‑2165‑1, USN‑2237‑1, USN‑2240‑1, USN‑2362‑1, USN‑2363‑1, USN‑2363‑2, USN‑2707‑1). *Ces correctifs corrigent les vulnérabilités déjà exploitées par des attaquants et réduisent immédiatement le risque.*
+- Mettre à jour Bash ou désactiver les fonctions dangereuses (ex. désactiver le traitement des variables d’environnement non fiables) afin de neutraliser les vecteurs d’exploitation de CVE‑2014‑6271 et CVE‑2014‑7169. *Ces vulnérabilités permettent l’exécution de code à distance via des variables d’environnement ; les corriger ou les désactiver empêche leur exploitation.*
 
 *Priorité court terme*
 
-- Remplacer Ubuntu 12.04 par une version maintenue du système d'exploitation. *Le support d'Ubuntu 12.04 s'est terminé le 28‑04‑2017, aucune mise à jour de sécurité n'est plus fournie, ce qui laisse la machine exposée aux nouvelles vulnérabilités.*
+- Remplacer Ubuntu 12.04 par une version d’Ubuntu maintenue et à jour. *Le support d’Ubuntu 12.04 s’est terminé le 28 avril 2017 ; aucune mise à jour ne sera fournie après cette date, laissant la machine exposée aux nouvelles vulnérabilités.*
 
 *Priorité moyen terme*
 
-- Durcir la configuration du shell Bash en désactivant les fonctions d'importation d'environnement non nécessaires et en limitant l'usage de ForceCommand dans OpenSSH. *CVE‑2014‑6271 et CVE‑2014‑7169 exploitent la façon dont Bash traite les variables d'environnement. Restreindre ces mécanismes réduit le risque d'exécution de code via des variables manipulées.*
-- Segmenter le réseau interne en isolant les postes de travail des services critiques et mettre en place une surveillance du trafic interne pour détecter les tentatives d'exploitation de Bash et de Firefox. *Les failles sont exploitables depuis le réseau interne. La segmentation limite la portée d'une compromission et la surveillance permet de repérer rapidement des comportements suspects.*
+- Segmenter le réseau interne et restreindre les communications vers le poste de travail à l’aide de VLAN ou d’ACL, en limitant l’accès uniquement aux services légitimes. *Les failles sont exploitables depuis le réseau interne ; la segmentation réduit la surface d’attaque et empêche la propagation d’un compromis.*
+- Déployer une surveillance continue des journaux système et des alertes sur les comportements suspects liés à Bash et au lecteur PDF de Firefox, et mettre en place des sauvegardes régulières des données utilisateur. *Une détection précoce permet d’intervenir rapidement en cas d’exploitation ; les sauvegardes assurent la continuité des activités en cas de compromission.*
 
 *Plan rédigé par : règles + LLM.*
 
 ### 192.168.10.19 : Poste de travail (Moyen, score 27.4)
 
-Le poste de travail sous Ubuntu 14.04 et Firefox 31.0 présente plusieurs failles déjà exploitées (CVE‑2014‑6271, CVE‑2014‑7169, CVE‑2015‑4495, CVE‑2014‑3153, CVE‑2016‑5195) accessibles depuis le réseau interne.
+Le poste de travail sous Ubuntu 14.04 et Firefox 31.0 présente plusieurs failles déjà exploitées (KEV) accessibles depuis le réseau interne.
 
 **Constats établis par les règles**
 
-- (immédiate) Appliquer les mises à jour de sécurité qui corrigent les failles déjà exploitées par des attaquants : CVE-2014-6271, CVE-2014-7169, CVE-2015-4495, CVE-2014-3153, CVE-2016-5195. Bulletins de sécurité correspondants : Apple HT6495, Apple HT6535, USN-2237-1, USN-2240-1, USN-2362-1, USN-2363-1, USN-2363-2, USN-2707-1, USN-3104-1, USN-3104-2, USN-3105-1, USN-3105-2.
+- (immédiate) Appliquer les mises à jour de sécurité qui corrigent les failles déjà exploitées par des attaquants : CVE-2014-6271, CVE-2014-7169, CVE-2015-4495, CVE-2014-3153, CVE-2016-5195. Bulletins de sécurité correspondants : USN-2237-1, USN-2240-1, USN-2362-1, USN-2363-1, USN-2363-2, USN-2707-1, USN-3104-1, USN-3104-2, USN-3105-1, USN-3105-2.
 
 **Plan d'action détaillé**
 
 *Priorité immédiate*
 
-- Installer les correctifs de sécurité disponibles pour les failles identifiées en appliquant les bulletins de sécurité correspondants. *Ces vulnérabilités sont répertoriées dans le catalogue KEV et leur exploitation a été confirmée. Les correctifs éliminent les vecteurs d’attaque connus.*
+- Appliquer les correctifs de sécurité disponibles pour les vulnérabilités observées (CVE‑2014‑6271, CVE‑2014‑7169, CVE‑2015‑4495, CVE‑2014‑3153, CVE‑2016‑5195) en installant les bulletins USN‑2362‑1, USN‑2363‑1, USN‑2363‑2, USN‑2707‑1, USN‑2237‑1, USN‑2240‑1, USN‑3104‑1, USN‑3104‑2, USN‑3105‑1, USN‑3105‑2. *Ces failles sont répertoriées dans le catalogue CISA KEV et ont été exploitées. Leur correction élimine le vecteur d’attaque connu.*
 
 *Priorité court terme*
 
-- Restreindre l’accès réseau au poste de travail en activant le pare‑feu local et en limitant les communications aux services strictement nécessaires. *Les failles peuvent être exploitées depuis le réseau interne ; réduire la surface d’exposition diminue le risque d’exploitation.*
-- Durcir la configuration de Bash et du serveur SSH : désactiver les options dangereuses (ex. ForceCommand), nettoyer les variables d’environnement et appliquer les profils AppArmor recommandés. *CVE‑2014‑6271 et CVE‑2014‑7169 exploitent la manipulation d’environnements Bash. Une configuration stricte empêche ces vecteurs.*
+- Restreindre l’accès réseau au poste de travail : bloquer les connexions entrantes non nécessaires, désactiver les fonctions SSH ForceCommand et limiter les services exposés au réseau interne. *Les vulnérabilités Bash (CVE‑2014‑6271, CVE‑2014‑7169) sont exploitables depuis le réseau interne via des variables d’environnement manipulées.*
+- Durcir la configuration de Bash : désactiver le traitement des variables d’environnement dangereuses (e.g., env_reset), appliquer les recommandations de sécurité du projet Bash et supprimer les scripts inutiles. *Réduire la surface d’attaque liée aux fonctions de traitement des chaînes de caractères dans Bash limite les possibilités d’exploitation même si un vecteur réseau persiste.*
 
 *Priorité moyen terme*
 
-- Planifier la migration vers une version d’Ubuntu maintenue avant la fin du support prévue en 2019‑04‑30. *Une version maintenue recevra des correctifs futurs, garantissant une protection continue contre de nouvelles vulnérabilités.*
-- Mettre en place des sauvegardes quotidiennes chiffrées des données utilisateurs et configurer une surveillance continue des journaux (IDS/IPS, alertes de connexion anormale). *En cas d’exploitation, les sauvegardes permettent une restauration rapide et la surveillance aide à détecter rapidement toute activité suspecte.*
+- Planifier la migration vers une version d’Ubuntu maintenue avant la fin du support (30 avril 2019) afin de bénéficier de correctifs futurs et d’un cycle de mise à jour plus rapide. *Le système actuel accumule plusieurs vulnérabilités critiques ; une version maintenue simplifiera la gestion des correctifs à long terme.*
+- Mettre en place une procédure de sauvegarde quotidienne des fichiers utilisateurs et des documents internes, avec vérification périodique de la restauration. *En cas d’exploitation réussie, les sauvegardes permettent de restaurer rapidement les données critiques et de limiter l’impact opérationnel.*
+- Déployer un système de détection d’intrusion hôte (HIDS) et activer la journalisation détaillée des activités système et réseau, en alertant le SOC en cas d’anomalies liées aux CVE connues. *Une surveillance continue permet de détecter rapidement toute tentative d’exploitation des vulnérabilités restantes ou de nouvelles attaques.*
 
 *Plan rédigé par : règles + LLM.*
 
 ### 192.168.10.17 : Poste de travail (Moyen, score 27.4)
 
-Poste de travail sous Ubuntu 14.04 et Firefox 31.0, contenant plusieurs vulnérabilités KEV exploitées depuis le réseau interne.
+Poste de travail sous Ubuntu 14.04 et Firefox 31.0, contenant plusieurs vulnérabilités critiques déjà exploitées (Bash, kernel Linux, lecteur PDF de Firefox).
 
 **Constats établis par les règles**
 
-- (immédiate) Appliquer les mises à jour de sécurité qui corrigent les failles déjà exploitées par des attaquants : CVE-2014-6271, CVE-2014-7169, CVE-2015-4495, CVE-2014-3153, CVE-2016-5195. Bulletins de sécurité correspondants : Apple HT6495, Apple HT6535, USN-2237-1, USN-2240-1, USN-2362-1, USN-2363-1, USN-2363-2, USN-2707-1, USN-3104-1, USN-3104-2, USN-3105-1, USN-3105-2.
+- (immédiate) Appliquer les mises à jour de sécurité qui corrigent les failles déjà exploitées par des attaquants : CVE-2014-6271, CVE-2014-7169, CVE-2015-4495, CVE-2014-3153, CVE-2016-5195. Bulletins de sécurité correspondants : USN-2237-1, USN-2240-1, USN-2362-1, USN-2363-1, USN-2363-2, USN-2707-1, USN-3104-1, USN-3104-2, USN-3105-1, USN-3105-2.
 
 **Plan d'action détaillé**
 
 *Priorité immédiate*
 
-- Appliquer les correctifs de sécurité disponibles (Apple HT6495, Apple HT6535, USN-2237-1, USN-2240-1, USN-2362-1, USN-2363-1, USN-2363-2, USN-2707-1, USN-3104-1, USN-3104-2, USN-3105-1, USN-3105-2) afin de corriger les vulnérabilités exploitées. *Ces correctifs éliminent les failles déjà observées dans le catalogue KEV, réduisant le risque d'exécution de code ou d'élévation de privilèges.*
+- Installer tous les correctifs de sécurité disponibles pour les vulnérabilités identifiées. *Les correctifs corrigent les failles déjà exploitées (KEV) et réduisent immédiatement le risque d'attaque.*
 
 *Priorité court terme*
 
-- Mettre à jour le navigateur Firefox vers une version maintenue qui corrige la vulnérabilité du lecteur PDF (CVE-2015-4495). *Cette mise à jour empêche le contournement de la Same Origin Policy et la lecture de fichiers arbitraires depuis le navigateur.*
-- Planifier la migration du système d'exploitation vers une version d'Ubuntu toujours maintenue (ex. 16.04 LTS ou supérieure). *Ubuntu 14.04 approche de sa fin de support (30 avril 2019). Une version maintenue recevra des correctifs de sécurité continus.*
+- Segmenter le réseau interne et appliquer des règles de pare‑feu pour limiter les communications vers le poste de travail uniquement aux services nécessaires. *Les vulnérabilités Bash (CVE‑2014‑6271, CVE‑2014‑7169) sont exploitables depuis le réseau interne ; la segmentation réduit la surface d’exposition.*
+- Mettre à niveau le système d’exploitation vers une version Ubuntu maintenue et mettre à jour Firefox vers une version récente. *Une version maintenue reçoit régulièrement des correctifs de sécurité ; la mise à jour du navigateur élimine la vulnérabilité PDF (CVE‑2015‑4495).*
 
 *Priorité moyen terme*
 
-- Segmenter le réseau interne et restreindre les flux vers le poste de travail à l'aide de règles de pare‑feu, limitant ainsi l'accès depuis d'autres machines. *Les vulnérabilités Bash sont exploitables depuis le réseau interne ; la segmentation réduit la surface d'attaque.*
-- Renforcer l'authentification locale et distante (exigence de mots de passe forts, utilisation de clés SSH protégées par phrase de passe, mise en place de MFA pour les comptes administratifs). *Une authentification robuste limite les possibilités d'accès non autorisé, notamment pour les failles nécessitant un accès local.*
+- Renforcer l’authentification en activant l’authentification à facteurs multiples pour tout accès distant (SSH) et appliquer des politiques de mots de passe forts. *Réduit le risque d’accès non autorisé qui pourrait être combiné avec les vulnérabilités locales.*
+- Déployer une solution de détection et de réponse sur les points de terminaison (EDR) et centraliser la journalisation des événements système. *Permet de détecter rapidement toute tentative d’exploitation des vulnérabilités résiduelles et d’y répondre.*
 
 *Plan rédigé par : règles + LLM.*
 
 ### 192.168.10.12 : Poste de travail (Moyen, score 17.0)
 
-Le poste de travail sous Ubuntu 16.04 présente plusieurs vulnérabilités graves, dont une déjà exploitée (Dirty COW) et d’autres exploitables depuis le réseau interne.
+Le poste de travail sous Ubuntu 16.04 présente plusieurs failles critiques, dont une déjà exploitée (Dirty COW) et d'autres exploitables depuis le réseau interne.
 
 **Constats établis par les règles**
 
 - (immédiate) Appliquer les mises à jour de sécurité qui corrigent les failles déjà exploitées par des attaquants : CVE-2016-5195. Bulletins de sécurité correspondants : USN-3104-1, USN-3104-2, USN-3105-1, USN-3105-2.
-- (court terme) Corriger les autres failles graves (CVSS 7 ou plus) : CVE-2016-4971, CVE-2016-7117, CVE-2016-9841, CVE-2016-9843. Bulletins de sécurité correspondants : Apple HT208112, Apple HT208113, Apple HT208115, Apple HT208144, USN-3012-1.
+- (court terme) Corriger les autres failles graves (CVSS 7 ou plus) : CVE-2016-4971, CVE-2016-7117, CVE-2016-9841, CVE-2016-9843. Bulletins de sécurité correspondants : USN-3012-1, USN-4246-1, USN-4292-1.
 
 **Plan d'action détaillé**
 
 *Priorité immédiate*
 
-- Installer les correctifs de sécurité qui corrigent la vulnérabilité Dirty COW (CVE-2016-5195) en appliquant les bulletins USN-3104-1, USN-3104-2, USN-3105-1 et USN-3105-2. *Cette faille est répertoriée dans le catalogue KEV et a déjà été exploitée dans le monde. La corriger immédiatement empêche une élévation de privilèges locale.*
-- Mettre à jour les paquets affectés par les vulnérabilités CVE-2016-4971, CVE-2016-7117, CVE-2016-9841 et CVE-2016-9843 en appliquant les bulletins USN-3012-1 et les bulletins Apple HT208112, HT208113, HT208115, HT208144. *Ces failles ont un score CVSS ≥ 7 et sont exploitables depuis le réseau interne. Les correctifs disponibles réduisent le risque d’exécution de code ou d’impact non spécifié.*
+- Appliquer les correctifs de sécurité disponibles pour la faille déjà exploitée (CVE-2016-5195) en installant les bulletins USN-3104-1, USN-3104-2, USN-3105-1 et USN-3105-2. *Cette vulnérabilité est répertoriée dans le catalogue KEV et a été exploitée en pratique. Corriger immédiatement réduit le risque d'élévation de privilèges locale.*
 
 *Priorité court terme*
 
-- Segmenter le réseau interne afin d’isoler le poste de travail des autres machines et limiter l’accès au réseau interne uniquement aux services nécessaires. *La plupart des vulnérabilités observées sont exploitables depuis le réseau interne. Une segmentation réduit la surface d’attaque.*
+- Installer les correctifs pour les autres failles graves (CVE-2016-4971, CVE-2016-7117, CVE-2016-9841, CVE-2016-9843) en appliquant les bulletins USN-3012-1, USN-4246-1 et USN-4292-1. *Ces vulnérabilités ont un score CVSS élevé et sont exploitables depuis le réseau interne. Les corriger limite les vecteurs d'attaque externes et internes.*
 
 *Priorité moyen terme*
 
-- Renforcer l’authentification locale : activer le verrouillage automatique, exiger des mots de passe forts et, si possible, ajouter une authentification à deux facteurs pour les accès sudo. *Une élévation de privilèges locale (Dirty COW) nécessite déjà un accès à la machine ; renforcer l’authentification limite la possibilité d’obtenir cet accès.*
-- Mettre en place des sauvegardes régulières des données utilisateur et vérifier périodiquement la restauration. *En cas d’exploitation réussie, des sauvegardes récentes permettent de restaurer les données sans perte majeure.*
+- Renforcer la segmentation du réseau interne en plaçant les postes de travail sur un VLAN séparé et en limitant les communications vers les serveurs critiques. *La plupart des failles sont exploitables depuis le réseau interne. Une segmentation réduit la portée d'une compromission éventuelle.*
+- Mettre en place une surveillance continue des journaux système et réseau, avec alertes sur les tentatives d'accès aux services vulnérables et sur les comportements anormaux. *Détecter rapidement une exploitation ou une tentative d'exploitation permet une réponse immédiate et limite les dommages.*
 
 *Plan rédigé par : règles + LLM.*
 
@@ -387,13 +391,13 @@ Niveau de risque Faible (score 11.3). Pire faille : CVE-2016-4971 (Ubuntu 16.04)
 
 *Priorité court terme*
 
-- Corriger les autres failles graves (CVSS 7 ou plus) : CVE-2016-4971, CVE-2016-7117, CVE-2016-9841, CVE-2016-9843. Bulletins de sécurité correspondants : Apple HT208112, Apple HT208113, Apple HT208115, Apple HT208144, USN-3012-1. *Failles graves, sans exploitation prouvée à ce jour.*
+- Corriger les autres failles graves (CVSS 7 ou plus) : CVE-2016-4971, CVE-2016-7117, CVE-2016-9841, CVE-2016-9843. Bulletins de sécurité correspondants : USN-3012-1, USN-4246-1, USN-4292-1. *Failles graves, sans exploitation prouvée à ce jour.*
 
 *Plan rédigé par : règles.*
 
 ### 192.168.10.1 : Équipement réseau (pare-feu, routeur) (Inconnu, score 0.0)
 
-Le pare-feu/routeur interne possède uniquement le port DNS ouvert, mais aucune information sur les logiciels installés, ce qui empêche d'évaluer les vulnérabilités.
+Le dispositif réseau ne possède aucun logiciel identifié, ce qui empêche d'évaluer ses vulnérabilités. Un inventaire complet et des mesures de durcissement sont nécessaires.
 
 **Constats établis par les règles**
 
@@ -403,16 +407,17 @@ Le pare-feu/routeur interne possède uniquement le port DNS ouvert, mais aucune 
 
 *Priorité immédiate*
 
-- Compléter l'inventaire du système, des logiciels et de leurs versions. *Sans inventaire, il est impossible de savoir quelles failles peuvent affecter la machine.*
-- Activer la journalisation détaillée du trafic DNS et des accès d'administration, puis centraliser les logs dans un serveur de SIEM. *Permet de détecter rapidement des comportements anormaux ou des tentatives d'exploitation.*
+- Activer la journalisation détaillée du pare‑feu et du service DNS, puis centraliser les logs dans un serveur sécurisé. *Des logs complets permettent de détecter rapidement toute activité suspecte ou tentative d’exploitation.*
+- Restreindre l’accès au service DNS aux seules adresses IP internes autorisées via des listes de contrôle d’accès (ACL). *Limiter l’accès empêche les requêtes non autorisées depuis l’extérieur et réduit la surface d’attaque.*
 
 *Priorité court terme*
 
-- Restreindre l'accès à l'interface de gestion du pare-feu aux adresses IP internes autorisées et exiger une authentification forte (MFA). *Réduit le risque d'accès non autorisé depuis le réseau ou Internet.*
+- Compléter l’inventaire du système, des logiciels installés et de leurs versions. *Sans inventaire, il est impossible d’identifier les failles potentielles et d’appliquer les correctifs appropriés.*
 
 *Priorité moyen terme*
 
-- Segmenter le réseau en isolant le service DNS du reste de l'infrastructure à l'aide de VLANs ou de listes de contrôle d'accès. *Limite la portée d'une éventuelle compromission du service DNS.*
+- Mettre en place une segmentation réseau pour isoler le dispositif DNS du reste de l’infrastructure. *La segmentation limite l’impact d’une éventuelle compromission du service DNS sur les autres systèmes.*
+- Établir des sauvegardes régulières de la configuration du pare‑feu/routeur et tester les procédures de restauration. *Des sauvegardes fiables assurent une reprise rapide en cas de perte ou de corruption de la configuration.*
 
 *Plan rédigé par : règles + LLM.*
 

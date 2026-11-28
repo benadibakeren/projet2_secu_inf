@@ -163,7 +163,8 @@ def creer_client():
     if not cle:
         print(f"[Agent 2] Variable {config.LLM_VARIABLE_CLE} absente : règles seulement")
         return None
-    return OpenAI(base_url=config.LLM_URL, api_key=cle)
+    # max_retries=0 : nos agents gèrent eux-mêmes les nouveaux essais et affichent l'attente
+    return OpenAI(base_url=config.LLM_URL, api_key=cle, max_retries=0, timeout=120)
 
 
 def extraire_json(texte: str) -> dict:
